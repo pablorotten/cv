@@ -62,6 +62,8 @@ B.Eng. in Computer Engineering
 - Focused on computer architecture and systems security. 
 - **Final Project:** Developed a complete real-time bus tracking system, including the Hybrid Android/iOS mobile applications and supporting backend infrastructure.
 
+\newpage
+
 ## Personal Projects
 
 [~P1]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
@@ -82,10 +84,28 @@ B.Eng. in Computer Engineering
 
 ## Skills
 
-**Technical Stack:** <span class="iconify" data-icon="logos:scala"></span> Scala, <span class="iconify" data-icon="logos:java"></span> Java, <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript, <span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python, <span class="iconify" data-icon="logos:bash"></span> Bash, <span class="iconify" data-icon="logos:aws"></span> AWS, <span class="iconify" data-icon="logos:docker-icon"></span> Docker, <span class="iconify" data-icon="simple-icons:gitlab"></span> GitLab CI/CD, <span class="iconify" data-icon="logos:react"></span> React
+**Technical Stack:** 
+<span class="iconify" data-icon="logos:scala"></span> Scala
+<span class="iconify" data-icon="logos:java"></span> Java
+<span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript
+<span class="iconify" data-icon="logos:typescript"></span> TypeScript
+<span class="iconify" data-icon="logos:react"></span> React
+<span class="iconify" data-icon="logos:aws"></span> AWS
+<span class="iconify" data-icon="simple-icons:gitlab"></span> GitLab CI/CD
+<span class="iconify" data-icon="logos:postgresql"></span> PostgreSQL
+<span class="iconify" data-icon="logos:mysql"></span> MySQL
 
-**Content & Creative:** <span class="iconify" data-icon="hugeicons:capcut-rectangle"></span> CapCut, <span class="iconify" data-icon="simple-icons:obsstudio"></span> OBS Studio, <span class="iconify" data-icon="simple-icons:synfigstudio"></span> Synfig, <span class="iconify" data-icon="simple-icons:photopea"></span> Photopea, Technical Writing, Public Speaking & Technical Demos
 
-**DevRel & Soft Skills:** Developer Support, Community Engagement, Cross-functional Communication (Engineering/Sales), Agile/Kanban Leadership, Feedback Loop Management
+**Content & Creative:** 
+<span class="iconify" data-icon="hugeicons:capcut-rectangle"></span> CapCut
+<span class="iconify" data-icon="simple-icons:obsstudio"></span> OBS Studio
+<span class="iconify" data-icon="simple-icons:synfigstudio"></span> Synfig
+<span class="iconify" data-icon="simple-icons:photopea"></span> Photopea
+<span class="iconify" data-icon="simple-icons:confluence"></span> Confluence
 
-**Languages:** <span class="iconify" data-icon="openmoji:flag-spain"></span> Spanish (Native), <span class="iconify" data-icon="openmoji:flag-united-kingdom"></span> English (Full Professional), <span class="iconify" data-icon="openmoji:flag-france"></span> French (Professional Working), <span class="iconify" data-icon="openmoji:flag-netherlands"></span> Dutch (Elementary)
+
+**Languages:** 
+<span class="iconify" data-icon="openmoji:flag-spain"></span> Spanish (Native)
+<span class="iconify" data-icon="openmoji:flag-united-kingdom"></span> English (Full Professional)
+<span class="iconify" data-icon="openmoji:flag-france"></span> French (Professional Working)
+<span class="iconify" data-icon="openmoji:flag-netherlands"></span> Dutch (Elementary)
