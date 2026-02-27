@@ -20,3 +20,16 @@ If you ask me for a list of new obfuscation techniques to improve DexGuard, my m
 
 ## Scripted and simplified version
 
+- Hello!
+
+- My name is Pablo. I'm making this video as cover letter for the DevRel role at Guardsquare. 
+
+- I am a lateral thinker in a vertical world.
+- While my peers loved deep-diving into design patterns, code refactorings, hours of Scrum ceremonies... I found all of that exhausting—and honestly, a struggle.
+
+- But I noticed a pattern: 
+- tasks that made my senior colleagues nervous, like presenting a new feature, writing documentation, or recording a demo... were a piece of cake for me. 
+- I could pick out the key points to focus on, separate the signal from the noise, and visualize exactly how the final material should look.
+- In that moment, I decided to stop forcing myself to be a "pattern-perfect" developer so I can pour 100% of my energy into the creative advocacy work that I actually love.
+
+- And the des
