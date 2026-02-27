@@ -1,6 +1,6 @@
 # Welcome to my CV 😊
 
-Click on the buttons below to access my **resume**, **LinkedIn** profile, and **YouTube** channel.
+Click on the buttons below to access my [Resume](https://ohmycv.app/dashboard), **LinkedIn** profile, and **YouTube** channel.
 
 [![Resume](https://img.shields.io/badge/Resume-f36132?style=for-the-badge&logo=googledocs&logoColor=white)](https://pablorotten.github.io/cv/)
 
