@@ -99,5 +99,5 @@ B.Eng. in Computer Engineering
 **Languages:** 
 <span class="iconify" data-icon="openmoji:flag-spain"></span> Spanish (Native)
 <span class="iconify" data-icon="openmoji:flag-united-kingdom"></span> English (Full Professional)
-<span class="iconify" data-icon="openmoji:flag-france"></span> French (Professional Working)
+<span class="iconify" data-icon="openmoji:flag-france"></span> French (Professional)
 <span class="iconify" data-icon="openmoji:flag-netherlands"></span> Dutch (Elementary)
