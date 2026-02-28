@@ -5,7 +5,7 @@
 - Hello!
 - My name is Pablo. And this is my "cover letter" for the devrel role at Guardsquare.
 - I’ve spent a decade as a software developer—eight of those years right here in Leuven.
-- While my brilliant peers loved deep-diving into design patterns or long Scrum ceremonies, I found it exhausting.
+- Deep-diving into design patterns,  tryiging to produce high quality code, long Scrum ceremonies.... Honestly, I found it exhausting.
 - I reached a point where I felt stuck because my brain just wasn't wired for "pattern-perfect" engineering.
 
 ## DevRel? What is that?
@@ -34,7 +34,7 @@
 
 - Why me then?
 - I survived 10 years by documenting my own uphill battles. 
-- Because I don't pick up frameworks in five minutes
+- When I learn about a new product, tool or feature
 - I know where the friction is...
 - ...I know how to smooth it over.
 - But I also know the high-level details an experienced user is hunting for
@@ -45,6 +45,7 @@
 - but if you can’t present it, it falls flat.
 - That’s exactly what I tried to showcase in my UnCrackable Challenge video (that I hope you watched already). I'll leave the link here, just in case...
 - I used your ProGuard tools to reverse-engineer an Android app, making the "how" engaging and accessible.
+- So anyone can see the potential 
  
 ## Conclusion
 * I have a lot to learn about DevRel nuances, but with 10 years of technical foundation, I’ll master the craft in no time. 
