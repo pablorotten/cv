@@ -4,8 +4,8 @@
 
 - Hello!
 - My name is Pablo, and this is my cover letter for the DevRel role at Guardsquare.
-- I’m literally rendering the video I’m going to send you to show off my DevRel skills.
-- And I thought, why not make a cover video instead of a classic cover letter? Might as well go all in.
+- I was about to apply to the job and I saw that you guys were asking for a cover letter...
+- ... and I thought, why not a cover video instead? That way, you can know me better.
 - My background?
 - I’m a Spanish software engineer with 10 years of experience.
 - I’ve been living in Belgium for… 8 years, I think. Time flies.
@@ -18,7 +18,6 @@
 - Fixing bugs
 - I enjoyed it, learned a lot, had fun… but deep down, I felt like something was missing.
 - I started to realize my brain just wasn’t wired to only sit and code all day.
-- 
 
 ## The Turning Point
 
