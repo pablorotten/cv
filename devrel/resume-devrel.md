@@ -57,7 +57,7 @@ Full-stack Software Engineer with over 10 years of experience in Scala and DevOp
   ~ Granada, Spain
 
 B.Eng. in Computer Engineering
-  ~ 09/2010 - 07/2015
+  ~ 2010 - 2015
 
 - Focused on computer architecture and systems security. 
 - **Final Project:** Developed a complete real-time bus tracking system, including the Hybrid Android/iOS mobile applications and supporting backend infrastructure.
