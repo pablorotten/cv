@@ -67,7 +67,7 @@ B.Eng. in Computer Engineering
 ## Personal Projects
 
 [~P1]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
-    *Technical Video & Documentation, 2025*
+    *Technical Video & Documentation*
     - Created a step-by-step guide on bypassing root detection and decrypting AES-256 secrets in Android apps using `ProGuard Assembler`.
     - [YouTube video](https://www.youtube.com/watch?v=mUKR67VA0Lg) | [Link to GitHub Repository](https://github.com/pablorotten/GuardSquare-devrel-project)
 
