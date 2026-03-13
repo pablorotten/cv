@@ -82,6 +82,16 @@ B.Eng. in Computer Engineering
     - Developed a prank-oriented PWA that mimics native app installation on iOS/Android via web manifests.
     - [Link to GitHub Repository](https://github.com/pablorotten/fake-tinder)
 
+[~P4]: **Technical Documentation & Learning Resources**
+    *Educational Content Creation & Knowledge Sharing*
+    - Created comprehensive documentation repositories covering modern development technologies and frameworks.
+    - **Scala & Reactive Systems:** Documented advanced Scala concepts and Akka framework fundamentals for distributed systems
+      ([Rock the JVM - Scala](https://github.com/pablorotten/rock-the-jvm-scala-beginners) | [Akka Essentials](https://github.com/pablorotten/akka-essentials))
+    - **Java & ORM:** Technical notes on Hibernate framework covering entity mapping, transactions, and best practices
+      ([Hibernate Course](https://github.com/pablorotten/hibernate-course))
+    - **Modern Frontend Stack:** React documentation with Vite and Tailwind CSS integration guides
+      ([Vite + React + Tailwind](https://github.com/pablorotten/vite-react-tailwind) | [Learning React Guide](https://github.com/pablorotten/vite-react-tailwind/blob/main/Learning-React.md))
+
 ## Skills
 
 **Technical Stack:** 
