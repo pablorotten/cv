@@ -96,6 +96,7 @@ B.Eng. in Computer Engineering
 
 **Technical Stack:** 
 <span class="iconify" data-icon="logos:scala"></span> Scala
+<span class="iconify" data-icon="devicon:akka"></span> Akka
 <span class="iconify" data-icon="logos:java"></span> Java
 <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript
 <span class="iconify" data-icon="logos:typescript"></span> TypeScript
