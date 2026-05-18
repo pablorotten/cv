@@ -69,13 +69,13 @@ B.Eng. in Computer Engineering
 [~P1]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
     *Technical Video & Documentation*
     - Created a step-by-step guide on bypassing root detection and decrypting AES-256 secrets in Android apps using `ProGuard Assembler`.
-    - [YouTube video](https://www.youtube.com/watch?v=mUKR67VA0Lg) | [Link to GitHub Repository](https://github.com/pablorotten/GuardSquare-devrel-project)
+    - [🎥 YouTube video](https://www.youtube.com/watch?v=mUKR67VA0Lg) | [Link to GitHub Repository](https://github.com/pablorotten/GuardSquare-devrel-project)
 
 [~P2]: **Movie Kombat: React + TypeScript Tournament App**
     *Full-Stack Web Development & API Integration*
-    - Built an interactive movie bracket app using **React 19, TypeScript, and Tailwind CSS v4**.
-    - Integrated multiple third-party APIs (OMDb & TMDB) for global search and discovery.
-    - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://movie-kombat.vercel.app/)
+    - Built an interactive movie bracket app using **React, TypeScript, and Tailwind CSS v4**.
+    - Integrated third-party API [TMDB](https://developer.themoviedb.org/docs/getting-started) for movie search and platforms availability.
+    - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://moviekombat.app/) | [🎥 Promo video](https://youtube.com/shorts/OPYjPb3ffrs?feature=share)
 
 [~P3]: **Fake Tinder: Progressive Web App (PWA) Experiment**
     *Mobile Web Development & Social Engineering Concept*
@@ -84,13 +84,13 @@ B.Eng. in Computer Engineering
 
 [~P4]: **Technical Documentation & Learning Resources**
     *Educational Content Creation & Knowledge Sharing*
-    - Created comprehensive documentation repositories covering modern development technologies and frameworks.
-    - **Scala & Reactive Systems:** Documented advanced Scala concepts and Akka framework fundamentals for distributed systems
+    - Comprehensive documentation of technologies and frameworks I used in my work and projects.
+    - **React:** React documentation with Vite and Tailwind CSS integration guides
+      ([Vite + React + Tailwind](https://github.com/pablorotten/vite-react-tailwind) | [Learning React Guide](https://github.com/pablorotten/vite-react-tailwind/blob/main/Learning-React.md))
+    - **Scala:** Documented advanced Scala concepts and Akka framework fundamentals for distributed systems
       ([Rock the JVM - Scala](https://github.com/pablorotten/rock-the-jvm-scala-beginners) | [Akka Essentials](https://github.com/pablorotten/akka-essentials))
     - **Java & ORM:** Technical notes on Hibernate framework covering entity mapping, transactions, and best practices
       ([Hibernate Course](https://github.com/pablorotten/hibernate-course))
-    - **Modern Frontend Stack:** React documentation with Vite and Tailwind CSS integration guides
-      ([Vite + React + Tailwind](https://github.com/pablorotten/vite-react-tailwind) | [Learning React Guide](https://github.com/pablorotten/vite-react-tailwind/blob/main/Learning-React.md))
 
 ## Skills
 
