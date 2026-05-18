@@ -75,7 +75,7 @@ B.Eng. in Computer Engineering
     *Full-Stack Web Development & API Integration*
     - Built an interactive movie bracket app using **React, TypeScript, and Tailwind CSS v4**.
     - Integrated third-party API [TMDB](https://developer.themoviedb.org/docs/getting-started) for movie search and platforms availability.
-    - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://moviekombat.app/) | [🎥 Promo video](https://youtube.com/shorts/OPYjPb3ffrs?feature=share)
+    - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://moviekombat.app/) | [🎥 Promo video](https://youtube.com/shorts/OPYjPb3ffrs?feature=share) | [<span class="iconify" data-icon="logos:linkedin"></span> post](https://www.linkedin.com/posts/pablo-antonio-rodriguez-rubio_sideproject-activity-7462103830365900800-YTVn?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUa0hwB06eAXuLcZS24G6hAF7MsJupSDnM)
 
 [~P3]: **Fake Tinder: Progressive Web App (PWA) Experiment**
     *Mobile Web Development & Social Engineering Concept*
@@ -102,7 +102,7 @@ B.Eng. in Computer Engineering
 <span class="iconify" data-icon="logos:typescript"></span> TypeScript
 <span class="iconify" data-icon="logos:react"></span> React
 <span class="iconify" data-icon="logos:aws"></span> AWS
-<span class="iconify" data-icon="simple-icons:gitlab"></span> GitLab CI/CD
+<span class="iconify" data-icon="simple-icons:link"></span> GitLab CI/CD
 <span class="iconify" data-icon="logos:postgresql"></span> PostgreSQL
 <span class="iconify" data-icon="logos:mysql"></span> MySQL
 
