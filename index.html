@@ -3,26 +3,548 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Rodriguez Rubio - CV Select</title>
+    <title>Pablo Rodriguez Rubio - Developer Advocate</title>
     <link href="images/logo.png" rel="icon" type="image/png">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f6f8fa; }
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; max-width: 400px; }
-        h1 { color: #24292e; font-size: 1.5rem; margin-bottom: 1.5rem; }
-        .btn { display: block; padding: 12px 20px; margin: 10px 0; border-radius: 6px; text-decoration: none; font-weight: bold; transition: background 0.2s; }
-        .devrel { background-color: #f36132; color: white; }
-        .devrel:hover { background-color: #d64f26; }
-        .dev { background-color: #2ea44f; color: white; }
-        .dev:hover { background-color: #268a42; }
-        p { color: #57606a; font-size: 0.9rem; margin-top: 1.5rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #f36132;
+            --secondary: #2ea44f;
+            --dark: #24292e;
+            --light: #f6f8fa;
+            --text: #57606a;
+            --border: #d0d7de;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header - Sticky */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .header-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cv-link {
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .cv-link.devrel {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .cv-link.devrel:hover {
+            background-color: #d64f26;
+            transform: translateY(-2px);
+        }
+
+        .cv-link.dev {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .cv-link.dev:hover {
+            background-color: #268a42;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(243, 97, 50, 0.1) 0%, rgba(46, 164, 79, 0.05) 100%);
+            border-radius: 12px;
+            margin-bottom: 4rem;
+            margin-top: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Why Transition Section */
+        .why-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .why-content {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .why-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .why-card h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .why-card p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin-bottom: 4rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        /* Central line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--border);
+            top: 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 52%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        /* Timeline dot */
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            background: var(--secondary);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .timeline-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content .category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content .category {
+            background: var(--secondary);
+        }
+
+        .timeline-content p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .timeline-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .timeline-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.9rem;
+            background: var(--light);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-link:hover {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cv-link {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            /* Timeline on mobile */
+            .timeline-container::before {
+                left: 8px;
+            }
+
+            .timeline-dot {
+                left: 8px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 40px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--light);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Pablo Antonio Rodriguez Rubio</h1>
-        <p>Which version of my resume would you like to view???</p>
-        <a href="./devrel" class="btn devrel">Developer Relations CV</a>
-        <a href="./dev" class="btn dev">Software Engineer CV</a>
-    </div>
-</body>
-</html>
+    <!-- Sticky Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-title">Pablo Rodriguez Rubio</div>
+            <div class="header-links">
+                <a href="./devrel/Pablo-Antonio-Rodriguez-Rubio-DevRel.pdf" class="cv-link devrel">📄 DevRel CV</a>
+                <a href="./dev/Pablo-Antonio-Rodriguez-Rubio-DEV.pdf" class="cv-link dev">📄 Dev CV</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>My Path to Developer Advocacy</h1>
+            <p class="subtitle">From Software Engineer to Developer Advocate</p>
+            <p>10 years of full-stack software engineering. Now focused on solving problems, creating demos, and helping developers understand complex concepts through engaging content and clear explanations.</p>
+        </section>
+
+        <!-- Why Transition Section -->
+        <section class="why-section">
+            <h2 class="section-title">Why This Transition?</h2>
+            <div class="why-content">
+                <h3>Finding My Fit</h3>
+                <p>After a decade in software engineering, I've discovered what truly energizes me: solving problems creatively, building proof-of-concepts, and—most importantly—<strong>helping others understand complex technical concepts</strong>. I'm shifting focus from building production systems to empowering developers and organizations.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <h4>🎯 Problem Solving</h4>
+                    <p>I love hearing about problems and crafting innovative solutions. I ask the right questions, think outside the box, and deliver original ideas quickly.</p>
+                </div>
+                <div class="why-card">
+                    <h4>🔨 Proof of Concepts</h4>
+                    <p>Building POCs and demos is where I shine. I can rapidly prototype and showcase solutions without getting bogged down in production-level design decisions.</p>
+                </div>
+                <div class="why-card">
+                    <h4>🎤 Communication & Advocacy</h4>
+                    <p>Explaining complex concepts clearly, creating engaging demos, and building authentic connections with developers is my superpower. I genuinely enjoy helping people understand technology.</p>
+                </div>
+                <div class="why-card">
+                    <h4>📚 Content & Documentation</h4>
+                    <p>Creating accurate, engaging, and fun technical content. Whether it's tutorials, videos, or documentation, I make complex things accessible.</p>
+                </div>
+                <div class="why-card">
+                    <h4>🤝 Customer Understanding</h4>
+                    <p>I excel at listening to customer needs, translating their requirements into technical solutions, and explaining those solutions back to them in terms they understand.</p>
+                </div>
+                <div class="why-card">
+                    <h4>✨ Experience Creation</h4>
+                    <p>I focus on creating meaningful experiences—whether through engaging demos, well-crafted tutorials, or thoughtful documentation that genuinely helps developers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <h2 class="section-title">My Developer Advocacy Journey</h2>
+            <div class="timeline-container">
+                <!-- P1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="category">Technical Content</span>
+                        <h4>Beyond the Bytecode: OWASP UnCrackable L1</h4>
+                        <p>Step-by-step guide to reverse engineering Android apps using ProGuard Assembler. Covered bypassing root detection and decrypting AES-256 secrets with Guardsquare tools.</p>
+                        <p><strong>Why it matters:</strong> Demonstrates deep technical understanding + ability to break down complex security concepts into consumable content for developers.</p>
+                        <div class="timeline-links">
+                            <a href="https://www.youtube.com/watch?v=mUKR67VA0Lg" class="timeline-link">▶️ YouTube Video</a>
+                            <a href="https://github.com/pablorotten/GuardSquare-devrel-project" class="timeline-link">💻 GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="category">Full-Stack Demo</span>
+                        <h4>Movie Kombat: React Tournament App</h4>
+                        <p>Interactive movie bracket tournament application using React, TypeScript, and Tailwind CSS v4. Integrated TMDB API for real movie data and platform availability.</p>
+                        <p><strong>Why it matters:</strong> Showcases ability to rapidly build engaging demos, integrate third-party APIs, and present work in multiple formats (live app, video promo, LinkedIn engagement).</p>
+                        <div class="timeline-links">
+                            <a href="https://github.com/pablorotten/movie-kombat" class="timeline-link">💻 GitHub</a>
+                            <a href="https://moviekombat.app/" class="timeline-link">🌐 Live App</a>
+                            <a href="https://youtube.com/shorts/OPYjPb3ffrs" class="timeline-link">▶️ Promo Video</a>
+                            <a href="https://www.linkedin.com/posts/pablo-antonio-rodriguez-rubio_sideproject-activity-7462103830365900800" class="timeline-link">💼 LinkedIn Post</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="category">Web Innovation</span>
+                        <h4>Fake Tinder: PWA Experiment</h4>
+                        <p>Progressive Web App that demonstrates how web manifests can mimic native app installation on iOS and Android. A fun exploration of web capabilities with social engineering education.</p>
+                        <p><strong>Why it matters:</strong> Shows creative thinking, willingness to explore technologies, and ability to make technical concepts entertaining and memorable.</p>
+                        <div class="timeline-links">
+                            <a href="https://github.com/pablorotten/fake-tinder" class="timeline-link">💻 GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="category">Educational Content</span>
+                        <h4>Technical Documentation & Learning Resources</h4>
+                        <p>Comprehensive documentation of frameworks and technologies:</p>
+                        <ul style="color: var(--text); margin: 0.75rem 0;">
+                            <li><strong>React:</strong> Integration guides for Vite and Tailwind CSS, hands-on Learning React Guide</li>
+                            <li><strong>Scala:</strong> Advanced concepts and Akka framework fundamentals for distributed systems</li>
+                            <li><strong>Java & ORM:</strong> Deep dive into Hibernate with entity mapping, transactions, and best practices</li>
+                        </ul>
+                        <p><strong>Why it matters:</strong> Proves ability to distill complex technical knowledge into clear, structured, reusable documentation that helps others learn.</p>
+                        <div class="timeline-links">
+                            <a href="https://github.com/pablorotten/vite-react-tailwind" class="timeline-link">📚 React Guide</a>
+                            <a href="https://github.com/pablorotten/rock-the-jvm-scala-beginners" class="timeline-link">📚 Scala Guide</a>
+                            <a href="https://github.com/pablorotten/hibernate-course" class="timeline-link">📚 Hibernate Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/pablorotten" class="social-link" title="GitHub">GH</a>
+                <a href="https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio" class="social-link" title="LinkedIn">in</a>
+                <a href="mailto:pabloantoniorodriguezrubio@gmail.com" class="social-link" title="Email">✉</a>
+            </div>
+            <p><strong>Pablo Antonio Rodriguez Rubio</strong><br>
+            Developer Advocate | Technical Content Creator | Solutions Focused</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">📧 pabloantoniorodriguezrubio@gmail.com | 📱 +32 476 062 894</p>
+        </footer>
+    </body>
+    </html>
