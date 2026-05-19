@@ -9,29 +9,50 @@
     --secondary: #2ea44f;
     --dark: #24292e;
     --light: #f6f8fa;
-    --text: #57606a;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-muted: #f6f8fa;
+    --text: #24292e;
+    --text-muted: #57606a;
     --border: #d0d7de;
+    --shadow: rgba(0, 0, 0, 0.05);
 }
 
 html {
+    color-scheme: light dark;
     scroll-behavior: smooth;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    background-color: #fff;
-    color: var(--dark);
+    background-color: var(--background);
+    color: var(--text);
     line-height: 1.6;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0f1720;
+        --surface: #161b22;
+        --surface-muted: #111827;
+        --text: #d8e3ff;
+        --text-muted: #94a3b8;
+        --border: #30363d;
+        --shadow: rgba(0, 0, 0, 0.45);
+        --primary: #ff8b60;
+        --secondary: #3fb950;
+    }
+}
+
 
 /* Header - Sticky */
 header {
     position: sticky;
     top: 0;
-    background: white;
+    background: var(--surface);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
 .header-content {
@@ -46,7 +67,7 @@ header {
 .header-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--text);
 }
 
 .header-links {
@@ -104,7 +125,7 @@ main {
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    color: var(--dark);
+    color: var(--text);
 }
 
 .hero .subtitle {
@@ -129,7 +150,7 @@ main {
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: var(--dark);
+    color: var(--text);
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
@@ -148,7 +169,7 @@ main {
 }
 
 .why-content {
-    background: var(--light);
+    background: var(--surface-muted);
     padding: 2rem;
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -168,14 +189,14 @@ main {
 }
 
 .why-card {
-    background: white;
+    background: var(--surface);
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--primary);
 }
 
 .why-card h4 {
-    color: var(--dark);
+    color: var(--text);
     margin-bottom: 0.5rem;
     font-size: 1rem;
 }
@@ -243,7 +264,7 @@ main {
 }
 
 .timeline-content {
-    background: white;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5rem;
@@ -256,7 +277,7 @@ main {
 }
 
 .timeline-content h4 {
-    color: var(--dark);
+    color: var(--text);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
@@ -289,12 +310,29 @@ main {
     margin-top: 1rem;
 }
 
+.embed-container {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 560px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.embed-container iframe {
+    width: 100%;
+    min-height: 520px;
+    border: 0;
+    display: block;
+}
+
 .timeline-link {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     padding: 0.5rem 0.9rem;
-    background: var(--light);
+    background: var(--surface-muted);
     color: var(--primary);
     text-decoration: none;
     border-radius: 6px;
@@ -358,7 +396,7 @@ main {
 
 /* Footer */
 footer {
-    background: var(--light);
+    background: var(--surface-muted);
     border-top: 1px solid var(--border);
     padding: 2rem;
     text-align: center;
@@ -379,7 +417,7 @@ footer {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: white;
+    background: var(--surface);
     border: 2px solid var(--border);
     border-radius: 50%;
     color: var(--primary);
