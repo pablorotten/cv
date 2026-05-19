@@ -424,20 +424,20 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--surface);
-    border: 2px solid var(--border);
-    border-radius: 50%;
-    color: var(--primary);
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--text);
     text-decoration: none;
-    transition: all 0.2s;
-    font-weight: bold;
-    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.social-link iconify-icon {
+    font-size: 1.8rem;
+    width: 1.8em;
+    height: 1.8em;
 }
 
 .social-link:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
+    color: var(--primary);
 }
