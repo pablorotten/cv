@@ -36,7 +36,7 @@ iconify-icon {
     /* height: 1.05em; */
     vertical-align: middle;
     margin-right: 0.35rem;
-    color: #0f1720;
+    color: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
