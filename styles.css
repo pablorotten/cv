@@ -125,16 +125,17 @@ main {
 .hero {
     text-align: center;
     padding: 4rem 0;
-    background: linear-gradient(135deg, rgba(243, 97, 50, 0.1) 0%, rgba(46, 164, 79, 0.05) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("images/Linkedin banner.png") center/cover no-repeat;
     border-radius: 12px;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     margin-top: 2rem;
+    color: white;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    color: var(--text);
+    color: white;
 }
 
 .hero .subtitle {
@@ -144,12 +145,6 @@ main {
     font-weight: 600;
 }
 
-.hero p {
-    font-size: 1.1rem;
-    color: var(--text);
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 /* Why Transition Section */
 .why-section {
