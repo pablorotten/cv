@@ -2,6 +2,9 @@
 
 Click on the buttons below to access my [Resume](https://ohmycv.app/dashboard), **LinkedIn** profile, and **YouTube** channel.
 
+
+[![Live Site](https://img.shields.io/badge/Live_CV-1f8acb?style=for-the-badge&logo=github&logoColor=white)](https://pablorotten.github.io/cv)
+
 [![DevRel Resume](https://img.shields.io/badge/DevRel_Resume-f36132?style=for-the-badge&logo=googledocs&logoColor=white)](https://pablorotten.github.io/cv/devrel)
 
 [![Engineer Resume](https://img.shields.io/badge/Engineer_Resume-2ea44f?style=for-the-badge&logo=codeforces&logoColor=white)](https://pablorotten.github.io/cv/dev)
