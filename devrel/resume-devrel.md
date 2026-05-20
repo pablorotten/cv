@@ -13,19 +13,24 @@ header:
     link: https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio
 ---
 
-Full-stack Software Engineer with over 10 years of experience in Scala and DevOps, now transitioning into Developer Relations.
+Full-stack Software Engineer with over 10 years of experience in Scala and DevOps, now transitioning into Developer Relations / Solutions Engineering.
 
 ## Experience
 
 **Software Engineer**
-  ~ N-SIDE
-  ~ 2021 - 2026
+  ~ N-SIDE 
+  ~ 2021 - 2026 
 
-- **Full-Stack Development:** Maintain and develop reactive, asynchronous applications using Scala, ScalaJs, and Postgres.
-- **Technical Advocacy & Demos:** Responsible for presenting new software developments to the department and creating internal guides and implementation strategies.
-- **Developer Support:** Act as the primary technical contact for clients and consultants, diagnosing production issues and providing clear technical explanations to resolve misunderstandings.
-- **Automation & DevOps:** Managed AWS infrastructure and GitLab CI/CD pipelines using Python, Bash, and Argo.
-- **Team Facilitation:** Serve as Kanban Lead, managing daily standups and resolving blockers to ensure consistent task progression.
+- **API Design & Developer Experience (DX):** Productized a new REST API via TYK gateway by consolidating middleware logic into a single, highly performant backend endpoint.
+  *Result:* Boosted API performance by >50%, and by actively collecting client feedback to improve OpenAPI documentation, reduced client integration support tickets by 80%.
+- **Technical Storytelling & Client Support:** Served as the technical bridge between end-users and the core Discrete Events Simulator (DES) Algorithm expert for clinical trial optimization. 
+  *Result:* Translated complex simulation issues into clear visual diagrams and Confluence troubleshooting guides, effectively filtering out user-setup errors and accelerating bug resolution.
+- **Product Advocacy & Training:** Championed major UI/UX architecture overhauls, including a smart bulk-edit workflow and high-performance tables. 
+  *Result:* Conducted live training for 50+ consultants, successfully migrating users from clumsy Excel exports to a seamless web workflow that improved data entry speed by up to 100x.
+- **Solutions Engineering & Automation:** Designed self-service Argo workflows that allowed consultants to safely run complex queries on automated QA database replicas. 
+  *Result:* Automated >50% of monthly client data extraction requests and accelerated UAT deployments by 60-70%, completely eliminating error-prone manual SSH operations.
+- **Team Alignment & Agile Facilitation:** Served as Kanban Lead, focusing on active listening, strategic unblocking, and tracking sprint objectives. 
+  *Result:* Streamlined cross-functional communication and successfully optimized daily standups into an engaging, strict 15-minute format.
 
 **Software Engineer**
   ~ Noesis Solutions
