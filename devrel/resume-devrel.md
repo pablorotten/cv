@@ -2,7 +2,7 @@
 name: Pablo Antonio Rodriguez Rubio
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">Software Engineer/ DevRel Evangelist</span>
+      <span style="font-size: 1.2em; font-weight: bold;">Software Engineer <span class="iconify" data-icon="noto-v1:right-arrow"></span>  DevRel / Solutions Engineer</span>
   - text: <span class="iconify" data-icon="tabler:phone"></span> +32 476062894
     newLine: true
   - text: <span class="iconify" data-icon="tabler:mail"></span> pabloantoniorodriguezrubio@gmail.com
@@ -13,40 +13,37 @@ header:
     link: https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio
 ---
 
-Full-stack Software Engineer with over 10 years of experience in Scala and DevOps, now transitioning into Developer Relations / Solutions Engineering.
+Software Engineer with over 10 years of experience now transitioning into DevRel and Solutions engineer.
 
 ## Experience
 
 **Software Engineer**
-  ~ N-SIDE 
-  ~ 2021 - 2026 
+  ~ N-SIDE
+  ~ 2021 - 2026
 
-- **API Design & Developer Experience (DX):** Productized a new REST API via TYK gateway by consolidating middleware logic into a single, highly performant backend endpoint.
-  *Result:* Boosted API performance by >50%, and by actively collecting client feedback to improve OpenAPI documentation, reduced client integration support tickets by 80%.
-- **Technical Storytelling & Client Support:** Served as the technical bridge between end-users and the core Discrete Events Simulator (DES) Algorithm expert for clinical trial optimization. 
-  *Result:* Translated complex simulation issues into clear visual diagrams and Confluence troubleshooting guides, effectively filtering out user-setup errors and accelerating bug resolution.
-- **Product Advocacy & Training:** Championed major UI/UX architecture overhauls, including a smart bulk-edit workflow and high-performance tables. 
-  *Result:* Conducted live training for 50+ consultants, successfully migrating users from clumsy Excel exports to a seamless web workflow that improved data entry speed by up to 100x.
-- **Solutions Engineering & Automation:** Designed self-service Argo workflows that allowed consultants to safely run complex queries on automated QA database replicas. 
-  *Result:* Automated >50% of monthly client data extraction requests and accelerated UAT deployments by 60-70%, completely eliminating error-prone manual SSH operations.
-- **Team Alignment & Agile Facilitation:** Served as Kanban Lead, focusing on active listening, strategic unblocking, and tracking sprint objectives. 
-  *Result:* Streamlined cross-functional communication and successfully optimized daily standups into an engaging, strict 15-minute format.
+*Advanced analytics SaaS platform optimizing complex clinical trials for pharmaceutical companies.*
+- **API Design & Developer Experience:** Productized a new REST API via TYK gateway by consolidating middleware logic into a single backend endpoint, boosting performance by over 50% and reducing client support tickets by 80% through proactive OpenAPI documentation updates.
+- **Technical Storytelling & Client Support:** Served as the technical bridge between end-users and core algorithm experts, translating complex simulation issues into clear visual diagrams and Confluence troubleshooting guides that accelerated bug resolution and solved the 70% of user-reported tickets.
+- **Product Advocacy & Training:** Leaded major UI overhauls including a high-expected and challenging smart bulk-edit patient groups workflow and high-performance tables, and conducted live training for 50+ consultants to migrate users to a seamless web flow that improved data entry speed up to 100x.
+- **Solutions Engineering & Automation:** Designed Argo workflows that automated over 50% of monthly client data extraction requests and accelerated QA/UAT instance deployments by 60-70%, completely eliminating error-prone manual operations.
+- **Agile Facilitation:** Served as Kanban Lead, leveraging active listening and strategic unblocking to streamline cross-functional communication and successfully optimize daily standups into an engaging, strict 15-minute format.
 
 **Software Engineer**
   ~ Noesis Solutions
   ~ 2017 - 2021
 
-- **Full-Stack Development:** Developed a new software product for the Process Integration and Design Optimization (PIDO) engineering sector.
-- **Technical Documentation & Advocacy:** Documented all new software developments in the project’s wiki, providing clear technical explanations for both users and developers.
-- **Feature Demos & Feedback:** Presented new features to the department to gather feedback for product improvement.
-- **Data Visualization:** Improved a specialized tool designed to handle and visualize datasets of hundreds of thousands of data points.
+*Cloud-native collaborative platform transforming legacy desktop simulation workflows into web-based engineering solutions.*
+- **Data Visualization:** Engineered complex data visualization dashboards almost from scratch using Java Web Toolkit (JwT), enabling engineers to interactively analyze and render large-scale engineering datasets with hundreds of thousands of data points.
+- **Knowledge Sharing:** Created detailed internal documentation mapping out data sources, database extraction logic, and charting mechanics, successfully onboarding other developers and streamlining future dashboard iterations.
+- **System Integration:** Designed and implemented a full-stack feature to bridge the cloud platform with legacy desktop optimization software, automating the configuration of complex XML simulation templates directly via a web UI and eliminating the need for manual server-side interventions.
+
 
 **Freelance Software Developer**
   ~ Remote / Granada, Spain
   ~ 2015 - 2017
 
-- **End-to-End Mobile Development:** Developed cross-platform mobile applications for iOS and Android from scratch using the Ionic framework.
-- **Full-Stack Architecture:** Designed and implemented backend services and REST APIs to support real-time mobile features, including GPS tracking for a transit application.
+- **Mobile Development:** Developed cross-platform mobile applications for iOS and Android from scratch using the Ionic framework.
+- **Full-Stack Architecture:** Designed and implemented backend services and REST APIs to support real-time mobile features, including GPS tracking for a bus application.
 
 **Software Engineer (Research & Development)**
   ~ Universidad De Granada (DECSAI)
@@ -55,6 +52,7 @@ Full-stack Software Engineer with over 10 years of experience in Scala and DevOp
 - Joined the Department of Computer Science and Artificial Intelligence to develop a fuzzy model to enhance user profiles in microblogging sites using deep relations.
 - Utilized Java, JSP, and MySQL for data modeling and implementation.
 
+\newpage
 
 ## Education
 
@@ -66,8 +64,6 @@ B.Eng. in Computer Engineering
 
 - Focused on computer architecture and systems security. 
 - **Final Project:** Developed a complete real-time bus tracking system, including the Hybrid Android/iOS mobile applications and supporting backend infrastructure.
-
-\newpage
 
 ## Personal Projects
 
