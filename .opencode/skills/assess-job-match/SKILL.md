@@ -1,17 +1,17 @@
 ---
-name: write-cover-letter
-description: Use when the user asks you to write a cover letter for a job offer. Trigger words: "write a cover letter", "cover letter", "cover letter for", "apply to". Do NOT use for general job search questions or resume edits.
+name: assess-job-match
+description: Assess whether a job offer is a good fit for Pablo's profile, and optionally write a cover letter. Trigger words: "is this a good match", "good match", "is this a good fit", "should I apply", with a LinkedIn link or job description. For general cover letter requests (no assessment needed), use the old trigger words instead.
 ---
 
-# Write a Cover Letter
+# Assess Job Match & Write Cover Letter
 
 ## Workflow
 
-1. **Read the offer** — fetch the LinkedIn URL the user provides. If the URL doesn't contain the full description, ask the user to paste it or provide an alternative source.
+1. **Read the offer** — if the user provides a LinkedIn URL, fetch it. If the URL doesn't contain the full description, ask the user to paste it or provide an alternative source. Accept inline paste too.
 
 2. **Read the profile** — read `index.html` and `devrel/resume-devrel.md` (or `devrel/Pablo-Antonio-Rodriguez-Rubio-DevRel.pdf` if available). These are the canonical sources for Pablo's experience and DevRel/Solutions Engineer narrative.
 
-3. **Match check** — compare the offer against these criteria and report to the user which match and which don't:
+3. **Match check** — compare the offer against these criteria and report to the user a clear assessment:
 
    **Wants (must align with several):**
    - Help customers with technical problems
@@ -25,9 +25,14 @@ description: Use when the user asks you to write a cover letter for a job offer.
 
    **Target roles:** Solutions Engineer, Technical Solutions Engineer, Developer Advocate, DevRel, Developer Evangelist, Developer Educator, Technical Content Engineer, Technical Product Marketer, Technical Community Manager
 
-   Also check if the responsibilities match Pablo's CV experience (training, demos, documentation, API productization, ticketing, etc.).
+   Also check:
+   - Responsibilities match Pablo's CV experience (training, demos, documentation, API productization, ticketing, etc.)
+   - Tech stack overlap with Pablo's skills
+   - Location / relocation feasibility
+   - Seniority level alignment
+   - Any major gaps (e.g. AI/ML domain expertise if required)
 
-4. **Ask to proceed** — present the match analysis to the user and ask: "This looks like a [good / partial / poor] match. Do you want me to write the cover letter?" Only continue if they say yes.
+4. **Present the assessment** — give the user a concise verdict (e.g. "Strong match 8/10", "Partial match 5/10", "Poor match 2/10") with bullet points on what aligns and what doesn't. End with: "Want me to write a cover letter?" Only continue if they say yes.
 
 5. **Create the folder** — create a directory at `jobs/<CompanyName>/` (exactly as written by the user, PascalCase). If it already exists, reuse it.
 
