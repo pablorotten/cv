@@ -42,7 +42,7 @@ Give a concise verdict (e.g. "Strong match 8/10", "Partial match 5/10", "Poor ma
 If the match is reasonable (partial or better), ask: "Want me to save this job to a new entry?"
 If yes:
 - Create folder `jobs/<CompanyName>/` (PascalCase, exactly as user provides the company name)
-- Create `jobs/<CompanyName>/job-details.md` with:
+- Create `jobs/<CompanyName>/<name-of-company>.md` (lowercase kebab-case) with:
   - LinkedIn URL
   - Full job description (paste what user provided)
   - Any trivia or notes the user wants to save
