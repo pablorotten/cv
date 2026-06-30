@@ -9,6 +9,12 @@ Click on the buttons below to access my [Resume](https://ohmycv.app/dashboard), 
 
 [![Engineer Resume](https://img.shields.io/badge/Engineer_Resume-2ea44f?style=for-the-badge&logo=codeforces&logoColor=white)](https://pablorotten.github.io/cv/dev)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=indeed&logoColor=white)](https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio)
 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@PabloDevRel)
+
+---
+
+[![Jobs](https://img.shields.io/badge/Job_Searches-6B3FA0?style=for-the-badge&logo=linkedin&logoColor=white)](jobs/JOBS.md)
+
+
