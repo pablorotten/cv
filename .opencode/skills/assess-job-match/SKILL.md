@@ -51,7 +51,6 @@ If yes:
 After saving (or if user says no to saving), ask: "Want me to write a cover letter?"
 If yes:
 - Save as `jobs/<CompanyName>/Cover letter - <CompanyName>.md`
-- Include at the top: ## Headline and ## Summary sections
 - Content guidelines:
   - LinkedIn offer URL for identification
   - Phone, email, location, willingness to relocate
