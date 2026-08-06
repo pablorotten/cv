@@ -413,6 +413,10 @@ main {
     display: block;
 }
 
+.embed-container iframe[src*="instagram.com"] {
+    height: 800px;
+}
+
 .timeline-link {
     display: inline-flex;
     align-items: center;
@@ -425,6 +429,10 @@ main {
     font-size: 0.9rem;
     transition: all 0.2s;
     border: 1px solid var(--border);
+}
+
+.timeline-link iconify-icon {
+    margin-right: 0;
 }
 
 .timeline-link:hover {
