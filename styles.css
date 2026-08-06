@@ -417,6 +417,10 @@ main {
     height: 800px;
 }
 
+.embed-container iframe[src*="tiktok.com"] {
+    height: 620px;
+}
+
 .timeline-link {
     display: inline-flex;
     align-items: center;
