@@ -13,20 +13,26 @@ header:
     link: https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio
 ---
 
-Software Engineer with over 10 years of experience now transitioning into DevRel and Solutions engineer.
+**Solutions Engineer** with over 10 years of experience as a **Software Developer**. Deep technical background enabling me to bridge the gap between complex technical products and the people who use them.
 
 ## Experience
 
-**Software Engineer**
+**Solutions Engineer / Software Engineer**
   ~ N-SIDE
   ~ 2021 - 2026
 
-*Advanced analytics SaaS platform optimizing complex clinical trials for pharmaceutical companies.*
-- **API Design & Developer Experience:** Productized a new REST API via TYK gateway by consolidating middleware logic into a single backend endpoint, boosting performance by over 50% and reducing client support tickets by 80% through proactive OpenAPI documentation updates.
-- **Technical Storytelling & Client Support:** Served as the technical bridge between end-users and core algorithm experts, translating complex simulation issues into clear visual diagrams and Confluence troubleshooting guides that accelerated bug resolution and solved the 70% of user-reported tickets.
-- **Product Advocacy & Training:** Leaded major UI overhauls including a high-expected and challenging smart bulk-edit patient groups workflow and high-performance tables, and conducted live training for 50+ consultants to migrate users to a seamless web flow that improved data entry speed up to 100x.
-- **Solutions Engineering & Automation:** Designed Argo workflows that automated over 50% of monthly client data extraction requests and accelerated QA/UAT instance deployments by 60-70%, completely eliminating error-prone manual operations.
-- **Agile Facilitation:** Served as Kanban Lead, leveraging active listening and strategic unblocking to streamline cross-functional communication and successfully optimize daily standups into an engaging, strict 15-minute format.
+*Advanced analytics SaaS platform optimizing complex clinical trials for pharmaceutical companies. Led a new API product branch from conception to production — developing, maintaining, and supporting it directly with customers so they could connect their systems, update workflows, run optimizations and simulations, and retrieve results without human interaction. Split 50/50 between solutions engineering (customer-facing product adoption) and development (building the API platform).*
+
+**Solutions Engineer — Product adoption & customer experience:**
+- **Customer Discovery:** Engaged directly with customers, technical users, and power users to understand their integration needs, workflows, and pain points, translating them into concrete product capabilities — designed and delivered ~20 API endpoints covering a wide range of use cases.
+- **Data Extraction Product:** Extended API usage to internal teams for bulk data extraction (faster than manual UI workflows), then identified the same capability as a sellable product — customers could access their own historic supply chain data (shipments, CO2 emissions, trial duration, etc.) directly via the API. Launched a new profitable business line for the company.
+- **PoC to Production:** Started from a Proof of Concept for a key client and iterated into a full working product now adopted by all existing accounts — integrated 5 new customers after initial launch.
+- **Guided Adoption & Support:** Guided clients through integration with screencasts and hands-on support, answered technical emails covering problems, questions, and feature suggestions — significantly reducing integration friction and the volume of support requests.
+- **Developer Experience & Content:** Wrote all external documentation on how to use the API, produced video tutorials and demos, and presented new features to customers and the wider community — increasing API usage and cutting the number of technical support emails.
+
+**Software Engineer**
+- Started as a developer on the main web application, building features for clinical trial optimization.
+- Pivoted to building the API infrastructure on the **TYK** gateway, designing internal documentation, and creating automation workflows.
 
 **Software Engineer**
   ~ Noesis Solutions
@@ -35,22 +41,18 @@ Software Engineer with over 10 years of experience now transitioning into DevRel
 *Cloud-native collaborative platform transforming legacy desktop simulation workflows into web-based engineering solutions.*
 - **Data Visualization:** Engineered complex data visualization dashboards almost from scratch using Java Web Toolkit (JwT), enabling engineers to interactively analyze and render large-scale engineering datasets with hundreds of thousands of data points.
 - **Knowledge Sharing:** Created detailed internal documentation mapping out data sources, database extraction logic, and charting mechanics, successfully onboarding other developers and streamlining future dashboard iterations.
-- **System Integration:** Designed and implemented a full-stack feature to bridge the cloud platform with legacy desktop optimization software, automating the configuration of complex XML simulation templates directly via a web UI and eliminating the need for manual server-side interventions.
-
 
 **Freelance Software Developer**
   ~ Remote / Granada, Spain
   ~ 2015 - 2017
 
 - **Mobile Development:** Developed cross-platform mobile applications for iOS and Android from scratch using the Ionic framework.
-- **Full-Stack Architecture:** Designed and implemented backend services and REST APIs to support real-time mobile features, including GPS tracking for a bus application.
 
 **Software Engineer (Research & Development)**
   ~ Universidad De Granada (DECSAI)
   ~ 2016 - 2016
 
 - Joined the Department of Computer Science and Artificial Intelligence to develop a fuzzy model to enhance user profiles in microblogging sites using deep relations.
-- Utilized Java, JSP, and MySQL for data modeling and implementation.
 
 \newpage
 
