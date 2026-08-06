@@ -2,7 +2,7 @@
 name: Pablo Antonio Rodriguez Rubio
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">Software Engineer <span class="iconify" data-icon="noto-v1:right-arrow"></span>  DevRel / Solutions Engineer</span>
+      <span style="font-size: 1.2em; font-weight: bold;"> DevRel / Solutions Engineer</span>
   - text: <span class="iconify" data-icon="tabler:phone"></span> +32 476062894
     newLine: true
   - text: <span class="iconify" data-icon="tabler:mail"></span> pabloantoniorodriguezrubio@gmail.com
@@ -23,16 +23,12 @@ header:
 
 *Advanced analytics SaaS platform optimizing complex clinical trials for pharmaceutical companies. Led a new API product branch from conception to production — developing, maintaining, and supporting it directly with customers so they could connect their systems, update workflows, run optimizations and simulations, and retrieve results without human interaction. Split 50/50 between solutions engineering (customer-facing product adoption) and development (building the API platform).*
 
-**Solutions Engineer — Product adoption & customer experience:**
 - **Customer Discovery:** Engaged directly with customers, technical users, and power users to understand their integration needs, workflows, and pain points, translating them into concrete product capabilities — designed and delivered ~20 API endpoints covering a wide range of use cases.
 - **Data Extraction Product:** Extended API usage to internal teams for bulk data extraction (faster than manual UI workflows), then identified the same capability as a sellable product — customers could access their own historic supply chain data (shipments, CO2 emissions, trial duration, etc.) directly via the API. Launched a new profitable business line for the company.
 - **PoC to Production:** Started from a Proof of Concept for a key client and iterated into a full working product now adopted by all existing accounts — integrated 5 new customers after initial launch.
 - **Guided Adoption & Support:** Guided clients through integration with screencasts and hands-on support, answered technical emails covering problems, questions, and feature suggestions — significantly reducing integration friction and the volume of support requests.
-- **Developer Experience & Content:** Wrote all external documentation on how to use the API, produced video tutorials and demos, and presented new features to customers and the wider community — increasing API usage and cutting the number of technical support emails.
-
-**Software Engineer**
-- Started as a developer on the main web application, building features for clinical trial optimization.
-- Pivoted to building the API infrastructure on the **TYK** gateway, designing internal documentation, and creating automation workflows.
+- **Content creation:** Wrote all external documentation on how to use the API, produced video tutorials and demos, and presented new features to customers and the wider community — increasing API usage and cutting the number of technical support emails.
+- **Developer Experience:** Started as a developer on the main web application, building features for clinical trial optimization. Pivoted to building the API infrastructure on the **TYK** gateway, designing internal documentation, and creating automation workflows.
 
 **Software Engineer**
   ~ Noesis Solutions
@@ -69,23 +65,33 @@ B.Eng. in Computer Engineering
 
 ## Personal Projects
 
-[~P1]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
+[~P1]: **PearNote: Real-Time Sync Without a Backend**
+    *Technical Content & Demo*
+    - Built a real-time collaborative sticky notes app with no server — two phones syncing peer-to-peer via the [Holepunch](https://holepunch.to/) stack.
+    - [🎥 YouTube video](https://www.youtube.com/watch?v=B8783WSrCjI) | [Link to GitHub Repository](https://github.com/pablorotten/PearNote)
+
+[~P2]: **Pridianum: WWII Interactive Map**
+    *Video Demo & Storytelling*
+    - Created a video demo telling a story through [Pridianum](https://pridianum.xyz/), an interactive WWII map.
+    - [🌐 Website](https://pridianum.xyz/) | [<span class="iconify" data-icon="skill-icons:instagram"></span> Instagram reel](https://www.instagram.com/reel/DZN5QjpuKfZ/)
+
+[~P3]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
     *Technical Video & Documentation*
     - Created a step-by-step guide on bypassing root detection and decrypting AES-256 secrets in Android apps using `ProGuard Assembler`.
     - [🎥 YouTube video](https://www.youtube.com/watch?v=mUKR67VA0Lg) | [Link to GitHub Repository](https://github.com/pablorotten/GuardSquare-devrel-project)
 
-[~P2]: **Movie Kombat: React + TypeScript Tournament App**
+[~P4]: **Movie Kombat: React + TypeScript Tournament App**
     *Full-Stack Web Development & API Integration*
     - Built an interactive movie bracket app using **React, TypeScript, and Tailwind CSS v4**.
     - Integrated third-party API [TMDB](https://developer.themoviedb.org/docs/getting-started) for movie search and platforms availability.
     - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://moviekombat.app/) | [🎥 Promo video](https://youtube.com/shorts/OPYjPb3ffrs?feature=share) | [<span class="iconify" data-icon="logos:linkedin"></span> post](https://www.linkedin.com/posts/pablo-antonio-rodriguez-rubio_sideproject-activity-7462103830365900800-YTVn?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUa0hwB06eAXuLcZS24G6hAF7MsJupSDnM)
 
-[~P3]: **Fake Tinder: Progressive Web App (PWA) Experiment**
+[~P5]: **Fake Tinder: Progressive Web App (PWA) Experiment**
     *Mobile Web Development & Social Engineering Concept*
     - Developed a prank-oriented PWA that mimics native app installation on iOS/Android via web manifests.
     - [Link to GitHub Repository](https://github.com/pablorotten/fake-tinder)
 
-[~P4]: **Technical Documentation & Learning Resources**
+[~P6]: **Technical Documentation & Learning Resources**
     *Educational Content Creation & Knowledge Sharing*
     - Comprehensive documentation of technologies and frameworks I used in my work and projects.
     - **React:** React documentation with Vite and Tailwind CSS integration guides
