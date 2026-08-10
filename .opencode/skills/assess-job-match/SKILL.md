@@ -113,5 +113,5 @@ Pablo has two application modes. Recommend the appropriate one based on the asse
 - **Note:** SE is a stepping stone toward DevRel. Getting an SE job is still a win.
 
 ### Skip
-- **When:** Score < 6/10, or user decides it's not worth pursuing
+- **When:** Score < 4/10, or user decides it's not worth pursuing
 - **Process:** Acknowledge and move on
