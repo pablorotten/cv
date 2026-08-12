@@ -87,6 +87,13 @@ If yes:
 ### 7. Handle application screening questions
 If the user provides application screening questions from the job portal, save them as `jobs/<CompanyName>/application-questions.md` with the questions and notes on how to answer / what stories to prepare.
 
+### 8. Writing style (cover letters AND screening question answers)
+Whenever writing a cover letter or answering cover-letter-style screening questions:
+- **Be concise.** Default to a single sentence per answer unless the question genuinely requires more. When the user asks to shorten, cut until it is one clean sentence.
+- **Be human.** Write the way Pablo talks, not the way a recruiter writes. No corporate LinkedIn jargon, no buzzwords (no "playbook", "inflection point", "leverage", "synergy", "robust", "mission-critical", "passionate about", "excited to", "proven track record", etc.). Plain, specific, everyday language.
+- **Concrete over abstract.** Name the actual thing (the API platform, TYK, the 5 customers, the support emails) instead of generic phrasing.
+- No em dashes (—); use regular hyphens (-).
+
 ## Application Strategy
 
 Pablo has two application modes. Recommend the appropriate one based on the assessment:
