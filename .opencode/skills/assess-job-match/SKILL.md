@@ -60,7 +60,32 @@ Give a concise verdict (e.g. "Strong match 8/10", "Partial match 5/10", "Poor ma
   - **SE with DevRel overlap (score ≥ 6):** "Careful apply -- SE title but DevRel duties, worth the extra effort"
   - **Score < 6:** "Skip" or "Borderline -- your call"
 
-### 5. Ask to save job details
+### 5. Log to tracker
+After presenting the assessment, **always** append a new section to `jobs/job-tracker.md` (before the `<!-- Add new entries above this line -->` comment). Format:
+
+```markdown
+## Company Name - Role Title
+**Date:** YYYY-MM-DD
+**Score:** X/10 - Verdict label
+**Recommendation:** Strategy (e.g. "Careful apply", "Standard apply", "Skip")
+
+**Summary:**
+Brief description of the role, key requirements, tech stack, location, remote/hybrid/onsite.
+
+**What aligns:**
+- Point 1
+- Point 2
+
+**What doesn't:**
+- Point 1
+
+**My opinion:**
+Your honest assessment and reasoning.
+```
+
+Use the exact company name and role title as provided or inferred. Always include this entry regardless of score.
+
+### 6. Ask to save job details
 If the match is reasonable (partial or better), ask: "Want me to save this job to a new entry?"
 If yes:
 - Create folder `jobs/<CompanyName>/` (PascalCase, exactly as user provides the company name)
@@ -69,7 +94,7 @@ If yes:
   - Full job description (paste what user provided)
   - Any trivia or notes the user wants to save
 
-### 6. Ask about cover letter
+### 7. Ask about cover letter
 After saving (or if user says no to saving), ask: "Want me to write a cover letter?"
 If yes:
 - Save as `jobs/<CompanyName>/Cover letter - <CompanyName>.md`
