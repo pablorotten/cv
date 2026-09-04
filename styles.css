@@ -125,7 +125,7 @@ main {
 .hero {
     text-align: center;
     padding: 3rem 1.25rem;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.45)), url("images/Linkedin banner.png") center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.45)), url("images/linkedin-banner.webp") center/cover no-repeat;
     border-radius: 14px;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
