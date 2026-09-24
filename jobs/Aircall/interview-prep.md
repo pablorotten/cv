@@ -112,7 +112,7 @@ That does three things: shows you noticed, shows you're not intimidated, keeps b
 
 ## 4. STAR stories (Situation / Task / Action / Result / Close)
 
-Stories A-C cover most competencies; D and E are extra API/performance stories, and the process answers cover the "how do you decide / how do you measure" questions. Don't reuse the same story twice in one interview. The labels are just the skeleton - tell it as a story, and always land on the result or business value.
+Stories A-C cover most competencies; D-F are extra API/performance/architecture stories, and the process answers cover the "how do you decide / how do you measure" questions. Don't reuse the same story twice in one interview. The labels are just the skeleton - tell it as a story, and always land on the result or business value.
 
 ### Story A - The API branch
 **Covers:** ownership / PoC to production · solution architecture & technical depth · driving adoption · commercial / expansion instinct.
@@ -159,6 +159,14 @@ Stories A-C cover most competencies; D and E are extra API/performance stories, 
 - **Action:** I looked at the call pattern, confirmed it was frequent and costly, and proposed a native endpoint in the internal API that returned the needed data in a single call. Worked with the team to design and ship it, then moved the BFF onto it.
 - **Result:** the BFF got faster and made far fewer calls, and the load on the internal API dropped. Other consumers could reuse the same endpoint.
 - **Close:** "spot the pattern, propose the product change, ship it, measure it" - the same motion I'd run with customers on Aircall.
+
+### Story F - Gateway vs BFF (the architecture lesson)
+**Covers:** solution-design judgment · owning a mistake honestly · putting logic in the right layer.
+- **Situation:** our clients wanted to connect their systems to our SaaS and get clean, filtered data, but the internal backend only exposed big, generic chunks - it wasn't built for that.
+- **Task:** give them a proper API quickly, without waiting on the slow core release cycle.
+- **Action:** the gateway was already sitting in front, so I used its built-in scripting to filter and reshape the responses there. For the pilot it worked, and it looked like we'd avoided building a service.
+- **Result / what went wrong:** as more clients asked for different filters, merges, and shapes, that logic grew inside the gateway. It was hard to test, every change meant a gateway deploy, and we mixed "edge" concerns (keys, rate limits, routing) with "application" concerns (filtering, merging). We'd built a BFF in the wrong place.
+- **Close / lesson:** the right design is a gateway at the edge and a small application layer - a BFF (backend-for-frontend) - behind it: the gateway does auth, keys, rate limits, and routing; the BFF does the filtering, merging, and reshaping, and gets tested and deployed like normal code. In the end that's exactly what we did - we implemented the BFF properly as its own layer and kept the gateway for what it's good at. The lesson I carry: put logic in the right layer, not the convenient one.
 
 ### Process answers (API usage, common issues, metrics)
 
