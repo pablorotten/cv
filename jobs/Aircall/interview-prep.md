@@ -5,9 +5,9 @@ Contact: Marie Mas (recruiter) - 30-min video screen
 
 ---
 
-## What Aircall does?
+## What Aircall does
 
-**One line:** Aircall is a cloud phone system for customer-facing teams - voice, SMS, and WhatsApp in one workspace, with AI on top - that captures every call as data and pushes it into the tools a company already uses.
+**One line:** Aircall is a cloud phone system for customer-facing teams - voice, SMS, and WhatsApp in one workspace, with AI on top - that captures every call as data and pushes it into the tools a company already uses. The phone number is the key, the CRM is the record, Aircall is the engine in between.
 
 **Who buys it:** any company with a phone-heavy customer motion - sales (SDRs/AEs calling out), support/contact centers, and general ops. 22,000+ companies, SMB through enterprise. Strong in Europe: Paris HQ, big Madrid hub.
 
@@ -20,7 +20,7 @@ Contact: Marie Mas (recruiter) - 30-min video screen
 
 **Products:**
 - **Core platform:** voice, SMS, WhatsApp; numbers, call routing/queues, IVR, voicemail, recording.
-- **Integrations:** native connectors for Salesforce, HubSpot, Pipedrive, Zendesk, Intercom, Freshdesk, Slack + 100 more. Public REST API + webhooks for custom work. Everywhere SDK to embed the softphone inside a CRM. Insight Cards show CRM data during a call.
+- **Integrations:** native connectors for Salesforce (v3, with a dedicated Aircall Log object), HubSpot, Pipedrive, Zoho, Zendesk, Intercom, Freshdesk, Slack + 100 more. Public REST API + webhooks for custom work. Everywhere SDK to embed the softphone inside a CRM. Insight Cards show up to 5 fields from a CRM object during a call.
 - **AI layer:** AI Voice Agent (handles routine calls), AI Assist (post-call work), AI Assist Pro (real-time guidance). Smartflows = current routing engine.
 - **Data/intelligence layer (two flavors):**
   - **Analytics / reporting (operational BI):** volume, missed calls, AHT, wait times, agent performance, tags, AI interventions. Tiered: Analytics vs Analytics+ (add-on). Export via API, or feed external BI/dashboards.
@@ -37,9 +37,6 @@ Contact: Marie Mas (recruiter) - 30-min video screen
 - **Identity is the contact/company record**, not the phone number - the number is the key that links a call to the right entity.
 - **Only calls through Aircall are captured.** It's a single pane of glass only if the phone work runs on it.
 - **AI data is editable** - the API distinguishes AI-generated vs human-corrected summaries.
-
-**Clean version:**
-> "Aircall is a cloud phone system that captures every call as data, ties it to the right contact, pushes it into the tools a team already uses (CRM, Slack, ticketing), and layers AI on top to summarize, structure, and even handle calls. The phone number is the key, the CRM is the record, Aircall is the engine in between."
 
 ## Template answer: "What do you know about us?"
 
@@ -77,9 +74,21 @@ That does three things: shows you noticed, shows you're not intimidated, keeps b
 
 ## 3. Your narrative in one breath
 
-"I'm a software engineer who spent the last five years building an API platform and then supporting the customers who used it. I designed ~20 endpoints, took the product from PoC to production, onboarded five customers, wrote all the external docs and tutorials, and handled their technical issues directly. So I sit exactly where Aircall puts a Customer Engineer - between the product/technical side and the customer."
+**Keyword note:** the call is likely on Aircall and transcribed, so the transcript will be scanned for keywords. Say the exact title **"Solutions Engineer"** early and repeat it - never paraphrase yourself as "software engineer" or "product person". Lead with it.
 
-Then pivot to Aircall: "Aircall is doing that same bridge with a much bigger surface - voice, SMS, WhatsApp, and now AI agents. That's the work I want to be doing."
+**Say this (primary):**
+
+> "I'm a Solutions Engineer. For the last five years at N-SIDE I've worked 50/50 as a Solutions Engineer and a Developer on an API platform. On the Solutions Engineer side I owned the customer relationship: I designed around 20 API endpoints, took the product from a PoC to production, onboarded five customers, wrote all the external documentation and tutorials, and handled their technical problems directly. On the developer side I built the platform itself, on the TYK gateway. So I sit exactly where Aircall puts a Customer Engineer - a Solutions Engineer sitting between the product and engineering side and the customer."
+
+**Then pivot to Aircall:**
+
+> "Aircall is doing that same bridge at a much bigger scale - voice, SMS, WhatsApp, and now AI agents. That's the work I want to be doing."
+
+**Shorter version (if time is tight):**
+
+> "I'm a Solutions Engineer at N-SIDE, where I split my time 50/50 between Solutions Engineering and development on an API platform. I built it, documented it, onboarded the customers onto it, and supported them directly - so I've been doing Customer Engineering work for five years. Aircall takes that same bridge to voice, SMS, WhatsApp, and AI."
+
+**Why it works:** "Solutions Engineer" lands in the first sentence and keeps coming back, the 50/50 split is explicit so HR can't misread you as "just a developer", and it closes on the bridge between product and customer - the exact CE positioning.
 
 ---
 
@@ -100,50 +109,40 @@ Map these to whatever she asks. Always end on the outcome or business value.
 
 **Tip:** for the "customer-facing" ones, always state who the customer was (pharma supply-chain / clinical-trial customers), and quantify where you can.
 
----
+### Support-flow story (N-SIDE)
 
-## 5. Likely questions + angles
+Use this for "tell me about a support / technical problem" questions.
 
-**Motivation / fit**
-- "Why Aircall, why Customer Engineering?" -> The bridge role is literally what you did at N-SIDE; Aircall adds voice/SMS/WhatsApp/AI scale. Mention Madrid + languages.
-- "You're a developer - why customer-facing?" -> You did both 50/50 and chose the customer side; you like translating complex tech into outcomes.
+- **L0 - self-service:** KB articles / docs / videos (what you wrote at N-SIDE for the API).
+- **L1 - first line:** triage, known issues, route or solve the easy ones (now AI + a human supervising).
+- **L2/L3 - you:** the technical/integration problems that got escalated, plus product feedback back to engineering.
 
-**Customer craft (very likely even at screen)**
-- "Tell me about a time you turned a challenging customer around." -> integration friction story, docs + hands-on support.
-- "Describe where you drove adoption of a product/feature." -> N-SIDE API adoption, screencasts, data extraction.
-- "How do you handle a feature request that's not on the roadmap?" -> understand the underlying problem first, workaround if possible, champion the business case, follow up.
-- "Walk me through a hard technical problem you solved." -> API/webhook integration debugging; use a structured troubleshooting approach (reproduce -> hypothesis -> isolate one variable -> update customer throughout -> escalate when stuck).
+> "Customers submitted issues through a ticket portal. A first line triaged them; I handled the escalated technical and integration issues as the second line. I also wrote the API documentation and tutorials that reduced the volume reaching us, and I fed recurring themes back to Product."
 
-**Technical literacy**
-- "Explain APIs/webhooks to a non-technical person." -> restaurant analogy: API = ordering from a menu; webhook = the kitchen texts you when your order is ready instead of you checking the counter.
-- "How would you debug a customer integration that stopped working?" -> check what changed, logs on both sides, auth/token expiry, endpoint returning 2XX in time, webhook delivery/retries.
-- "Experience with CRMs (Salesforce/HubSpot)?" -> be honest; connect it to integration mindset: screen-pop, call logging, field mapping.
-
-**Behavioral**
-- Cross-functional influence, conflict, ownership beyond your job, prioritising a large portfolio, staying calm in escalations.
+Flow: intake -> triage -> escalation ownership -> knowledge/self-service -> product feedback.
 
 ---
 
-## 5b. Common questions (full bank)
+## 5. Common questions (full bank)
 
 Grouped by type. For the 30-min recruiter screen, only group A plus logistics/salary realistically come up - the rest are for the hiring-manager and later rounds. Pointers on the tricky ones.
 
 **A. Motivation / background (screen)**
 - Tell me about yourself.
-- Why Aircall? Why Customer Engineering?
+- Why Aircall? Why Customer Engineering? -> the bridge role is literally what you did at N-SIDE; Aircall adds voice/SMS/WhatsApp/AI scale. Mention Madrid + languages.
 - Why are you leaving N-SIDE / why the change? -> the hybrid-to-full-SE story.
-- You're a developer - why customer-facing? -> 50/50 split taught you where your energy is; you stay hands-on technically.
+- You're a developer - why customer-facing? -> the 50/50 split taught you where your energy is; you stay hands-on technically.
 - What do you know about us? -> use the template answer above.
 - What are you looking for in your next role?
 - Where do you want to be in a few years?
-- Salary expectations? -> defer politely to the band for the level.
-- Location / relocation to Madrid / hybrid?
+- Salary expectations? -> "I'd love to understand the band for the level first."
+- Location / relocation to Madrid / hybrid? -> based in Belgium, Spanish native, happy to relocate (confirm your actual situation).
 - Languages? -> Spanish native, English full professional, French professional. Mention early.
 
 **B. Customer craft**
-- Tell me about a time you turned around a challenging or at-risk customer.
-- Describe a time you drove adoption of a product or feature.
-- How do you handle a customer asking for something not on the roadmap?
+- Tell me about a time you turned around a challenging or at-risk customer. -> the integration friction story; docs + hands-on support.
+- Describe a time you drove adoption of a product or feature. -> N-SIDE API adoption, screencasts, data extraction.
+- How do you handle a customer asking for something not on the roadmap? -> understand the underlying problem first, workaround if possible, champion the business case, follow up.
 - How do you handle an angry customer?
 - How do you identify churn signals early?
 - How do you prioritise a large portfolio when you can't touch every account? (Staff - key)
@@ -160,7 +159,7 @@ Grouped by type. For the 30-min recruiter screen, only group A plus logistics/sa
 - A customer's system isn't in the native list - how do you connect it? -> Public API + webhooks, or an automation platform (Zapier/Workato).
 - What happens if a customer's webhook endpoint goes down? -> Aircall retries, then disables after 10 failed deliveries; you'd monitor and alert.
 - Do you have VoIP / telephony experience? -> honest no, plus quick-learner proof (ProGuard) and the API/integration side.
-- Tell me about a hard technical problem you solved.
+- Tell me about a hard technical problem you solved. -> API/webhook debugging; structured approach: reproduce, hypothesis, isolate one variable, update the customer throughout, escalate when stuck.
 - Some Aircall processes include a light technical/SQL screen - be ready for basic SQL and API reasoning.
 
 **D. Behavioral / cross-functional**
@@ -181,7 +180,7 @@ Grouped by type. For the 30-min recruiter screen, only group A plus logistics/sa
 
 **F. Closing**
 - Why should we hire you?
-- What questions do you have? -> always have some (section 7).
+- What questions do you have? -> always have some (section 8).
 - What's an area you want to grow in? -> enterprise/commercial side, telephony domain (honest).
 
 **Delivery tips**
@@ -191,7 +190,7 @@ Grouped by type. For the 30-min recruiter screen, only group A plus logistics/sa
 
 ---
 
-## 5c. Gap awareness (the "do you fit 100%?" question)
+## 6. Gap awareness (the "do you fit 100%?" question)
 
 **The setup:** she already spotted the gaps. She asks *"Do you think you fit 100%, or are there some gaps?"* This is an **honesty and self-awareness test**, not a knowledge test. The wrong answers:
 - **"Yes, 100%"** -> not credible; she knows the gaps. Reads as arrogant or unaware.
@@ -251,31 +250,30 @@ The right answer: **don't claim 100%**, name **2-3 real gaps**, then hand her a 
 
 ---
 
-## 6. Domain crash course (do this before the screen)
+## 7. Domain crash course (do this before the screen)
 
 **VoIP / telephony basics**
 - SIP = signalling protocol; RTP = carries audio; PSTN = the traditional phone network.
 - DID = your Aircall phone number. Number provisioning and porting.
-- IVR = the "press 1 for sales" menu. Call routing / call flows. Queues, ring strategy, voicemail, call recording.
+- IVR (Interactive Voice Response) = the "press 1 for sales" menu. Call routing / call flows. Queues, ring strategy, voicemail, call recording.
 - Why it's hard: latency/jitter, codecs, NAT/firewalls, compliance (call-recording consent, GDPR).
 
-**Contact-center vocabulary**
-- Agent, queue, AHT (average handle time), FCR (first call resolution), abandon rate, CSAT, occupancy/SLA. Know these so you sound native.
+**Contact-center & commercial vocabulary**
+- Agent, queue, AHT (average handle time), FCR (first call resolution), abandon rate, CSAT, occupancy, SLA.
+- QBR (Quarterly Business Review), NRR (Net Revenue Retention), GRR (Gross Revenue Retention), churn, expansion.
 
-**Aircall platform specifics**
-- Product: one workspace for voice, SMS, WhatsApp, AI. AI Voice Agent (automates routine calls), AI Assist (post-call work), AI Assist Pro (real-time guidance). Smartflows = current routing engine (replacing legacy routing).
+**Aircall platform specifics (technical)**
 - **Public API:** REST at `api.aircall.io/v1`, HTTPS only, OAuth2 access tokens. User V1 deprecated, removed 30 Sep 2026 -> build on User V2.
 - **Webhooks:** register from the Dashboard or `POST /v1/webhooks`; events include `call.created`, `call.ended`, `call.tagged`, `call.commented`, `contact.*`, `user.opened/closed`, `message.*`, `ai_voice_agent.started/ended/escalated`, `realtime_transcription.utterances_received`, `custom_summary.*`, `call_evaluation.*`. Max 100 webhooks/account. Must return 2XX (ideally 200) within 5s; auto-disabled after 10 failed deliveries. Each webhook has a unique token to verify origin.
-- **CNI:** integrations are enabled at Company level by an Admin; multiple instances allowed.
+- **Integrations** are enabled at Company level by an Admin; multiple instances allowed.
 - **Everywhere SDK:** embeds the softphone/CTI into a CRM (V1 deprecated, use V2).
 - **Insight Cards:** surface up to 5 fields from a CRM object in the agent's in-call view.
-- **Native integrations:** Salesforce (v3 with Aircall Log object), HubSpot, Pipedrive, Zoho, Zendesk, Intercom, Freshdesk, Slack + 100 more. One-click install, call logging, screen-pop, field mapping.
 
 **Aircall values (mirror this language):** customer-obsessed, data-driven, ownership, continuous learning, "thoughtful speed", collaborative, fast-moving.
 
 ---
 
-## 7. Questions to ask her
+## 8. Questions to ask her
 
 1. "Is this the same opening as the Customer Engineer role, leveled differently, or a separate Staff req? And is the CE role also still open?"
 2. "What does the Customer Engineering team in Madrid / Iberia & FIME look like today?"
@@ -287,38 +285,16 @@ The right answer: **don't claim 100%**, name **2-3 real gaps**, then hand her a 
 
 ---
 
-## 8. Logistics & first-impression checklist
+## 9. Logistics & first-impression checklist
 
 - [ ] Test camera, mic, and connection 10 min before.
 - [ ] Quiet room, clean/neutral background, good light.
 - [ ] Have the JD, this doc, your resume, and 2-3 STAR stories on screen (not visible to camera, but within reach).
 - [ ] One-page note card: your narrative sentence, the level script, and 3 numbers (~20 endpoints, 5 customers, new business line).
 - [ ] Speak slowly; English is a second language - fluency is fine, just don't rush.
-- [ ] Confirm Madrid/hybrid + languages early ("I'm based in Belgium but Spanish native and happy to relocate" - confirm your actual situation).
-- [ ] Ask about salary expectations: defer politely if possible ("I'd love to understand the band for the level first").
 
 ---
 
-## 9. One-line summary to keep in your head
+## 10. One-line summary to keep in your head
 
 "Technical enough to build the integration, customer-facing enough to make it succeed, and honest about learning the telephony and enterprise-commercial parts."
-
-
-## Stuff to add to the document
-
-### What I did in n-side
-
-- L0 - self-service: KB articles / docs / videos (this is what you wrote at N-SIDE for the API)
-- L1 - first line: triage, known issues, route or solve the easy ones (now AI + a human supervising)
-- L2/L3 - you: the technical/integration problems that got escalated, plus product feedback back to engineering
-
-"Customers submitted issues through a ticket portal. A first line triaged them; I handled the escalated technical and integration issues as the second line. I also wrote the API documentation and tutorials that reduced the volume reaching us, and I fed recurring themes back to Product."
-
- intake -> triage -> escalation ownership -> knowledge/self-service -> product feedback.
-
-
-## Vocabulary to know
-
-- IVR: Interactive Voice Response
-- QBR: Quarterly Business Review
-- NRR: Net Revenue Retention
