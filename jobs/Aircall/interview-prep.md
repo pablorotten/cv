@@ -44,6 +44,24 @@ Contact: Marie Mas (recruiter) - 30-min video screen
 
 **If pushed for depth, add:** the analytics angle - "there's also a reporting and conversation-intelligence layer, so teams can see call volumes, handle time, and what actually happened on each call. That part maps to work I've done too - I built data-visualization dashboards earlier in my career and later a data-extraction product at N-SIDE."
 
+## Template answer: "Why Aircall?"
+
+**The three ingredients:** role fit, product fit, momentum. Hit all three, in that order, and keep it personal.
+
+**Say this (primary):**
+
+> "Two reasons, and the biggest one is the role. I'm ready to stop splitting my time. For the last five years I've been 50/50 between Solutions Engineering and development, and I want to go all-in on the customer side. This is exactly that opportunity - Aircall's Customer Engineer is the full version of the work I enjoy most: the discovery, the integrations, seeing someone actually adopt what we built. That's what motivates me most right now. The second is the product. I've spent my career on APIs and integrations, and that's central to what Aircall is - the value comes from how it plugs into Salesforce, HubSpot, webhooks, the tools a team already uses. So it's the same kind of work I've been doing, just on voice, SMS, WhatsApp, and now AI. And the AI part is what makes me want this now rather than later: the Voice Agent and the assist tools are changing what a support or sales team can actually do, and I'd rather be on the side helping customers use it than reading about it. And it's a European company with a real hub in Madrid, which fits where I am and the languages I speak."
+
+**Shorter version (20-30s):**
+
+> "For me it's the chance to go from 50/50 to full Solutions Engineering - that's what I want right now. Aircall's Customer Engineer is the full version of the customer-facing work I've been doing half-time, on a product where the value is exactly my strength: the CRM, the API, webhooks. Add the AI layer, and it's the kind of problem I want to work on."
+
+**Don't:**
+- Don't just praise the company generically ("great culture, great product"). Give your reason.
+- Don't lead with location or salary.
+- Don't recite features. One or two concrete ones (Voice Agent, CRM integrations) is enough.
+- Don't say "passionate about" or "excited to" - just say what pulls you toward it.
+
 ---
 
 ## 1. What the 30-min screen actually is
@@ -92,34 +110,75 @@ That does three things: shows you noticed, shows you're not intimidated, keeps b
 
 ---
 
-## 4. STAR stories to prepare (use your real work)
+## 4. STAR stories (Situation / Task / Action / Result / Close)
 
-Map these to whatever she asks. Always end on the outcome or business value.
+Stories A-C cover most competencies; D and E are extra API/performance stories, and the process answers cover the "how do you decide / how do you measure" questions. Don't reuse the same story twice in one interview. The labels are just the skeleton - tell it as a story, and always land on the result or business value.
 
-| Competency they test | Your story | Outcome to land |
-|---|---|---|
-| Ownership / PoC to production | N-SIDE API branch: started as a PoC for one client, iterated to a full product | Adopted by all existing accounts, 5 new customers integrated |
-| Driving adoption | Guided clients through integration with screencasts, hands-on support, docs | Lower integration friction, fewer support emails |
-| Commercial/expansion instinct | Spotted bulk data extraction used internally, turned it into a sellable product | New profitable business line |
-| Solution architecture / technical depth | Built API infrastructure on the TYK gateway, designed internal docs + automation | Scalable platform, repeatable onboarding |
-| Quick learner / calm under pressure | GuardSquare ProGuard Assembler: learned a niche tool and shipped a public technical video | Shows you learn new domains fast (relevant for VoIP/telephony) |
-| Cross-functional influence | Worked between customers and Product/Engineering to shape API features; Kanban lead running standups | Shipped the right endpoints, smoother delivery |
-| Troubleshooting complex issues | Debugging customer integration/webhook issues against the API | Root cause found, customer unblocked, docs improved so it didn't recur |
-| Honest handling of a missing feature | Customer request not on roadmap - found a workaround, logged the business case | Trust kept, request championed internally |
+### Story A - The API branch
+**Covers:** ownership / PoC to production · solution architecture & technical depth · driving adoption · commercial / expansion instinct.
+- **Situation:** customers did everything by hand in the UI - uploading data, running simulations, copying results out; a key client asked to connect their own systems instead.
+- **Task:** take it on as a PoC but treat it like a product.
+- **Action:** discovery with the customer and their technical users (what they needed to push in and pull out); designed ~20 API endpoints; built the platform on the TYK gateway; wrote the external docs and video tutorials; handled their technical questions directly and iterated on what broke.
+- **Result:** full product adopted by every existing account; 5 new customers integrated after launch; a new revenue line from the same API (customers pulling their own historical data - shipments, CO2 emissions, trial duration).
+- **Close:** "the full circle - discover, build, document, onboard, support - which is exactly the CE loop."
 
-**Tip:** for the "customer-facing" ones, always state who the customer was (pharma supply-chain / clinical-trial customers), and quantify where you can.
+### Story B - Support flow and product feedback
+**Covers:** troubleshooting complex issues · cross-functional influence · honest handling of a missing feature · calm under pressure.
+- **Situation:** customers submitted issues through a ticket portal; a first line triaged them; I was the second line for the technical and integration problems.
+- **Task:** own the escalated problems end to end - and turn the recurring ones into product input instead of fixing the same thing forever.
+- **Action:** debugged customer integrations against the API (what changed, logs, auth, webhooks); wrote the docs, tutorials, and videos that cut the volume reaching us; became the point of contact for PMs - identified pain points and possible improvements, assessed and measured new ideas, and turned them into features; when a request wasn't on the roadmap, found a workaround and logged the business case.
+- **Result:** fewer support tickets; recurring issues became product improvements; trust kept when I couldn't hand over the feature.
+- **Close:** intake -> triage -> fix -> self-service -> product feedback. (Also the Kanban lead story - running standups, keeping delivery moving - if they ask about leading or coordinating.)
 
-### Support-flow story (N-SIDE)
+### Story C - ProGuard Assembler
+**Covers:** quick learner · learning a new domain fast (directly relevant to the telephony and product-domain gap).
+- **Situation:** I had to produce a technical DevRel piece on ProGuard Assembler, a tool I'd never used.
+- **Task:** learn it well enough to explain it clearly and ship something public.
+- **Action:** worked through it hands-on until I could bypass root detection and decrypt AES-256 secrets, then wrote the step-by-step guide and recorded the video.
+- **Result:** shipped a public video and repo.
+- **Close:** "the same way I'd pick up SIP, call flows, and the Aircall product."
 
-Use this for "tell me about a support / technical problem" questions.
+### Story D - Performance incident on one instance
+**Covers:** troubleshooting under pressure · owning an incident end to end · prevention and lessons learned.
+- **Situation:** one customer's instance became unresponsive. A single endpoint was doing heavy computation, and a specific corner case - an unusual combination of shipments, locations, patients, and other parameters - exploded the computation time. It froze that instance, so even normal users lost the UI.
+- **Task:** restore the instance, find the root cause, and make sure it couldn't happen again.
+- **Action:** we located the endpoint from monitoring and logs, reproduced it with the customer's data set, and profiled the computation. We mitigated first - protecting the instance by limiting or queueing the heavy operation - then fixed the root cause by optimizing the calculation.
+- **Result:** the instance recovered, normal users were unblocked, and the endpoint's response time came back in line.
+- **Close / prevention:** the key point is that we can't predict every corner case, so we didn't just patch that one combination. We put in general guardrails so any heavy computation stays contained:
+  - heavy work runs off the main request path, in background workers, so it can't block the instance;
+  - it's bounded by a time budget and timeouts, plus pagination and result-size limits;
+  - per-endpoint concurrency and rate limits, with a circuit breaker, so one slow operation gets cut off instead of dragging the whole instance down;
+  - per-endpoint latency and error monitoring with alerts, so the next unforeseen case is caught early;
+  - and the endpoint now fails gracefully (returns a timeout or a partial result) instead of freezing the UI.
+- We kept a regression test for the original case too, but the goal was to make heavy computation safe in general - so a different combination or a different endpoint can't take the instance down either.
 
-- **L0 - self-service:** KB articles / docs / videos (what you wrote at N-SIDE for the API).
-- **L1 - first line:** triage, known issues, route or solve the easy ones (now AI + a human supervising).
-- **L2/L3 - you:** the technical/integration problems that got escalated, plus product feedback back to engineering.
+### Story E - Native endpoint for a repeated BFF pattern
+**Covers:** spotting patterns · proposing product improvements · cross-team collaboration · performance.
+- **Situation:** the BFF (backend-for-frontend) was making a repeated call pattern - several calls to the internal API product just to build one screen or action.
+- **Task:** cut the load and the latency without changing anything the user sees.
+- **Action:** I looked at the call pattern, confirmed it was frequent and costly, and proposed a native endpoint in the internal API that returned the needed data in a single call. Worked with the team to design and ship it, then moved the BFF onto it.
+- **Result:** the BFF got faster and made far fewer calls, and the load on the internal API dropped. Other consumers could reuse the same endpoint.
+- **Close:** "spot the pattern, propose the product change, ship it, measure it" - the same motion I'd run with customers on Aircall.
 
-> "Customers submitted issues through a ticket portal. A first line triaged them; I handled the escalated technical and integration issues as the second line. I also wrote the API documentation and tutorials that reduced the volume reaching us, and I fed recurring themes back to Product."
+### Process answers (API usage, common issues, metrics)
 
-Flow: intake -> triage -> escalation ownership -> knowledge/self-service -> product feedback.
+**How I measured which APIs were popular, and where to invest**
+- Instrumented usage: call volume per endpoint, per customer, plus error rate and latency.
+- Ranked endpoints by usage and by how slow or heavy they were, and by error rate.
+- Invested where usage is high and performance is poor; turned repeated call patterns into native endpoints; added endpoints where a capability was missing and customers kept asking.
+- Brought that data to Product to prioritise the roadmap.
+
+**Most common daily issues, and repeated 2nd-line problems**
+- Most common: integration problems - authentication/token issues, malformed requests or wrong field mapping, misunderstandings of how an endpoint works, and data not syncing.
+- When a problem keeps coming to 2nd line: stop solving it case by case. Find the pattern and fix the root cause - improve the documentation, add input validation or a guardrail, or build the missing endpoint/feature. The goal is to push it down to self-service and cut recurrence.
+
+**Metrics to prove the improvement**
+- Support: ticket volume, recurrence rate of the same issue, resolution time.
+- Product/API: endpoint latency, error rate, call volume, instance load, uptime.
+- Adoption: API usage, number of consumers, uptake of the new endpoint.
+- Always compare before and after to show the change.
+
+**Note:** for the customer-facing stories, always say who the customer was (pharma clinical-trial supply-chain teams) and quantify where you can.
 
 ---
 
@@ -197,51 +256,43 @@ Grouped by type. For the 30-min recruiter screen, only group A plus logistics/sa
 - **"No, I'm underqualified."** -> self-sabotage; you give her a reason to pass.
 
 The right answer: **don't claim 100%**, name **2-3 real gaps**, then hand her a ramp plan. Pick the 2-3 based on which role it lands on:
-- **Staff CE:** telephony domain, enterprise/exec + commercial, seniority.
-- **Regular CE:** telephony domain, CRM hands-on, French.
+- **Staff CE:** product/business domain, enterprise/exec + commercial, seniority.
+- **Regular CE:** product/business domain, French.
 
 ### Opening template
 
-> "No, I don't think anyone fits 100% - and I'd rather be straight with you. There are a couple of areas where I'd be ramping up, mainly the telephony side and the enterprise layer. Can I tell you how I'd go at them?"
+> "No, I don't think anyone fits 100% - and I'd rather be straight with you. There are a couple of areas where I'd be ramping up, mainly the product domain and the enterprise layer. Can I tell you how I'd go at them?"
 
 ### The gaps
 
-**1. Telephony / VoIP / contact-center domain**
-- **Formulate:** "The biggest one is the domain. I've spent my career in APIs, integrations, and platforms - not VoIP. SIP, call flows, contact-center metrics like AHT - those are newer to me."
-- **Propose to her:** "I'd want a structured ramp: your product bootcamp, shadowing a senior CE through two or three onboardings, and pairing on live escalations. I pick up domains fast - I've done exactly that before."
+**1. Product and business domain knowledge (telephony, CRM, AI)**
+- **Formulate:** "The biggest gap is the domain. I've spent my career in APIs, integrations, and platforms - not telephony, not living inside Salesforce or HubSpot, and not voice AI. SIP, call flows, contact-center metrics, CRM depth, agentic voice - that's all product knowledge I'd be picking up."
+- **Propose to her:** "I'd want a structured ramp: your product bootcamp, shadowing a senior CE through two or three onboardings, and pairing on live escalations. Domain knowledge is the fastest thing for me to learn - I've done exactly that before."
 
 **2. Enterprise / strategic accounts & exec stakeholders**
 - **Formulate:** "Most of my customers were mid-market and technical users. I haven't spent much time in front of CTOs or Heads of CX."
-- **Propose to her:** "Let me shadow a senior CE or the hiring manager on a couple of enterprise accounts and a QBR before owning my own. I'm comfortable in the room - I just need the exposure."
+- **Propose to her:** "I'd start by joining a senior CE on a couple of enterprise accounts and one QBR, then take my own from there. Seeing it run once is the fastest way for me to pick it up."
 
 **3. Commercial ownership (renewal, GRR/NRR, QBRs, expansion)**
 - **Formulate:** "I've built the product and driven adoption, but I haven't owned renewal or expansion numbers."
 - **Propose to her:** "Sit me in on a full renewal cycle and a QBR with a KAM first, so I learn how you articulate ROI and read the signals. I understand the technical levers that drive renewal - I just haven't owned the commercial outcome."
 
-**4. CRM platforms (Salesforce / HubSpot)**
-- **Formulate:** "I've only briefly used Salesforce day-to-day - my environment was Jira, Slack, and Google."
-- **Propose to her:** "Put me in the CRM with your enablement and the connectors in my first weeks. I understand the integration model - screen-pop, call logging, field mapping - I just need hands-on time in the tool."
-
-**5. Agentic AI voice / messaging workflows**
-- **Formulate:** "I haven't deployed a voice agent hands-on."
-- **Propose to her:** "Pair me with the FDE/AI team on a real AI Voice or AI Assist Pro deployment, and I'll build a demo of my own to get fluent. This is the area I'm most excited to grow into."
-
-**6. Seniority / CE-years at Staff level**
+**4. Seniority / CE-years at Staff level**
 - **Formulate:** "The Staff bar is 8+ years in customer engineering. I'm at about five years of direct SE work, on top of ten total in engineering."
 - **Propose to her:** "I'm flexible on level - if it fits better, put me in the senior CE seat and let the work make the case for Staff. I'd rather earn it in the role than argue about the title."
 
-**7. Mentoring at Staff scale**
+**5. Mentoring at Staff scale**
 - **Formulate:** "I've led a Kanban team and onboarded and documented, but I haven't mentored a team of CEs."
 - **Propose to her:** "I'd start by running enablement sessions and tightening documentation, and ask the team where the technical standards need raising most."
 
-**8. French (only if it lands on the regular CE role)**
-- **Formulate:** "My French is professional, not fluent - if the regular Customer Engineer role needs full French, that's a real gap for me."
-- **Propose to her:** "Spanish and English are fully covered, and I'd get my French to working level quickly given the base I have."
+**6. French (only if it lands on the regular CE role)**
+- **Formulate:** "French is my third language, and I use it every day - my current company is based in Belgium, so a good share of internal meetings and discussions happen in French, and I'm comfortable thinking and speaking in it. Where I'm lighter is customer-facing French, because my customer work has mostly been in Spanish and English. So it's about sharpening the customer vocabulary and register, not about learning the language."
+- **Propose to her:** "I'd sit in on French customer conversations with a colleague for my first few weeks and practise the product vocabulary. I'm confident I'd be fully operational in a French or hybrid environment after a short ramp - I just want to be straight that the customer-facing side would take me a little time to warm up, since it's a different register from internal meetings."
 
 ### Framing rules
 
 - Never answer "100%."
-- Name 2-3 gaps maximum - the real ones for this role. Don't recite all eight.
+- Name 2-3 gaps maximum - the real ones for this role. Don't recite all six.
 - One sentence to acknowledge, then the plan. Don't dwell on the weakness.
 - Every action is something you'd do **with their support** -> reads as coachable, not a lone fixer.
 - Attach proof you learn fast: ProGuard Assembler, TYK gateway.
@@ -298,3 +349,12 @@ The right answer: **don't claim 100%**, name **2-3 real gaps**, then hand her a 
 ## 10. One-line summary to keep in your head
 
 "Technical enough to build the integration, customer-facing enough to make it succeed, and honest about learning the telephony and enterprise-commercial parts."
+
+
+## TO ADD
+
+- Situation where an endpoint was compromising the instance performance. How we handle it? There was a corner case of one study with a very specific combination of shipments, locations, patients, etc that was causing a massive computation time in the server that froze that instance so not even regular users could use the UI for that customer. We detected by X, we solved by Y and then we did lessons learned and impolemented Z measure to prevent this to happen in the future.
+- Proposed feature: detected recurrent API call using the BFF that implied multiuple calls to the iternal API product. Suggested to add a native endpoint in the internal API to retreive the data in one call. This was implemented and improved the performance of the BFF and reduced the load on the internal API product.
+- how you measured what APIs were more or less popular? How you decide where to invest on improve performance on which endpoint or create new ones? What is the process?
+- What is the most common type of issues you have to solve every day? What do you do when there's a very common and repeated problem coming to 2nd line?
+- What metrics you have to assess if your measures have improved or not the status quo?
