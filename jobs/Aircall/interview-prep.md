@@ -5,7 +5,7 @@ Contact: Marie Mas (recruiter) - 30-min video screen
 
 ---
 
-## What Aircall does (know this cold)
+## What Aircall does?
 
 **One line:** Aircall is a cloud phone system for customer-facing teams - voice, SMS, and WhatsApp in one workspace, with AI on top - that captures every call as data and pushes it into the tools a company already uses.
 
@@ -77,7 +77,7 @@ That does three things: shows you noticed, shows you're not intimidated, keeps b
 
 ## 3. Your narrative in one breath
 
-"I'm a software engineer who spent the last five years building an API platform and then supporting the customers who used it. I designed ~20 endpoints, took the product from PoC to production, onboarded five customers, wrote all the external docs and tutorials, and handled their technical issues directly. So I sit exactly where Aircall puts a Customer Engineer - between the product/engineering side and the customer."
+"I'm a software engineer who spent the last five years building an API platform and then supporting the customers who used it. I designed ~20 endpoints, took the product from PoC to production, onboarded five customers, wrote all the external docs and tutorials, and handled their technical issues directly. So I sit exactly where Aircall puts a Customer Engineer - between the product/technical side and the customer."
 
 Then pivot to Aircall: "Aircall is doing that same bridge with a much bigger surface - voice, SMS, WhatsApp, and now AI agents. That's the work I want to be doing."
 
@@ -121,6 +121,133 @@ Map these to whatever she asks. Always end on the outcome or business value.
 
 **Behavioral**
 - Cross-functional influence, conflict, ownership beyond your job, prioritising a large portfolio, staying calm in escalations.
+
+---
+
+## 5b. Common questions (full bank)
+
+Grouped by type. For the 30-min recruiter screen, only group A plus logistics/salary realistically come up - the rest are for the hiring-manager and later rounds. Pointers on the tricky ones.
+
+**A. Motivation / background (screen)**
+- Tell me about yourself.
+- Why Aircall? Why Customer Engineering?
+- Why are you leaving N-SIDE / why the change? -> the hybrid-to-full-SE story.
+- You're a developer - why customer-facing? -> 50/50 split taught you where your energy is; you stay hands-on technically.
+- What do you know about us? -> use the template answer above.
+- What are you looking for in your next role?
+- Where do you want to be in a few years?
+- Salary expectations? -> defer politely to the band for the level.
+- Location / relocation to Madrid / hybrid?
+- Languages? -> Spanish native, English full professional, French professional. Mention early.
+
+**B. Customer craft**
+- Tell me about a time you turned around a challenging or at-risk customer.
+- Describe a time you drove adoption of a product or feature.
+- How do you handle a customer asking for something not on the roadmap?
+- How do you handle an angry customer?
+- How do you identify churn signals early?
+- How do you prioritise a large portfolio when you can't touch every account? (Staff - key)
+- How do you align a customer's technical needs with their business goals?
+- Tell me about a time you explained something very technical to a non-technical person.
+- How would you run a QBR / technical business review? (Staff)
+- How would you spot expansion opportunities? (Staff)
+
+**C. Technical / integration**
+- Explain APIs and webhooks to a non-technical person. -> menu vs the kitchen texting you when it's ready.
+- How would you debug a customer integration that stopped working? -> what changed, logs on both sides, auth/token expiry, webhook delivery, 2XX within 5s, retries and auto-disable after 10 failures.
+- Walk me through how you'd onboard a new customer technically.
+- What's your experience with CRMs (Salesforce/HubSpot)? -> be honest; connect to the integration mindset (screen-pop, call logging, field mapping).
+- A customer's system isn't in the native list - how do you connect it? -> Public API + webhooks, or an automation platform (Zapier/Workato).
+- What happens if a customer's webhook endpoint goes down? -> Aircall retries, then disables after 10 failed deliveries; you'd monitor and alert.
+- Do you have VoIP / telephony experience? -> honest no, plus quick-learner proof (ProGuard) and the API/integration side.
+- Tell me about a hard technical problem you solved.
+- Some Aircall processes include a light technical/SQL screen - be ready for basic SQL and API reasoning.
+
+**D. Behavioral / cross-functional**
+- Time you influenced a cross-functional team (engineering/sales/product) against resistance.
+- Time you took ownership of a problem that wasn't assigned to you.
+- A disagreement with a colleague or stakeholder - how you handled it, and the outcome.
+- A time you delivered under pressure or in an escalation.
+- A time you failed or got tough feedback - what you learned.
+- How do you handle competing priorities?
+- Time you mentored or enabled someone. (Staff)
+
+**E. Commercial / Staff-level**
+- How do technical decisions affect renewal, NRR, GRR?
+- How would you handle an escalation on a strategic account?
+- How do you build credibility with a CTO or Head of CX?
+- How would you drive AI add-on adoption (AI Assist Pro, Voice Agent)?
+- How would you raise the technical bar / mentor other CEs?
+
+**F. Closing**
+- Why should we hire you?
+- What questions do you have? -> always have some (section 7).
+- What's an area you want to grow in? -> enterprise/commercial side, telephony domain (honest).
+
+**Delivery tips**
+- Use STAR for behavioral; always end on the outcome.
+- If you don't know, say so and explain how you'd find out - never bluff.
+- Keep screen-round answers to 60-90 seconds.
+
+---
+
+## 5c. Gap awareness (the "do you fit 100%?" question)
+
+**The setup:** she already spotted the gaps. She asks *"Do you think you fit 100%, or are there some gaps?"* This is an **honesty and self-awareness test**, not a knowledge test. The wrong answers:
+- **"Yes, 100%"** -> not credible; she knows the gaps. Reads as arrogant or unaware.
+- **"No, I'm underqualified."** -> self-sabotage; you give her a reason to pass.
+
+The right answer: **don't claim 100%**, name **2-3 real gaps**, then hand her a ramp plan. Pick the 2-3 based on which role it lands on:
+- **Staff CE:** telephony domain, enterprise/exec + commercial, seniority.
+- **Regular CE:** telephony domain, CRM hands-on, French.
+
+### Opening template
+
+> "No, I don't think anyone fits 100% - and I'd rather be straight with you. There are a couple of areas where I'd be ramping up, mainly the telephony side and the enterprise layer. Can I tell you how I'd go at them?"
+
+### The gaps
+
+**1. Telephony / VoIP / contact-center domain**
+- **Formulate:** "The biggest one is the domain. I've spent my career in APIs, integrations, and platforms - not VoIP. SIP, call flows, contact-center metrics like AHT - those are newer to me."
+- **Propose to her:** "I'd want a structured ramp: your product bootcamp, shadowing a senior CE through two or three onboardings, and pairing on live escalations. I pick up domains fast - I've done exactly that before."
+
+**2. Enterprise / strategic accounts & exec stakeholders**
+- **Formulate:** "Most of my customers were mid-market and technical users. I haven't spent much time in front of CTOs or Heads of CX."
+- **Propose to her:** "Let me shadow a senior CE or the hiring manager on a couple of enterprise accounts and a QBR before owning my own. I'm comfortable in the room - I just need the exposure."
+
+**3. Commercial ownership (renewal, GRR/NRR, QBRs, expansion)**
+- **Formulate:** "I've built the product and driven adoption, but I haven't owned renewal or expansion numbers."
+- **Propose to her:** "Sit me in on a full renewal cycle and a QBR with a KAM first, so I learn how you articulate ROI and read the signals. I understand the technical levers that drive renewal - I just haven't owned the commercial outcome."
+
+**4. CRM platforms (Salesforce / HubSpot)**
+- **Formulate:** "I've only briefly used Salesforce day-to-day - my environment was Jira, Slack, and Google."
+- **Propose to her:** "Put me in the CRM with your enablement and the connectors in my first weeks. I understand the integration model - screen-pop, call logging, field mapping - I just need hands-on time in the tool."
+
+**5. Agentic AI voice / messaging workflows**
+- **Formulate:** "I haven't deployed a voice agent hands-on."
+- **Propose to her:** "Pair me with the FDE/AI team on a real AI Voice or AI Assist Pro deployment, and I'll build a demo of my own to get fluent. This is the area I'm most excited to grow into."
+
+**6. Seniority / CE-years at Staff level**
+- **Formulate:** "The Staff bar is 8+ years in customer engineering. I'm at about five years of direct SE work, on top of ten total in engineering."
+- **Propose to her:** "I'm flexible on level - if it fits better, put me in the senior CE seat and let the work make the case for Staff. I'd rather earn it in the role than argue about the title."
+
+**7. Mentoring at Staff scale**
+- **Formulate:** "I've led a Kanban team and onboarded and documented, but I haven't mentored a team of CEs."
+- **Propose to her:** "I'd start by running enablement sessions and tightening documentation, and ask the team where the technical standards need raising most."
+
+**8. French (only if it lands on the regular CE role)**
+- **Formulate:** "My French is professional, not fluent - if the regular Customer Engineer role needs full French, that's a real gap for me."
+- **Propose to her:** "Spanish and English are fully covered, and I'd get my French to working level quickly given the base I have."
+
+### Framing rules
+
+- Never answer "100%."
+- Name 2-3 gaps maximum - the real ones for this role. Don't recite all eight.
+- One sentence to acknowledge, then the plan. Don't dwell on the weakness.
+- Every action is something you'd do **with their support** -> reads as coachable, not a lone fixer.
+- Attach proof you learn fast: ProGuard Assembler, TYK gateway.
+- Hand the level decision to them; stay flexible.
+- Close on strength: "The technical and customer sides I'm confident on - the gaps are the domain and the enterprise layer, and those are exactly the parts I'm most motivated to grow into."
 
 ---
 
@@ -190,6 +317,8 @@ Map these to whatever she asks. Always end on the outcome or business value.
  intake -> triage -> escalation ownership -> knowledge/self-service -> product feedback.
 
 
-### What can do with Aircall
+## Vocabulary to know
 
- IVR (Interactive Voice Response)
+- IVR: Interactive Voice Response
+- QBR: Quarterly Business Review
+- NRR: Net Revenue Retention
