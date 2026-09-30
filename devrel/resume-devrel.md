@@ -65,38 +65,43 @@ B.Eng. in Computer Engineering
 
 ## Personal Projects
 
-[~P1]: **So... Vercel doesn't have built-in email?**
+[~P1]: **Your API needs a ❤️ Best Friend Forever ❤️**
+    *Technical Content*
+    - Explained the difference between an API gateway and a BFF, and why product logic belongs behind the gateway — not in Tyk virtual endpoints.
+    - [🎥 YouTube video](https://www.youtube.com/watch?v=d8GkpmMJqsI)
+
+[~P2]: **So... Vercel doesn't have built-in email?**
     *Technical Content, Tutorial & Short*
     - Wrote a step-by-step tutorial on setting up a professional email address for a Vercel-hosted domain using Amelu's free tier, with IMAP/SMTP support.
     - [<span class="iconify" data-icon="ph:dev-to-logo-fill"></span> dev.to article](https://dev.to/pablodevrel/so-vercel-doesnt-have-built-in-email-2dpd) | [<span class="iconify" data-icon="logos:linkedin"></span> LinkedIn short](https://www.linkedin.com/posts/pablo-antonio-rodriguez-rubio_vercel-email-devrel-ugcPost-7496207571498905600-7t-N/)
 
-[~P2]: **PearNote: Real-Time Sync Without a Backend**
+[~P3]: **PearNote: Real-Time Sync Without a Backend**
     *Technical Content & Demo*
     - Built a real-time collaborative sticky notes app with no server — two phones syncing peer-to-peer via the [Holepunch](https://holepunch.to/) stack.
     - [🎥 YouTube video](https://www.youtube.com/watch?v=B8783WSrCjI) | [Link to GitHub Repository](https://github.com/pablorotten/PearNote)
 
-[~P3]: **Pridianum: WWII Interactive Map**
+[~P4]: **Pridianum: WWII Interactive Map**
     *Video Demo & Storytelling*
     - Created a video demo telling a story through [Pridianum](https://pridianum.xyz/), an interactive WWII map.
     - [🌐 Website](https://pridianum.xyz/) | [<span class="iconify" data-icon="skill-icons:instagram"></span> Instagram reel](https://www.instagram.com/reel/DZN5QjpuKfZ/)
 
-[~P4]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
+[~P5]: **Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare Tools**
     *Technical Video & Documentation*
     - Created a step-by-step guide on bypassing root detection and decrypting AES-256 secrets in Android apps using `ProGuard Assembler`.
     - [🎥 YouTube video](https://www.youtube.com/watch?v=mUKR67VA0Lg) | [Link to GitHub Repository](https://github.com/pablorotten/GuardSquare-devrel-project)
 
-[~P5]: **Movie Kombat: React + TypeScript Tournament App**
+[~P6]: **Movie Kombat: React + TypeScript Tournament App**
     *Full-Stack Web Development & API Integration*
     - Built an interactive movie bracket app using **React, TypeScript, and Tailwind CSS v4**.
     - Integrated third-party API [TMDB](https://developer.themoviedb.org/docs/getting-started) for movie search and platforms availability.
     - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://moviekombat.app/) | [🎥 Promo video](https://youtube.com/shorts/OPYjPb3ffrs?feature=share) | [<span class="iconify" data-icon="logos:linkedin"></span> post](https://www.linkedin.com/posts/pablo-antonio-rodriguez-rubio_sideproject-activity-7462103830365900800-YTVn?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUa0hwB06eAXuLcZS24G6hAF7MsJupSDnM)
 
-[~P6]: **Fake Tinder: Progressive Web App (PWA) Experiment**
+[~P7]: **Fake Tinder: Progressive Web App (PWA) Experiment**
     *Mobile Web Development & Social Engineering Concept*
     - Developed a prank-oriented PWA that mimics native app installation on iOS/Android via web manifests.
     - [Link to GitHub Repository](https://github.com/pablorotten/fake-tinder)
 
-[~P7]: **Technical Documentation & Learning Resources**
+[~P8]: **Technical Documentation & Learning Resources**
     *Educational Content Creation & Knowledge Sharing*
     - Comprehensive documentation of technologies and frameworks I used in my work and projects.
     - **React:** React documentation with Vite and Tailwind CSS integration guides
