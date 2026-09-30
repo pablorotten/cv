@@ -67,7 +67,7 @@ B.Eng. in Computer Engineering
 
 [~P1]: **Your API needs a ❤️ Best Friend Forever ❤️**
     *Technical Content*
-    - Explained the difference between an API gateway and a BFF, and why product logic belongs behind the gateway — not in Tyk virtual endpoints.
+    - Explained the difference between an API gateway and a BFF, and why product logic belongs behind the gateway, not in Tyk virtual endpoints.
     - [🎥 YouTube video](https://www.youtube.com/watch?v=d8GkpmMJqsI)
 
 [~P2]: **So... Vercel doesn't have built-in email?**
