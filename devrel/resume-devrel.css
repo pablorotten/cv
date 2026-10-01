@@ -93,7 +93,8 @@
     url("https://pablodevrel.com/images/linkedin-banner.webp");
   background-size: cover;
   background-position: center;
-  padding: 16px 12px 20px;
+  margin: -50px -45px 0;
+  padding: 24px 45px 20px;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }

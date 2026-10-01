@@ -2,7 +2,7 @@
 name: Pablo Antonio Rodriguez Rubio
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;"> DevRel / Solutions Engineer</span>
+      <span style="font-size: 1.2em; font-weight: bold;"> DevRel ▪️ Solutions Engineer ▪️ Developer </span>
 ---
 
 <p class="resume-contact">
