@@ -44,7 +44,7 @@ header:
 
 **Software Engineer (Research & Development)**
   ~ Universidad De Granada (DECSAI)
-  ~ 2016 - 2016
+  ~ 2015 - 2016
 
 - Joined the Department of Computer Science and Artificial Intelligence to develop a fuzzy model to enhance user profiles in microblogging sites using deep relations.
 
@@ -59,7 +59,7 @@ B.Eng. in Computer Engineering
   ~ 2010 - 2015
 - **Final Project:** Developed a complete real-time bus tracking system, including the Hybrid Android/iOS mobile applications and supporting backend infrastructure.
 
-## Personal Projects
+## Personal Projects: [pablodevrel.com](https://pablodevrel.com)
 
 [~P1]: **Your API needs a ❤️ Best Friend Forever ❤️**
     *Technical Content*
@@ -113,13 +113,10 @@ B.Eng. in Computer Engineering
 <span class="iconify" data-icon="logos:scala"></span> Scala
 <span class="iconify" data-icon="devicon:akka"></span> Akka
 <span class="iconify" data-icon="logos:java"></span> Java
-<span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript
-<span class="iconify" data-icon="logos:typescript"></span> TypeScript
+<span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript / TypeScript
 <span class="iconify" data-icon="logos:react"></span> React
 <span class="iconify" data-icon="logos:aws"></span> AWS
-<span class="iconify" data-icon="simple-icons:link"></span> GitLab CI/CD
-<span class="iconify" data-icon="logos:postgresql"></span> PostgreSQL
-<span class="iconify" data-icon="logos:mysql"></span> MySQL
+<span class="iconify" data-icon="logos:gitlab"></span> CI/CD
 
 
 **Content & Creative:** 
