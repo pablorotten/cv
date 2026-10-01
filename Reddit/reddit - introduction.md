@@ -1,6 +1,6 @@
 # After 10 years building software, I want to go All-In on DevRel. Roast my portfolio!
 
-TLDR: I'm a Senior Software/Solutions Engineer transitioning full-time into DevRel. Roast my portfolio/work: https://pablorotten.github.io/cv/
+TLDR: I'm a Senior Software/Solutions Engineer transitioning full-time into DevRel. Roast my portfolio/work: https://pablodevrel.com/
 
 Hello devrels!
 
@@ -18,4 +18,4 @@ Recently, I’ve been building DevRel-focused content: technical videos, short-f
 
 I've started applying for DevRel roles through platforms like DevRel Careers and GitHub listings. I’m currently refining my strategy and portfolio to make sure I stand out.
 
-I would love your honest feedback and advice. Feel free to roast my portfolio and work: https://pablorotten.github.io/cv/
+I would love your honest feedback and advice. Feel free to roast my portfolio and work: https://pablodevrel.com/

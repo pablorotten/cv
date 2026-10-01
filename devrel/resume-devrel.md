@@ -21,13 +21,13 @@ header:
   ~ N-SIDE
   ~ 2021 - 2026
 
-*Advanced analytics SaaS platform optimizing complex clinical trials for pharmaceutical companies. Led a new API product branch from conception to production — developing, maintaining, and supporting it directly with customers so they could connect their systems, update workflows, run optimizations and simulations, and retrieve results without human interaction. Split 50/50 between solutions engineering (customer-facing product adoption) and development (building the API platform).*
+*SaaS platform optimizing complex clinical trials for pharmaceutical companies. Led a new API product branch from conception to production. Split 50/50 between solutions engineering (customer-facing product adoption) and development (building the API platform).*
 
-- **Customer Discovery:** Engaged directly with customers, technical users, and power users to understand their integration needs, workflows, and pain points, translating them into concrete product capabilities — designed and delivered ~20 API endpoints covering a wide range of use cases.
-- **Data Extraction Product:** Extended API usage to internal teams for bulk data extraction (faster than manual UI workflows), then identified the same capability as a sellable product — customers could access their own historic supply chain data (shipments, CO2 emissions, trial duration, etc.) directly via the API. Launched a new profitable business line for the company.
-- **PoC to Production:** Started from a Proof of Concept for a key client and iterated into a full working product now adopted by all existing accounts — integrated 5 new customers after initial launch.
-- **Guided Adoption & Support:** Guided clients through integration with screencasts and hands-on support, answered technical emails covering problems, questions, and feature suggestions — significantly reducing integration friction and the volume of support requests.
-- **Content creation:** Wrote all external documentation on how to use the API, produced video tutorials and demos, and presented new features to customers and the wider community — increasing API usage and cutting the number of technical support emails.
+- **Customer Discovery:** Engaged directly with customers, technical users, and power users to understand their integration needs, workflows, and pain points, translating them into concrete product capabilities - designed and delivered ~20 API endpoints covering a wide range of use cases.
+- **Data Extraction Product:** Extended API usage to internal teams for bulk data extraction (faster than manual UI workflows), then identified the same capability as a sellable product - customers could access their own historic supply chain data (shipments, CO2 emissions, trial duration, etc.) directly via the API. Launched a new profitable business line for the company.
+- **PoC to Production:** Started from a Proof of Concept for a key client and iterated into a full working product now adopted by all existing accounts - integrated 5 new customers after initial launch.
+- **Guided Adoption & Support:** Guided clients through integration with screencasts and hands-on support, answered technical emails covering problems, questions, and feature suggestions - significantly reducing integration friction and the volume of support requests.
+- **Content creation:** Wrote all external documentation on how to use the API, produced video tutorials and demos, and presented new features to customers and the wider community - increasing API usage and cutting the number of technical support emails.
 - **Developer Experience:** Started as a developer on the main web application, building features for clinical trial optimization. Pivoted to building the API infrastructure on the **TYK** gateway, designing internal documentation, and creating automation workflows.
 
 **Software Engineer**
@@ -59,8 +59,6 @@ header:
 
 B.Eng. in Computer Engineering
   ~ 2010 - 2015
-
-- Focused on computer architecture and systems security. 
 - **Final Project:** Developed a complete real-time bus tracking system, including the Hybrid Android/iOS mobile applications and supporting backend infrastructure.
 
 ## Personal Projects
@@ -77,7 +75,7 @@ B.Eng. in Computer Engineering
 
 [~P3]: **PearNote: Real-Time Sync Without a Backend**
     *Technical Content & Demo*
-    - Built a real-time collaborative sticky notes app with no server — two phones syncing peer-to-peer via the [Holepunch](https://holepunch.to/) stack.
+    - Built a real-time collaborative sticky notes app with no server - two phones syncing peer-to-peer via the [Holepunch](https://holepunch.to/) stack.
     - [🎥 YouTube video](https://www.youtube.com/watch?v=B8783WSrCjI) | [Link to GitHub Repository](https://github.com/pablorotten/PearNote)
 
 [~P4]: **Pridianum: WWII Interactive Map**

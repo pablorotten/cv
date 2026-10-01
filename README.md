@@ -3,11 +3,11 @@
 Click on the buttons below to access my [Resume](https://ohmycv.app/dashboard), **LinkedIn** profile, and **YouTube** channel.
 
 
-[![Live Site](https://img.shields.io/badge/Live_CV-1f8acb?style=for-the-badge&logo=github&logoColor=white)](https://pablorotten.github.io/cv)
+[![Live Site](https://img.shields.io/badge/Live_CV-1f8acb?style=for-the-badge&logo=github&logoColor=white)](https://pablodevrel.com)
 
-[![DevRel Resume](https://img.shields.io/badge/DevRel_Resume-f36132?style=for-the-badge&logo=googledocs&logoColor=white)](https://pablorotten.github.io/cv/devrel)
+[![DevRel Resume](https://img.shields.io/badge/DevRel_Resume-f36132?style=for-the-badge&logo=googledocs&logoColor=white)](https://pablodevrel.com/devrel)
 
-[![Engineer Resume](https://img.shields.io/badge/Engineer_Resume-2ea44f?style=for-the-badge&logo=codeforces&logoColor=white)](https://pablorotten.github.io/cv/dev)
+[![Engineer Resume](https://img.shields.io/badge/Engineer_Resume-2ea44f?style=for-the-badge&logo=codeforces&logoColor=white)](https://pablodevrel.com/dev)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=indeed&logoColor=white)](https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio)
 

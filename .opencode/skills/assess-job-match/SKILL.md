@@ -106,7 +106,7 @@ If yes:
   - 10+ years engineering framed as Solutions Engineering work
   - Specific metrics and anecdotes from N-SIDE (TYK gateway, 80% ticket reduction, training for 50+ consultants, Argo automation, troubleshooting guides)
   - Quick learner angle (ProGuard Assembler story)
-  - Link to portfolio: `https://pablorotten.github.io/cv/`
+  - Link to portfolio: `https://pablodevrel.com/`
 - **Never use the em dash character (—). Always use a regular hyphen (-) instead.**
 
 ### 8. Handle application screening questions
