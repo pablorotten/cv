@@ -3,17 +3,15 @@ name: Pablo Antonio Rodriguez Rubio
 header:
   - text: |
       <span style="font-size: 1.2em; font-weight: bold;"> DevRel / Solutions Engineer</span>
-  - text: <span class="iconify" data-icon="tabler:phone"></span> +32 476062894
+  - text: <span class="iconify" data-icon="flat-color-icons:phone"></span> +32 476062894
     newLine: true
-  - text: <span class="iconify" data-icon="tabler:mail"></span> pabloantoniorodriguezrubio@gmail.com
+  - text: <span class="iconify" data-icon="fluent-color:mail-16"></span> pabloantoniorodriguezrubio@gmail.com
     link: mailto:pabloantoniorodriguezrubio@gmail.com
-  - text: <span class="iconify" data-icon="tabler:brand-github"></span> pablorotten
-    link: https://github.com/pablorotten
-  - text: <span class="iconify" data-icon="tabler:brand-linkedin"></span> pablo-antonio-rodriguez-rubio
-    link: https://www.linkedin.com/in/pablo-antonio-rodriguez-rubio
+  - text: <span class="iconify" data-icon="flat-color-icons:globe"></span> pablodevrel.com
+    link: https://pablodevrel.com
 ---
 
-**Solutions Engineer** with over 10 years of experience as a **Software Developer**. Deep technical background enabling me to bridge the gap between complex technical products and the people who use them.
+**Solutions Engineer** with 10+ years of software engineering, looking for a **Developer Advocate** role.
 
 ## Experience
 
