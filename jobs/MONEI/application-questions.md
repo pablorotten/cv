@@ -2,20 +2,25 @@
 
 ## Q1. Content born from real developer pain. Min 800 chars.
 
-Pick one piece of content you personally published — a doc page, blog post, tweet/thread, video, talk, or repo README — that was directly triggered by a real developer issue or recurring pain point. Then tell us:
+Pick **one piece of content** you personally published — a doc page, blog post, tweet/thread, video, talk, or repo README — that was directly **triggered by a real developer issue or recurring pain point**. Then tell us:
 
-- The content — link to it
-- What sparked it — was it a single support ticket, a recurring pattern across many users, a thread you saw on X, a confused colleague? Be specific about how the pain surfaced.
-- What you did between sparking and publishing — debugging, code reading, talking to the user, prototyping a fix, writing a runbook
-- What the content did — engagement, follow-up tickets that stopped, "this saved my life" replies, internal team adoption.
+- **The content** — link to it
+- **What sparked it** — was it a single support ticket, a recurring pattern across many users, a thread you saw on X, a confused colleague? Be specific about how the pain surfaced.
+- **What you did between sparking and publishing** — debugging, code reading, talking to the user, prototyping a fix, writing a runbook
+- **What the content did** — engagement, follow-up tickets that stopped, "this saved my life" replies, internal team adoption.
 
-**Talking points (not the answer):**
-- Pick the Tyk Gateway vs BFF video: https://www.youtube.com/watch?v=d8GkpmMJqsI
-- Spark = N-SIDE API work, recurring support mail, not a tweet
-- Middle = built the API, answered the mail, wrote docs/screencasts, THEN recorded the video
-- Docs killed the tickets. Video is the public proof. Don't swap those.
-- Skip Movie Kombat, PearNote, GuardSquare, Vercel email
-- 800 characters is about 130 words. Four short paragraphs, then stop.
+> [!TIP]
+> Pick the Tyk Gateway vs BFF video: https://www.youtube.com/watch?v=d8GkpmMJqsI
+>
+> Spark = the N-SIDE API work and the recurring support mail. Not a tweet.
+>
+> Middle = built the API, answered the mail, wrote the docs and screencasts, THEN recorded the video. The video is the last step, not the first.
+>
+> Docs killed the tickets. The video is the public proof. Don't swap those.
+>
+> Skip Movie Kombat, PearNote, GuardSquare, Vercel email.
+>
+> 800 characters is about 130 words. Four short paragraphs, then stop.
 
 **Answer:**
 
@@ -45,20 +50,24 @@ I wrote documentation, made videos and presentation of why implement a BFF is go
 
 ## Q2. Top 3 educational posts.
 
-Share 3 of your best educational posts/threads/videos from the last 12 months — Twitter/X, LinkedIn, dev.to, YouTube, anywhere. For each:
+Share **3 of your best educational posts/threads/videos from the last 12 months** — Twitter/X, LinkedIn, dev.to, YouTube, anywhere. For each:
 
 - The link
 - The metric you're proudest of (likes, replies, "saved my life" comments, citations from elsewhere)
-- One sentence on why you think it landed — what made it good, not just what it was about
+- **One sentence on why you think it landed** — what made it good, not just what it was about
 
-**Talking points (not the answer):**
-- Last 12 months only. Fake Tinder is out.
-- Best three: Tyk BFF video, GuardSquare video, Vercel email tutorial. Those are the educational ones. Movie Kombat and PearNote are demos, weaker here.
-- Check what those two lnkd.in links actually are before you reuse them. If they are already two of the three, don't repeat.
-- Third URL field: YouTube of the Tyk video or GuardSquare, unless those LinkedIn posts already are them.
-- Metric: open the post and copy a real number. Views, comments, a reply. Don't invent "saved my life."
-- The one sentence is the "why it landed" not the topic. For Tyk: you admitted a real architecture mistake. For GuardSquare: you showed the clicks. For Vercel: you solved a boring setup people actually hit.
-- The text field is a single line in the form. Keep it tight: 3 bullets, link + metric + one sentence each.
+> [!TIP]
+> Three URL fields, all required. Put one URL in each.
+>
+> Last 12 months only. Fake Tinder is out.
+>
+> Don't reuse the Tyk BFF video, it's already Q1.
+>
+> Metric: open the post and copy the real number. Views, impressions, a reply. Don't invent "saved my life."
+>
+> The one sentence is the *why it landed*, not the topic.
+>
+> The text field is a single-line input, not a textarea. Keep it to three short bullets.
 
 **Answer:**
 
@@ -75,5 +84,31 @@ Share 3 of your best educational posts/threads/videos from the last 12 months �
   - YT: 131 views
   - LinkedIn: 333 impressions
 
-I can't answer this properly because this form has 1 single input field for all three posts, not even a textarea. Anyway, I'm proud of those videos because I manage to explain complex topics in a simple and fun way. They have rookie numbers, like average 400 impressions in LinkedIn and 130 views in YouTube, but I think they are good examples of my work. The oldest one is 6 month old, when I started with this DevRel adventure. 
+I can't answer this properly because this form has 1 single input field for all 3 posts, not even a textarea. Anyway, I'm proud of those videos because I manage to explain complex topics in a simple and fun way. They have rookie numbers: like average 400 impressions in LinkedIn and 130 views in YouTube, but I think they are good examples of my work. The oldest one is 6 month old, when I started with this DevRel adventure. 
+```
+
+## Q3. Long-form deep-dive.
+
+Link to **one long-form piece** you wrote/recorded that taught a concept well — a blog post, video, conference talk, multi-tweet thread, technical doc, or detailed GitHub README. Then in ~150 words: **what made this one land?** What was the pedagogy — the structure, the analogy, the diagram, the order of revelation?
+
+> [!TIP]
+> Do NOT reuse the Tyk BFF video. It's already Q1.
+>
+> Best candidate: the GuardSquare / ProGuard Assembler video. Long-form, teaches something hard, and you built the thing before writing about it.
+>
+> Alternative is the Vercel email post, but it's narrower and shorter.
+>
+> The 150 words are about **method, not topic**. They name four things: structure, analogy, diagram, order of revelation. Use the ones you actually used.
+>
+> Your strongest angle: you learned the toolchain by using it, so the content follows the path a reader would have to take. Each step earns the next. That's the pedagogy.
+>
+> Don't describe what ProGuard Assembler does. They can read the video.
+>
+> Don't use "clear", "accessible" or "engaging" as the explanation. Show the mechanism instead.
+>
+> Don't claim you knew it beforehand. The opposite is your best material.
+
+**Answer:**
+
+```
 ```
