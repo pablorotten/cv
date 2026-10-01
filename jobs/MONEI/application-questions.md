@@ -123,3 +123,48 @@ The second half is built as a reveal. I pretend I am done, the viewer catches me
 
 The analogies came from things I already knew: encryption as a lock, the secret as a chest. And I kept a section on why not to use javap, showing both outputs, because that was the question I had myself.
 ```
+
+## Q4. Writing sample on demand
+
+Pick **one** of these topics:
+
+- What a webhook is and why payment systems use them
+- Why idempotency keys matter for payment APIs
+- What 3D Secure (3DS) is and why it sometimes interrupts checkout
+- What an API key is and how to keep it from leaking
+
+Then **In English (150-250 words):** write a short explainer for a small-shop merchant who has never integrated a payment API before. No preamble, no padding. Pretend it's the top of a docs page.
+
+> [!TIP]
+> **Pick webhooks.** It's the only one of the four where the "why" is the concept itself. The other three are either jargon (idempotency), a side quest about friction (3DS), or security warnings (API keys). With webhooks the merchant has a real intuition to start from: "you tell me when something happens." That intuition is your opening line, and the reader never has to hold a definition in their head.
+>
+> Audience is a small-shop merchant, not an engineer. Consequence over mechanism. Say what changes for them, not what the HTTP request contains.
+>
+> 150-250 words is a real range. Land near 200. Under 150 looks thin, over 250 means you're writing a tutorial instead of a docs intro.
+>
+> "No preamble, no padding" is literal. Don't open with "Payment integrations can be complex" or "In this guide we'll explore." Start with the thing itself.
+>
+> The docs top-of-page constraint is the test: could someone read your first paragraph and immediately take the next action?
+
+**Answer (English, 150-250 words):**
+
+```
+```
+
+## Q4.1. Writing sample on demand, Spanish
+
+Same topic as Q4. **In Spanish (~100 words):** a tighter version of the same explainer, voice and tone calibrated for a Spanish-speaking merchant. Not a literal translation, write it natively.
+
+> [!TIP]
+> Roughly half the English length. That's the test for "tighter": same idea, fewer words.
+>
+> Write it natively, not translated. Read like the MONEI docs read. Informal "tú", short sentences, no anglicisms.
+>
+> Spanish payments vocabulary: webhook stays "webhook", don't invent a translation. "Tu tienda", "el pago", "se confirma", "te avisamos".
+>
+> Same opening move as the English version. If the reader would need to read the English first to get the Spanish, it's a translation.
+
+**Answer (Spanish, ~100 words):**
+
+```
+```
