@@ -1,2 +1,4 @@
 jobs/*
 !jobs/Aircall/
+!jobs/MONEI/
+jobs/MONEI/application.html
