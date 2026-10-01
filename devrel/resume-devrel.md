@@ -3,15 +3,14 @@ name: Pablo Antonio Rodriguez Rubio
 header:
   - text: |
       <span style="font-size: 1.2em; font-weight: bold;"> DevRel / Solutions Engineer</span>
-  - text: <span class="iconify" data-icon="flat-color-icons:phone"></span> +32 476062894
-    newLine: true
-  - text: <span class="iconify" data-icon="fluent-color:mail-16"></span> pabloantoniorodriguezrubio@gmail.com
-    link: mailto:pabloantoniorodriguezrubio@gmail.com
-  - text: <span class="iconify" data-icon="flat-color-icons:globe"></span> pablodevrel.com
-    link: https://pablodevrel.com
 ---
 
-**Solutions Engineer** with 10+ years of software engineering, looking for a **Developer Advocate** role.
+<p class="resume-contact">
+  <span class="iconify" data-icon="flat-color-icons:phone"></span> +32 476062894 |
+  <a href="mailto:pabloantoniorodriguezrubio@gmail.com"><span class="iconify" data-icon="fluent-color:mail-16"></span> pabloantoniorodriguezrubio@gmail.com</a> |
+  <a href="https://pablodevrel.com"><span class="iconify" data-icon="flat-color-icons:globe"></span> pablodevrel.com</a>
+</p>
+
 
 ## Experience
 
