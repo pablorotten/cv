@@ -72,10 +72,9 @@ Share **3 of your best educational posts/threads/videos from the last 12 months*
 **Answer:**
 
 ```
-- https://www.youtube.com/watch?v=mUKR67VA0Lg 
-  - Title: Beyond the Bytecode: Solving OWASP UnCrackable L1 with Guardsquare's Proguard Assembler 
-  - YT: 138 views in 6 months
-  - LinkedIn: 422 impressions
+- https://lnkd.in/p/eG45vvqT 
+  - Title: Movie Kombat: React Tournament App
+  - LinkedIn: 623 impressions
 - https://lnkd.in/p/eV4A95ez 
   - Title: Vercel has no email. Found Amelu, an Ordnary tool, to solve this.
   - LinkedIn: 465 impressions
@@ -111,4 +110,16 @@ Link to **one long-form piece** you wrote/recorded that taught a concept well â€
 **Answer:**
 
 ```
+Link: https://github.com/pablorotten/GuardSquare-devrel-project
+Video: https://www.youtube.com/watch?v=mUKR67VA0Lg
+
+I had never touched Android reverse engineering before, so I wrote the guide in the order I actually got unstuck, not in the order the tools make sense.
+
+The goal is to solve the OWASP L1 challenge with ProGuard Assembler.
+
+First, the tool refuses the .apk and asks for a .jar, so the guide tells you to convert first and explains why two steps later. Each step only makes sense because of the obstacle in the one before.
+
+The second half is built as a reveal. I pretend I am done, the viewer catches me, and we find the secret together. I decode the two strings while building the CyberChef recipe on screen in parallel, so the reasoning and the result arrive at the same time.
+
+The analogies came from things I already knew: encryption as a lock, the secret as a chest. And I kept a section on why not to use javap, showing both outputs, because that was the question I had myself.
 ```
