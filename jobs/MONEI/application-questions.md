@@ -110,12 +110,12 @@ Link to **one long-form piece** you wrote/recorded that taught a concept well �
 **Answer:**
 
 ```
-Link: https://github.com/pablorotten/GuardSquare-devrel-project
+Link to README.md: https://github.com/pablorotten/GuardSquare-devrel-project
 Video: https://www.youtube.com/watch?v=mUKR67VA0Lg
 
-I had never touched Android reverse engineering before, so I wrote the guide in the order I actually got unstuck, not in the order the tools make sense.
+This is the first video I did, I chose it because I also wrote a nice README.md for it and it has a clear objective: solve the OWASP L1 challenge with ProGuard Assembler. The README.md is a step-by-step guide, and the video is a visual companion to it.
 
-The goal is to solve the OWASP L1 challenge with ProGuard Assembler.
+I had never touched Android reverse engineering before, so I wrote the guide in the order I actually got unstuck, not in the order the tools make sense.
 
 First, the tool refuses the .apk and asks for a .jar, so the guide tells you to convert first and explains why two steps later. Each step only makes sense because of the obstacle in the one before.
 
@@ -149,6 +149,23 @@ Then **In English (150-250 words):** write a short explainer for a small-shop me
 **Answer (English, 150-250 words):**
 
 ```
+## Why idempotency keys matter for payment APIs
+
+When a customer places an 🛒 order and clicks on "Pay" button, it sends a 💸 payment request to your e-commerce platform. 
+
+Your e-commerce platform receives the 💸 payment request, ✅ processes it and sends confirmation back to the customer.
+
+Customer waits for the confirmation, but due to an unstable internet connection, the confirmation never arrives and hits a 🔴 timeout "This webpage is not available" on their side. 
+
+🔄 The customer reloads the page, and the payment request is automatically sent again.
+
+Your e-commerce platform receives again the same payment request. But **you don't want the customer to be charged twice** for the same 🛒 order. This is where **idempotency keys** come in.
+
+The customer 💸 payment generates a unique "Idempotency Key". This key identifies that specific attempt to pay for the 🛒 order. Your e-commerce platform stores that key linked to the payment.
+
+When the customer reloads the page, they send again the same 💸 payment request with the same "Idempotency Key". The e-commerce will check if the payment request with that "Idempotency Key" has already been processed. It will find it so it will **not process the payment again** and will send again the confirmation to the customer.
+
+That's what Idempotency keys are for: No matter how many times the customer reloads the page, they will only be charged once for that specific order and they will always receive the same confirmation of the payment.
 ```
 
 ## Q4.1. Writing sample on demand, Spanish
