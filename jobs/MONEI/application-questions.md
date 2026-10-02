@@ -148,24 +148,24 @@ Then **In English (150-250 words):** write a short explainer for a small-shop me
 
 **Answer (English, 150-250 words):**
 
+Why idempotency keys matter for payment APIs
+
 ```
-## Why idempotency keys matter for payment APIs
-
-When a customer places an 🛒 order and clicks on "Pay" button, it sends a 💸 payment request to your e-commerce platform. 
-
-Your e-commerce platform receives the payment request, processes it and sends confirmation back to the customer.
-
-Customer waits for the confirmation, but due to an unstable internet connection, the confirmation never arrives and hits a timeout "This webpage is not available" on their side. 
-
-The customer reloads the page, and the payment request is automatically sent again.
-
-Your e-commerce platform receives again the same payment request. But **you don't want the customer to be charged twice 💸💸** for the same 🛒 order. This is where **idempotency keys** come in.
-
-The customer payment generates a unique `Idempotency Key`. This key identifies that specific attempt to pay for the order. Your e-commerce platform stores that key linked to the payment.
-
-When the customer reloads the page, they send again the same payment request with the same `Idempotency Key`. The e-commerce will check if the payment request with that `Idempotency Key` has already been processed. It will find it so it will **not process the payment again** and will send again the confirmation to the customer.
-
-No matter how many times the customer reloads the page, they will only be charged once for that specific order and they will always receive the same confirmation of the payment.
+A customer places an 🛒 order and clicks the "Pay" button, sending a 💸 payment request to your platform. 
+ 
+Your platform receives it, processes it and sends confirmation back to the customer.
+ 
+The customer waits, but the connection drops and the confirmation never arrives, hitting a timeout `Webpage unavailable` on their side. 
+ 
+The customer reloads the page, resending the payment request.
+ 
+Your platform receives the same request again. But **you don't want the customer to be charged twice** for the same 🛒 order. This is where **idempotency keys** come in.
+ 
+Your platform generates a unique `Idempotency Key` for that attempt and stores it linked to the payment.
+ 
+When the customer reloads the page, they resend the same request with the same `Idempotency Key`. Your platform sees it was already processed, so it will **not charge again**, it just resends the confirmation.
+ 
+No matter how many times the customer reloads the page, they will only be charged once for that order and will always receive the same confirmation.
 ```
 
 ## Q4.1. Writing sample on demand, Spanish
@@ -186,9 +186,9 @@ Same topic as Q4. **In Spanish (~100 words):** a tighter version of the same exp
 ```
 Un cliente realiza un pedido en tu tienda y se queda esperando la confirmación del pago. La conexión falla y no llega. El cliente recarga la página y envía otra vez la misma solicitud de pago.
 
-**No quieres que se cobre dos veces** por el mismo pedido. Para eso está la `clave de idempotencia`. 
+**No quieres que se cobre dos veces** por el mismo pedido. Para eso está la `Clave de Idempotencia`. 
 
 Cada intento de pago está asociado a una clave única que guarda tu tienda. 
 
-Si el cliente recarga la página y envía otra vez la solicitud de pago, tu tienda reconoce que ya se procesó y **no cobra otra vez**, simplemente reenvía la confirmación al cliente.
+Si el cliente recarga la página, envía otra vez la misma solicitud de pago, tu tienda reconoce que ya se procesó y **no cobra otra vez**, simplemente reenvía la confirmación al cliente.
 ```
