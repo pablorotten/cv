@@ -78,11 +78,6 @@ B.Eng. in Computer Engineering
     - Integrated multiple third-party APIs (OMDb & TMDB) for global search and discovery.
     - [Link to GitHub Repository](https://github.com/pablorotten/movie-kombat) | [Live App](https://movie-kombat.vercel.app/)
 
-[~P3]: **Fake Tinder: Progressive Web App (PWA) Experiment**
-    *Mobile Web Development & Social Engineering Concept*
-    - Developed a prank-oriented PWA that mimics native app installation on iOS/Android via web manifests.
-    - [Link to GitHub Repository](https://github.com/pablorotten/fake-tinder)
-
 ## Skills
 
 **Technical Stack:** 
