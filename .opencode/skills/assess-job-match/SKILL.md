@@ -88,8 +88,9 @@ Use the exact company name and role title as provided or inferred. Always includ
 ### 6. Ask to save job details
 If the match is reasonable (partial or better), ask: "Want me to save this job to a new entry?"
 If yes:
-- Create folder `jobs/<CompanyName>/` (PascalCase, exactly as user provides the company name)
-- Create `jobs/<CompanyName>/<name-of-company>.md` (lowercase kebab-case) with:
+- Decide the category folder first: **`jobs/DevRel/`** for DevRel, Developer Advocate, Developer Evangelist, Developer Educator, technical writer, documentation, technical author roles (tech writing lives with DevRel). **`jobs/SolutionsEngineer/`** for Solutions Engineer, Sales Engineer, Solutions Architect, Customer Engineer, Forward Deployed Engineer roles.
+- Create folder `jobs/<Category>/<CompanyName>/` (PascalCase company name, exactly as user provides it)
+- Create `jobs/<Category>/<CompanyName>/<name-of-company>.md` (lowercase kebab-case) with:
   - LinkedIn URL
   - Full job description (paste what user provided)
   - Any trivia or notes the user wants to save
@@ -97,8 +98,14 @@ If yes:
 ### 7. Ask about cover letter
 After saving (or if user says no to saving), ask: "Want me to write a cover letter?"
 If yes:
-- Save as `jobs/<CompanyName>/Cover letter - <CompanyName>.md`
-- Content guidelines:
+- **Start from the matching template in `jobs/`** - do not write from scratch:
+  - DevRel / Developer Advocate / Developer Evangelist / Developer Educator roles → `jobs/cover-letter-template-devrel.md`
+  - Technical Writer / documentation / technical author roles → `jobs/cover-letter-template-tech-writer.md`
+  - Solutions Engineer / Technical Solutions Engineer roles → `jobs/cover-letter-template-solutions-engineer.md`
+  - For SE roles with strong DevRel overlap, use the SE template but borrow the DevRel template's "I already do DevRel work / want it full-time" paragraph
+- Fill every `[BRACKET]` placeholder with the company/role specifics; delete unused pick-list options
+- Save as `jobs/<Category>/<CompanyName>/Cover letter - <CompanyName>.md`
+- Content guidelines (templates already include these, keep them when filling):
   - LinkedIn offer URL for identification
   - Phone, email, location, willingness to relocate
   - Honest about gaps where applicable
@@ -108,9 +115,10 @@ If yes:
   - Quick learner angle (ProGuard Assembler story)
   - Link to portfolio: `https://pablodevrel.com/`
 - **Never use the em dash character (—). Always use a regular hyphen (-) instead.**
+- Plain URLs only (no markdown links) - Pablo pastes into simple forms
 
 ### 8. Handle application screening questions
-If the user provides application screening questions from the job portal, save them as `jobs/<CompanyName>/application-questions.md` with the questions and notes on how to answer / what stories to prepare.
+If the user provides application screening questions from the job portal, save them as `jobs/<Category>/<CompanyName>/application-questions.md` with the questions and notes on how to answer / what stories to prepare.
 
 ### 9. Writing style (cover letters AND screening question answers)
 Whenever writing a cover letter or answering cover-letter-style screening questions:
