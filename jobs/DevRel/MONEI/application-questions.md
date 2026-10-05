@@ -192,3 +192,44 @@ Cada intento de pago está asociado a una clave única que guarda tu tienda.
 
 Si el cliente recarga la página, envía otra vez la misma solicitud de pago, tu tienda reconoce que ya se procesó y **no cobra otra vez**, simplemente reenvía la confirmación al cliente.
 ```
+
+## Q5. Critique a MONEI docs page
+
+Read [docs.monei.com](https://docs.monei.com). Pick **one** specific page that could be improved. Provide:
+
+- **The exact URL**
+- **What's wrong with it** — confusing structure, missing prerequisites, stale code samples, missing edge cases, bad ordering, weak introduction, etc.
+- **How you'd fix it** — concrete proposal, not "make it better"
+
+> [!TIP]
+> **Pick `https://docs.monei.com/monei-js/overview.md`.**
+>
+> The strongest find, and it is a *missing prerequisite* — one of the things they explicitly list.
+>
+> Every sample on that page hardcodes `paymentId: '{{payment_id}}'`. Nothing on the page says where that value comes from, and there is no link to the integration guide that creates it. A developer copying the Card Input sample gets a literal string and a dead component.
+>
+> **Be honest that the content already exists** at `integrations/build-custom-checkout.md`, which has "Before you begin" and "Step 1: Create Payment (Server-side)". Say the page is the wrong *entry point*, not that the docs lack the content. That is a more surgical and more credible proposal.
+>
+> **Second finding, same page:** the samples end `console.log(result)` after `monei.confirmPayment()`, telling the reader to "check `result.status`" — with no warning that the client-side status is **not authoritative**. The canonical guide says the opposite in capitals: *"you should ALWAYS rely on the result passed to the callback endpoint to update the final order status."* A merchant following the overview page fulfils orders on a status that can later reverse. This is a real ticket.
+>
+> **The fix, concretely:** add two lines at the top of the overview — "Create a payment server-side first, see Step 1" — and one line after `confirmPayment()` saying the client result is provisional and the callback/webhook is authoritative. Link both.
+>
+> Weak answer to avoid: praising docs that are already good. `guides/webhooks.md` is genuinely excellent — retries, duplicates, out-of-order delivery, resends, signature timestamps — and there is nothing to fix there. Do not pick it.
+
+```
+Small things:
+* Em dashes everywhere — >> Very obvious is AI generated text. Is it a bad thing? Not really
+* Here https://docs.monei.com/fraud-prevention/chargebacks/, "A chargeback (in Spanish, retroceso or contracargo) is a forced" >> If you're reading the page in English, you don't need the Spanish translation. It's very obvious that the page was written in English and then automatically translated to Spanish. 
+
+I asked to AI, those are the remarks it made:
+
+### What is paymentId?
+In this snippet https://docs.monei.com/monei-js/overview/#card-input-component and the following ones it mentions `paymentId` and `payment_id` but it doesn't explain where to get them. It assumes you come from https://docs.monei.com/integrations/build-custom-checkout/ where it explains how to create a payment and get the `paymentId`. This is a missing prerequisite
+
+
+But... being honest, your documentation rocks! I see everything is well structured, clear and updated. You guys have a solid foundation and an automation process to keep it that way. My bet is your stack is:
+* 
+* 
+
+
+```
