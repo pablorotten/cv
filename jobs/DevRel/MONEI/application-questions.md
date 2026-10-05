@@ -217,15 +217,14 @@ Read [docs.monei.com](https://docs.monei.com). Pick **one** specific page that c
 > Weak answer to avoid: praising docs that are already good. `guides/webhooks.md` is genuinely excellent — retries, duplicates, out-of-order delivery, resends, signature timestamps — and there is nothing to fix there. Do not pick it.
 
 
-## Stuff I found myself
+## Answer:
+I found a couple of things:
+
 1. In this [english documentation](https://docs.monei.com/fraud-prevention/chargebacks/): "A chargeback (in Spanish, retroceso or contracargo) is a forced...". If you're reading the page in English, you don't need the Spanish translation. It's very obvious that the page was written in Spanish and then automatically translated to English. 
 
 My suggestion: find all the Spanish translations in the English documentation and remove them.
 
-## Reviewing with AI
-I reviewed the Developer guide along with AI (OpenCode + Space Bunny) and we found something:
-
-1. An inprecision in the [Payment Modal section](https://docs.monei.com/monei-js/overview/#payment-modal) comment:
+2. An inprecision in the [Payment Modal section](https://docs.monei.com/monei-js/overview/#payment-modal) comment:
 
 ```
 const result = await monei.confirmPayment({
@@ -235,23 +234,14 @@ const result = await monei.confirmPayment({
 console.log(result);
 ```
 
-The payment might not be completed at this point. The function [confirmPayment](https://docs.monei.com/monei-js/reference/#confirmpayment-function) returns a PaymentResult whose [status](https://docs.monei.com/apis/rest/schemas/payment-status/) might be `SUCCEEDED`, `FAILED`, `PENDING`, etc. The issue is that `PENDING` means the payment is not completed yet. The comment should be changed to something like: `// Payment interaction completed — check result.status, but always rely on the webhook for the final status`.
-
-On top on that, in this [integrations](https://docs.monei.com/integrations/build-custom-checkout/#3-confirm-the-payment-client-side) guide, the code snippet  states just after `await monei.confirmPayment` that `you should always rely on callback endpoint on the server`.
-
-Same thing [here](https://docs.monei.com/integrations/use-payment-modal/#2-handle-payment-interaction-client-side): 
-```
-monei
-    .confirmPayment
-    ...
-      // This result reflects the immediate outcome of the modal interaction (e.g., user closed, initial success).
-      // Always rely on the webhook (Step 3) for the definitive final payment status.
-```
+The payment might not be completed at this point. The function [confirmPayment](https://docs.monei.com/monei-js/reference/#confirmpayment-function) returns a PaymentResult whose [status](https://docs.monei.com/apis/rest/schemas/payment-status/) might be `SUCCEEDED`, `FAILED`, `PENDING`, etc. The issue is that `PENDING` means the payment is not completed yet.
 
 My suggestion:
 I think it would be good to add a comment in the [Payment Modal section](https://docs.monei.com/monei-js/overview/#payment-modal) code snippet to clarify that the result is not definitive and that the webhook should be used for the final status.
 
-2. What is `paymentId`?
+It's true that in the [Developer overview](https://docs.monei.com/developer/#confirm) it says `Always rely on the webhook sent to your server — never the client-side result alone.` but a client might skip that page.
+
+3. What is `paymentId`?
 In this snippet https://docs.monei.com/monei-js/overview/#card-input-component and the following ones it mentions `paymentId` and `payment_id` but it doesn't explain what is this. It assumes you come from https://docs.monei.com/integrations/build-custom-checkout/ where it explains how to create a payment and get the `paymentId`.
 
 My suggestion:
@@ -259,4 +249,4 @@ I think it would be good to add a link to the page where it explains how to crea
 
 
 ## A critique can also be positive right 🙂?
-Your documentation rocks! I see everything is well structured, clear and updated. As I mentioned before, it's obvious you use AI for it **BUT** I can still feel the human touch. And that's great, a perfect mix between AI perfectionistm and human creativity. All the pages are very recently updated. It looks like you guys have a solid foundation and an automation process to keep it that way. My bet is your pipeline is:
+Your documentation rocks! I see everything is well structured, clear and updated. As I mentioned before, it's obvious you use AI for it **BUT** I can still feel the human touch. And that's great, a perfect mix between AI perfectionism and human creativity. All the pages are very recently updated. It looks like you have a solid foundation and an automation process to keep it that way. My bet is your pipeline is:
