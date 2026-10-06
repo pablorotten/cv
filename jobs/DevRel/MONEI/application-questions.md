@@ -214,11 +214,24 @@ Read [docs.monei.com](https://docs.monei.com). Pick **one** specific page that c
 ## Answer:
 I found a couple of things:
 
-1. In this [english documentation](https://docs.monei.com/fraud-prevention/chargebacks/): "A chargeback (in Spanish, retroceso or contracargo) is a forced...". If you're reading the page in English, you don't need the Spanish translation. It's very obvious that the page was written in Spanish and then automatically translated to English. 
+1. Checking how you implement idempotency for Q4 I found [this FAQ section](https://docs.monei.com/developer/#idempotency) explaining it.
+
+I find it a bit confusing. It states that idempotency is not supported - that part is clear. But then it suggests to `look the order up before you rety`, but id doesn't explain what to do with that `orderId`, it doesn't link with any kind of documentation or API. I investigated it and I think I know what a customer has to do in this situation:
+
+Checking [this nice diagram](https://docs.monei.com/integrations/use-payment-modal/#how-it-works) to understand the happy path. I think the problem described here is in the step 1. We sent the `POST /v1/payments` request but we never receive the response with the `payment.id`.
+
+I can't resend the same payment since there's no idempotency, ✅ Clear.
+
+Then the part that is missing: I think a client has to make a `GraphQL query` with the `orderId` [documented here](https://docs.monei.com/apis/graphql/#example-queries) to find the `payment.id` and continue with the happy path.
+
+What I would do is document this `unhappy path` with diagrams and with the specific `GraphQL query` to solve this and link that in this FAQ entry.
+
+
+2. In this [english documentation](https://docs.monei.com/fraud-prevention/chargebacks/): "A chargeback (in Spanish, retroceso or contracargo) is a forced...". If you're reading the page in English, you don't need the Spanish translation. It's very obvious that the page was written in Spanish and then automatically translated to English. 
 
 My suggestion: find all the Spanish translations in the English documentation and remove them.
 
-2. An inprecision in the [Payment Modal section](https://docs.monei.com/monei-js/overview/#payment-modal) comment:
+3. An inprecision in the [Payment Modal section](https://docs.monei.com/monei-js/overview/#payment-modal) comment:
 
 ```
 const result = await monei.confirmPayment({
@@ -235,29 +248,4 @@ I think it would be good to add a comment in the [Payment Modal section](https:/
 
 It's true that in the [Developer overview](https://docs.monei.com/developer/#confirm) it says `Always rely on the webhook sent to your server — never the client-side result alone.` but a client might skip that page.
 
-3. What is `paymentId`?
-In the snippets in https://docs.monei.com/monei-js/overview/#card-input-component it mentions `paymentId` and `payment_id` but it doesn't explain what is this. It assumes you come from https://docs.monei.com/integrations/build-custom-checkout/ where it explains how to create a payment and get the `paymentId`.
-
-My suggestion:
-I think it would be good to add a link to the page where it explains how to create a payment and get the `paymentId` in the [Card Input Component section](https://docs.monei.com/monei-js/overview/#card-input-component) and the following ones.
-
-
-## A critique can also be positive right 🙂?
-Your documentation is genuinely strong. Structure is consistent, the pages are recently updated, and the schema references are airtight.
-
-My bet is your documentation setup mixes two things:
-
-* **Generated:** the SDKs and the schema pages under [/apis/rest/schemas](https://docs.monei.com/apis/rest/schemas/apiexception), built from your OpenAPI spec. These can't drift, because no one edits them by hand.
-* **Hand-written:** the guides and reference pages. This is where drift happens, because every claim lives in one place with no one comparing it to the others.
-
-`confirmPayment` is a good example. Its contract is restated three times across three pages:
-
-* [monei-js/overview#payment-modal](https://docs.monei.com/monei-js/overview/#payment-modal) — says `Payment completed — check result.status`
-* [build-custom-checkout#3](https://docs.monei.com/integrations/build-custom-checkout/#3-confirm-the-payment-client-side) — says `you should ALWAYS rely on the result passed to the callback endpoint`
-* [use-payment-modal#2](https://docs.monei.com/integrations/use-payment-modal/#2-handle-payment-interaction-client-side) — says `Always rely on the webhook (Step 3) for the definitive final payment status`
-
-The second and third are correct. The first is misleading. That's not carelessness, it's what happens when the generated half and the written half have different review paths.
-
-My suggestion: one shared include for that wording, so `confirmPayment`'s contract has a single source of truth and can't drift again. An alternative would be a CI rule that fails the build when a snippet calling `confirmPayment` doesn't mention the webhook — cheaper to adopt, but it checks for the word rather than the meaning, so I'd start with the include.
-
-I think it would be good to unify the comments across all the pages to avoid confusion. Having a single source of truth for the `confirmPayment` function would be ideal. 
+4. The Card Input and Payment Modal samples use `paymentId` without ever saying where it comes from. Easy fix: one line pointing to the step that creates the payment.
