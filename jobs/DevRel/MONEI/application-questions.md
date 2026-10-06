@@ -248,4 +248,4 @@ I think it would be good to add a comment in the [Payment Modal section](https:/
 
 It's true that in the [Developer overview](https://docs.monei.com/developer/#confirm) it says `Always rely on the webhook sent to your server — never the client-side result alone.` but a client might skip that page.
 
-4. The Card Input and Payment Modal samples use `paymentId` without ever saying where it comes from. Easy fix: one line pointing to the step that creates the payment.
+4. The Card Input and [Payment Modal](https://docs.monei.com/integrations/use-payment-modal/) samples use `paymentId` without ever saying where it comes from. Easy fix: one line pointing to [Step 1: Create Payment (Server-side)](https://docs.monei.com/integrations/build-custom-checkout/#1-create-payment-server-side).
