@@ -3,6 +3,7 @@ jobs/*
 jobs/DevRel/*
 !jobs/DevRel/MONEI/
 !jobs/DevRel/TYK/
+!jobs/DevRel/Voxgig/
 !jobs/SolutionsEngineer/
 jobs/SolutionsEngineer/*
 !jobs/SolutionsEngineer/Aircall/
