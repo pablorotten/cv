@@ -26,43 +26,95 @@ What algorithm have you implemented or invented that you are most happy with? Ho
 
 **Answer:**
 
-We had two databases: `BusinessDB` and `MetaDataDB`. Together they stored the full history of everything.
+### The context
+
+This matters, because it explains why the architecture looks the way it does.
+
+The app was not designed to keep history. It was designed to run optimizations on current data: clinical coordinators enter today's data, the app processes it, and plans come out. In that design the present is all that matters, so nothing was built to keep yesterday's version of anything.
+
+Then the requirements changed. After a while, customers started asking for historical aggregations, and they were willing to pay for them. So it stopped being a nice to have and became revenue, and we had to add versioning to a system that had no place for it. It went into a separate catalog database because that is where the existing metadata about tables and relationships already lived. The complexity was a retrofit, not a plan.
+
+### The data model
+
+We had two databases: `BusinessDB` (the actual data) and `MetaDataDB` (data about the data). Together they stored the full history.
 
 Nothing was ever overwritten. Every time you edited something, you saved a new snapshot with a bumped version instead of editing the existing entry. So "Lay's Chips" was never a single row; it was all of its snapshots.
 
-`BusinessDB` --> Products table:
+`BusinessDB` → `products` table:
 
 ```
-{id:123, name:"Lays chips", price:"2.00", description:"blah"}
-{id:252, name:"Lays chips", price:"2.20", description:"blah, blah"}
-{id:990, name:"Lay's chips", price:"3.00", description:"blah, blah, blah, blah"}
+{id: 123, name: Lays chips, price: 2.00, description: blah}
+{id: 252, name: Lays chips, price: 2.20, description: blah blah}
+{id: 990, name: Lay's chips, price: 3.00, description: blah blah blah blah}
 ```
 
-The rows themselves carry no version. It is `MetaDataDB` that knows these three rows are the same product, and that `123` is `version 1`, `252` is `version 2` and `990` is `version 3`. The latest version with id `990` is the current Lay's Chips, but the older ones still matter. Why? not only to be able to revert to an older version, it's because of **references**.
+The rows carry no version. Entity 12 is the logical product, Lay's Chips, and it never changes and has no version of its own. It is the thing that appears as row 123 in v1, row 252 in v2 and row 990 in v3.
 
-When you created a shipment in 2021, it was linked to whichever snapshot of Lay's Chips was current at that time:
-
-`BusinessDB` → Shipments table:
+`MetaDataDB` → `versions` table:
 
 ```
-{id:9025, date:"2021", destination:"Germany", item:252}
+{id: 501, business_row_id: 123, version: 1}
+{id: 502, business_row_id: 252, version: 2}
+{id: 503, business_row_id: 990, version: 3}
 ```
 
-`item:252` means "this shipment shipped product snapshot 252" (Lay's Chips version 2). It stays pinned to that snapshot forever: even after a later version changed the price, the 2021 shipment still points to the version it actually shipped.
+When you created a shipment of Lay's chips to Finland in 2021, the shipment itself was just its own data:
 
-The problem: list every shipment that shipped "Lay's Chips".
+`BusinessDB` → `shipments` table:
 
-The algorithm:
+```
+{id: 9025, date: 2021, destination: Finland}
+```
 
-- Ask `MetaDataDB` for every snapshot that represents Lay's Chips on `BusinessDB`: {123, 252, 990}.
-- Then, in `BusinessDB`, find every shipment whose `item` is one of those ids, and collect them.
-- Where references chained, like a shipment referencing something that referenced something else; follow those hops too, so it was not always a single step.
+And his MetaDataDB counterpart
 
-This was complex because the backend, in Scala, had to merge queries from two different databases (`MetaDataDB` and `BusinessDB`) across multiple tables and multiple reference hops. Also the real requirement was not as simple as this one, I had to join multiple tables with different constraints.
+`MetaDataDB` → `versions` table:
+```
+{id: 601, business_row_id: 9025, version: 1}
+```
 
-The outcome:
+But... What are we shipping? Where's the link between the shipment and the product we're shipping?
+The reference was not stored in that BusinessDB row. It lives in another `MetaDataDB` table
 
-I spotted the root cause: two legacy databases doing one job. The algorithm worked, was complex to understand and hard to mantain. Was a big chunk of code.
+A `reference` is a pair of ids from the `versions` table:
+
+`MetaDataDB` → `references` table:
+
+```
+{id: 9001, from_id: 601, to_id: 501}
+```
+
+Reading `id` 9001 gives you two ids and nothing else. No "Lay's Chips", no "shipment", no "Finland". You look up `from_id` 601 in `versions` and discover it is shipments v1, business row 9025. You look up `to_id` 501 and discover it is Lay's Chips v1, business row 123. All the meaning comes from the join.
+
+Here is the awkward part. That lookup happens entirely inside `MetaDataDB`, but row 9025 only exists in `BusinessDB`. So resolving a single reference was a round trip: read the reference from `MetaDataDB`, use `versions` to translate it into a real row id, go back to `BusinessDB`, and only then read the row.
+
+### The problem
+
+List every shipment of Lay's Chips between Belgium and Finland, across all stores.
+
+Something that would have been straightforward in a relational DB becomes a complex problem with this particular model.
+
+In a normal database this is one join. Shipment has `product_id`, product has `id`, you join and filter. You never think about versions, because a row *is* the current truth. When the price changes you update it, there is one Lay's Chips row, and historical accuracy is what you pay for that simplicity.
+
+We inverted that trade. We guarantee the 2021 shipment still points at the price that was real in 2021, and we get it by keeping every snapshot forever. So "Lay's Chips" is not one row, it is three, and no single column anywhere says "this shipment shipped Lay's Chips." The link exists only as a chain through two tables in another database: entity, version, row. And "across all stores" makes it worse, because each store's Lay's Chips is a separate entity that must be walked separately and never conflated.
+
+### The algorithm
+
+- Start from the logical entity, Lay's Chips in this store (entity 12).
+- Ask `versions` for every `business_row_id` it ever occupied: {123, 252, 990}, which gives you ids 501, 502 and 503.
+- Find every entry in `references` pointing at any of those ids.
+- For each one, read the other side of the link, and resolve it through `versions` to find out what it is and which `business_row_id` holds it.
+- Go to `BusinessDB` and read that row to get the real shipment. Repeat for every store, and follow any further hops where a shipment references something that references something else.
+
+Two stores and a chain of lookups where every answer required bouncing between them. This was complex because the backend, in Scala, had to merge queries from both databases across multiple tables and multiple reference hops. And the real requirement was never as simple as this example; I had to join multiple tables with different constraints.
+
+It was not hard because it was complex. It was hard because we had deliberately made "the current version" not exist.
+
+### The outcome
+
+Splitting the databases did not only make reads slower. It removed the database's ability to enforce the relationships, because a foreign key cannot cross two databases. Instead of a constraint the engine guarantees, we got a row in a table that nothing enforces, so the application had to check every reference by hand on every write.
+
+I spotted the root cause: two legacy databases doing one job. The algorithm worked, but it was hard to understand, hard to maintain, and a big chunk of code.
 
 With a single database, my Scala code that merged two query results could have collapsed into a single query, improving both performance and maintainability, and it was easier to back up and deploy.
 

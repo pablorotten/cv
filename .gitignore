@@ -8,3 +8,6 @@ jobs/DevRel/*
 jobs/SolutionsEngineer/*
 !jobs/SolutionsEngineer/Aircall/
 jobs/DevRel/MONEI/application.html
+
+# Vendored third-party opencode skill (reinstall from https://github.com/cathrynlavery/diagram-design)
+.opencode/skills/diagram-design/
