@@ -109,11 +109,7 @@ With a single database, my Scala code that merged two query results collapsed in
 
 I explained the problem carefully to my department and convinced management to invest in merging the two databases, which we ended up doing.
 
-## 3. SaaS developer experience
-
-When you visit the website of a SaaS company that has an API, what do you look for? What do you think is missing in most cases?
-
-**Answer:**
+## 3. When you visit the website of a SaaS company that has an API, what do you look for? What do you think is missing in most cases?
 
 When I visit a SaaS API, I look for two kinds of dealbreakers: business and technical.
 
@@ -126,7 +122,9 @@ I also care about AI:
 2. An MCP server so agents can search efficiently instead of guessing.
 3. Skills that encode the integration workflow.
 
-If the spec is good, I generate a client, make a real request and look at the actual response. That is how I can have an idea how this API will be modeled in my app.
+If the spec is good, I generate a client, make a real request and look at the actual response. That is how I can see how this API would be modeled in my app.
+
+What is usually missing is exactly that last part: docs written only for humans, with no markdown, no OpenAPI spec and no MCP server, no sandbox, and errors that just say "something went wrong". The worst one now is docs that drift from the real API, because a stale spec makes an AI confidently write broken code.
 
 ## 4. Client types
 
