@@ -2,7 +2,11 @@
 
 > Reply by email, writing each answer beneath the relevant question. Paste plain, no markdown.
 
-## 1. Tell us about your personal experience organising, attending, promoting, or speaking at a developer event. What would you have done to improve the event?
+## 1. Developer events
+
+Tell us about your personal experience organising, attending, promoting, or speaking at a developer event. What would you have done to improve the event?
+
+**Answer:**
 
 Last year I spoke at N-SIDE Connect 2025, the clinical-supply event my company runs for its customers in Belgium. I presented a session called "Leveraging APIs and system integrations to operationalise a supply chain strategy".
 
@@ -24,15 +28,17 @@ What algorithm have you implemented or invented that you are most happy with? Ho
 
 ### The context
 
-The app was not designed to keep history. It was designed to run optimizations on current data, prevent data loss and ease going back and forth with different combinations of data until the customer finds the optimal.
+The app is not designed to aggregate large historical data. It is designed to run optimizations on current data, prevent data loss and ease users going back and forth with different combinations of data until they find the optimal.
 
-Then the requirements changed. After a while, customers started asking for historical aggregations, and they were willing to pay for them. So it stopped being a nice to have and became revenue, and we had to add versioning to a system that had no place for it. 
+Then the requirements change. After a while, customers start asking for historical aggregations, and they are willing to pay for them. So it stops being a nice to have and becomes revenue, and we add versioning to a system that has no place for it.
 
 ### The data model
 
-We had two databases: `BusinessDB` (the actual data) and `MetaDataDB` (data about the data). Together they stored the full history.
+> **Note:** I am using Lay's Chips and shipments below instead of the real clinical supply data. Same structure, easier to follow. The table and column names are simplified.
 
-Nothing was ever overwritten. Every time you edited something, you saved a new snapshot with a bumped version instead of editing the existing entry. So "Lay's Chips" was never a single row; it was all of its snapshots.
+We have two databases: `BusinessDB` (the actual data) and `MetaDataDB` (data about the data). Together they store the full history.
+
+Nothing is ever overwritten. Every time you edit something, you save a new snapshot with a bumped version instead of editing the existing entry. So "Lay's Chips" is never a single row; it is all its snapshots.
 
 `BusinessDB` → `products` table:
 
@@ -42,72 +48,66 @@ Nothing was ever overwritten. Every time you edited something, you saved a new s
 {id: 990, name: Lay's chips, price: 3.00, description: blah blah blah blah}
 ```
 
-The rows carry no version. Entity 12 is the logical product, Lay's Chips, and it never changes and has no version of its own. It is the thing that appears as row 123 in v1, row 252 in v2 and row 990 in v3.
+The rows carry no version. It is `MetaDataDB` that knows these three rows are the same product, and that 123 is version 1, 252 is version 2 and 990 is version 3.
 
 `MetaDataDB` → `versions` table:
 
 ```
-{id: 501, entity_id: 12, business_row_id: 123, version: 1}
-{id: 502, entity_id: 12, business_row_id: 252, version: 2}
-{id: 503, entity_id: 12, business_row_id: 990, version: 3}
-{id: 601, entity_id: 40, business_row_id: 9025, version: 1}
+{id: 501, business_row_id: 123, version: 1}
+{id: 502, business_row_id: 252, version: 2}
+{id: 503, business_row_id: 990, version: 3}
 ```
 
-Entity 12 is the one that answers "how do I know these three rows are the same product". `entity_id` never changes and has no version of its own; it is the logical product. Each version row binds it to a different snapshot. That column is also why a store cannot be mixed up with another: Lay's Chips in Brussels and Lay's Chips in Lyon are different entity_ids, the same way two studies of the same drug are separate products.
+The latest version with id 990 is the current Lay's Chips, but the older ones still matter. Why? not only to be able to revert to an older version, it's because of **references**.
 
-When you created a shipment of Lay's chips to Finland in 2021, the shipment itself was just its own data:
+Then shipments. Similar to products, they have a date and a destination.
 
 `BusinessDB` → `shipments` table:
 
 ```
-{id: 9025, date: 2021, destination: Finland}
+{id: 9025, date: 2021, destination: Germany}
 ```
 
 But... what are we shipping? Where is the link between the shipment and the product?
 
-The reference was not stored in that `BusinessDB` row. It lives in another `MetaDataDB` table. A reference is a pair of ids from the `versions` table:
+The reference is not stored in that `BusinessDB` row. It lives in `MetaDataDB`.
 
 `MetaDataDB` → `references` table:
 
 ```
-{id: 9001, from_id: 601, to_id: 502}
+{id: 9001, from_id: 845, to_id: 502}
 ```
 
-This reads as "there is a reference between these two ids, and each id represents an entity plus a version." Reading `id` 9001 gives you two ids and nothing else: no "Lay's Chips", no "shipment", no "Finland". You look up `from_id` 601 and discover it is shipments v1, business row 9025. You look up `to_id` 502 and discover it is Lay's Chips v2, business row 252. All the meaning comes from the join.
+This reads as "there is a reference between these two ids, and each id represents an entity plus a version."
 
-Here is the awkward part. That lookup happens entirely inside `MetaDataDB`, but row 9025 only exists in `BusinessDB`. So resolving a single reference was a round trip: read the reference from `MetaDataDB`, use `versions` to translate it into a real row id, go back to `BusinessDB`, and only then read the row.
+Here is the awkward part. Those coordinates do not exist in `BusinessDB`. The real row is id 252, and only `MetaDataDB` knows that entity "Lay's Chips" in version 2 equals row 252 in `BusinessDB`. So resolving a single reference is a round trip: read the reference from `MetaDataDB`, resolve entity plus version into a real row id, go back to `BusinessDB`, and only then read the row.
 
 ### The problem
 
-List every shipment of Lay's Chips to Finland, across all stores.
+List the latest version of every shipment that shipped Lay's Chips to Finland.
 
 Something that would have been straightforward in a relational DB becomes a complex problem with this particular model.
 
-In a normal database this is one join. Shipment has `product_id`, product has `id`, you join and filter. You never think about versions, because a row *is* the current truth. When the price changes you update it, there is one Lay's Chips row, and historical accuracy is what you pay for that simplicity.
-
-We inverted that trade. We guarantee the 2021 shipment still points at the price that was real in 2021, and we get it by keeping every snapshot forever. So "Lay's Chips" is not one row, it is three, and no single column anywhere says "this shipment shipped Lay's Chips." The link exists only as a chain through two tables in another database: entity, version, row. And "across all stores" makes it worse, because each store's Lay's Chips is a separate entity that must be walked separately and never conflated.
-
 ### The algorithm
 
-- Start from the logical entity, Lay's Chips in this store (entity 12).
-- Ask `versions` for every `business_row_id` it ever occupied: {123, 252, 990}, which gives you ids 501, 502 and 503.
-- Find every entry in `references` pointing at any of those ids.
-- For each one, read the other side of the link, and resolve it through `versions` to find out what it is and which `business_row_id` holds it.
-- Go to `BusinessDB` and read that row to get the real shipment. Repeat for every store, and follow any further hops where a shipment references something that references something else.
+- Ask `MetaDataDB` for every row id in `BusinessDB` that corresponds to any version of Lay's Chips.
+- For each one, find in `MetaDataDB` the references pointing at it.
+- Resolve each reference the same way, to get the row ids of the shipments.
+- Go back to `BusinessDB` and check whether each shipment goes to Finland.
 
-Two stores and a chain of lookups where every answer required bouncing between them. This was complex because the backend, in Scala, had to merge queries from both databases across multiple tables and multiple reference hops. And the real requirement was never as simple as this example; I had to join multiple tables with different constraints.
+This is a very simplified version of the real problem. The actual work has many more layers: multiple reference hops, multiple tables, and different constraints on each join.
 
-It was not hard because it was complex. It was hard because we had deliberately made "the current version" not exist.
+It is not hard because it is complex. It is hard because we deliberately made "the current version" not exist.
 
 ### The outcome
 
-Splitting the databases did not only make reads slower. It removed the database's ability to enforce the relationships, because a foreign key cannot cross two databases. Instead of a constraint the engine guarantees, we got a row in a table that nothing enforces, so the application had to check every reference by hand on every write.
+Splitting the databases did not only make reads slower. It also removed the safety net: when two tables live in the same database, the database itself guarantees that a reference points at something real. Across two databases it cannot, so nothing checks it, and my code ended up validating every reference by hand.
 
 I spotted the root cause: two legacy databases doing one job. The algorithm worked, but it was hard to understand, hard to maintain, and a big chunk of code.
 
-With a single database, my Scala code that merged two query results could have collapsed into a single query, improving both performance and maintainability, and it was easier to back up and deploy.
+With a single database, my Scala code that merged two query results collapsed into a single query, improving both performance and maintainability, and it was easier to back up and deploy.
 
-I had to explain the problem carefully to my department and convince management to invest in merging the two databases.
+I explained the problem carefully to my department and convinced management to invest in merging the two databases, which we ended up doing.
 
 ## 3. SaaS developer experience
 
@@ -136,13 +136,13 @@ What is your personal "pop psychology" classification of client types, and what 
 
 Off the top of my head, I deal with three types:
 
-- The engineer (nerd). My usual point of contact. We speak the same language, so the conversation is smooth. The small caveat: either of us can lack a piece of business context, and we can't always explain it because we don't own it. The talk stalls until a domain expert unblocks it.  
+- The engineer (nerd). My usual point of contact. We speak the same language, so the conversation is smooth. The small caveat: either of us can lack a piece of business context, and we can't always explain it because we don't own it. The talk stalls until a domain expert unblocks it.
 Strategy: talk tech freely, but flag business gaps early and pull in an expert instead of guessing.
 
-- The consultant. They use the app behind the API. Strong on the business, not technical. If I have to explain a technical problem, I always translate it into UI, screens, and business language. If I can't tie it to something visual ("clicking fast here triggers a race condition"), I use a metaphor. They have to be concrete with me too: "I click this button, I want that number; this other number is wrong." I don't need the business meaning, I need to reproduce the error, read the log, and find a workaround. They're pragmatic; they always want to move forward.  
+- The consultant. They use the app behind the API. Strong on the business, not technical. If I have to explain a technical problem, I always translate it into UI, screens, and business language. If I can't tie it to something visual ("clicking fast here triggers a race condition"), I use a metaphor. They have to be concrete with me too: "I click this button, I want that number; this other number is wrong." I don't need the business meaning, I need to reproduce the error, read the log, and find a workaround. They're pragmatic; they always want to move forward.
 Strategy: no jargon; map everything to what they see. Match their pragmatism: reproduce, workaround, then explain.
 
-- The corpo. They care about risk, numbers, efficiency, and legal.  
+- The corpo. They care about risk, numbers, efficiency, and legal.
 Strategy: lead with impact (time, money, risk). One sentence, no rabbit holes.
 
 ## 5. How you work
