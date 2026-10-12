@@ -2,23 +2,19 @@
 
 > Reply by email, writing each answer beneath the relevant question. Paste plain, no markdown.
 
-## 1. Developer events
+## 1. Tell us about your personal experience organising, attending, promoting, or speaking at a developer event. What would you have done to improve the event?
 
-Tell us about your personal experience organising, attending, promoting, or speaking at a developer event. What would you have done to improve the event?
-
-**Answer:**
-
-Last year I spoke at [N-SIDE Connect 2025](https://www.n-side.com/en/news/n-side-connect-innovation-in-clinical-supplies-2025), the clinical-supply event my company runs for its customers in Belgium. I presented a session "Leveraging APIs and system integrations to operationalise a supply chain strategy".
+Last year I spoke at N-SIDE Connect 2025, the clinical-supply event my company runs for its customers in Belgium. I presented a session called "Leveraging APIs and system integrations to operationalise a supply chain strategy".
 
 The audience was mixed: software engineers, but also managers, supply-chain experts and clinical coordinators. I designed the talk as an hourglass: open broad for the business stakeholders, narrow into the technical for the engineers, then widen back out to the ROI for the decision-makers.
 
-Connecting the business and technical point of view was the real challenge. So rather than just saying "coordinators save four hours a week on data entry", I make the business connection out loud: "by removing four hours of data entry, coordinators can spend that time refining risk, preventing supply stockouts and cutting drug waste by 15%." One fact, bridged for both halves of the room.
+Connecting the business and technical point of view was the real challenge. So rather than just saying "coordinators save four hours a week on data entry", I make the business connection out loud: "by removing four hours of data entry, coordinators can spend that time refining risk thresholds, preventing supply stockouts and cutting drug waste by 15%." One fact, bridged for both halves of the room.
 
-Everyone knows how Excel looks like, so I showed a huge spreadsheet and then showed how it collapses into a small JSON payload a machine can process: technical for the developers, but still familiar for everyone else.
+Everyone knows what Excel looks like, so I showed a huge spreadsheet and then showed how it collapses into a small JSON payload a machine can process: technical for the developers, but still familiar for everyone else.
 
-Q&A with a mixed audience is hard: I can't control what people ask, and a technical question can lose the rest of the room. I set the ground rules up front (questions at the end, technical deep-dives after the session). For business or pricing questions, I never guess without the data; we had the relevant manager and a salesperson on hand for that.
+Q&A with a mixed audience is hard: I cannot control what people ask, and a technical question can lose the rest of the room. I set the ground rules up front (questions at the end, technical deep-dives after the session). For business or pricing questions, I never guess without the data; we had the relevant manager and a salesperson on hand for that.
 
-If I ran it again, I'd fix the one thing I actually missed: a formal, scheduled post-talk slot for the engineers to ask technical questions. Some of them came over informally afterwards, but that space should have been announced and planned. The best technical questions deserve a room where you can go deep.
+If I ran it again, I would fix the one thing I actually missed: a formal, scheduled post-talk slot for the engineers to ask technical questions. Some of them came over informally afterwards, but that space should have been announced and planned. The best technical questions deserve a room where you can go deep.
 
 ## 2. Algorithms and problem-solving
 
@@ -28,11 +24,9 @@ What algorithm have you implemented or invented that you are most happy with? Ho
 
 ### The context
 
-This matters, because it explains why the architecture looks the way it does.
+The app was not designed to keep history. It was designed to run optimizations on current data, prevent data loss and ease going back and forth with different combinations of data until the customer finds the optimal.
 
-The app was not designed to keep history. It was designed to run optimizations on current data: clinical coordinators enter today's data, the app processes it, and plans come out. In that design the present is all that matters, so nothing was built to keep yesterday's version of anything.
-
-Then the requirements changed. After a while, customers started asking for historical aggregations, and they were willing to pay for them. So it stopped being a nice to have and became revenue, and we had to add versioning to a system that had no place for it. It went into a separate catalog database because that is where the existing metadata about tables and relationships already lived. The complexity was a retrofit, not a plan.
+Then the requirements changed. After a while, customers started asking for historical aggregations, and they were willing to pay for them. So it stopped being a nice to have and became revenue, and we had to add versioning to a system that had no place for it. 
 
 ### The data model
 
@@ -53,10 +47,13 @@ The rows carry no version. Entity 12 is the logical product, Lay's Chips, and it
 `MetaDataDB` → `versions` table:
 
 ```
-{id: 501, business_row_id: 123, version: 1}
-{id: 502, business_row_id: 252, version: 2}
-{id: 503, business_row_id: 990, version: 3}
+{id: 501, entity_id: 12, business_row_id: 123, version: 1}
+{id: 502, entity_id: 12, business_row_id: 252, version: 2}
+{id: 503, entity_id: 12, business_row_id: 990, version: 3}
+{id: 601, entity_id: 40, business_row_id: 9025, version: 1}
 ```
+
+Entity 12 is the one that answers "how do I know these three rows are the same product". `entity_id` never changes and has no version of its own; it is the logical product. Each version row binds it to a different snapshot. That column is also why a store cannot be mixed up with another: Lay's Chips in Brussels and Lay's Chips in Lyon are different entity_ids, the same way two studies of the same drug are separate products.
 
 When you created a shipment of Lay's chips to Finland in 2021, the shipment itself was just its own data:
 
@@ -66,31 +63,23 @@ When you created a shipment of Lay's chips to Finland in 2021, the shipment itse
 {id: 9025, date: 2021, destination: Finland}
 ```
 
-And his MetaDataDB counterpart
+But... what are we shipping? Where is the link between the shipment and the product?
 
-`MetaDataDB` → `versions` table:
-```
-{id: 601, business_row_id: 9025, version: 1}
-```
-
-But... What are we shipping? Where's the link between the shipment and the product we're shipping?
-The reference was not stored in that BusinessDB row. It lives in another `MetaDataDB` table
-
-A `reference` is a pair of ids from the `versions` table:
+The reference was not stored in that `BusinessDB` row. It lives in another `MetaDataDB` table. A reference is a pair of ids from the `versions` table:
 
 `MetaDataDB` → `references` table:
 
 ```
-{id: 9001, from_id: 601, to_id: 501}
+{id: 9001, from_id: 601, to_id: 502}
 ```
 
-Reading `id` 9001 gives you two ids and nothing else. No "Lay's Chips", no "shipment", no "Finland". You look up `from_id` 601 in `versions` and discover it is shipments v1, business row 9025. You look up `to_id` 501 and discover it is Lay's Chips v1, business row 123. All the meaning comes from the join.
+This reads as "there is a reference between these two ids, and each id represents an entity plus a version." Reading `id` 9001 gives you two ids and nothing else: no "Lay's Chips", no "shipment", no "Finland". You look up `from_id` 601 and discover it is shipments v1, business row 9025. You look up `to_id` 502 and discover it is Lay's Chips v2, business row 252. All the meaning comes from the join.
 
 Here is the awkward part. That lookup happens entirely inside `MetaDataDB`, but row 9025 only exists in `BusinessDB`. So resolving a single reference was a round trip: read the reference from `MetaDataDB`, use `versions` to translate it into a real row id, go back to `BusinessDB`, and only then read the row.
 
 ### The problem
 
-List every shipment of Lay's Chips between Belgium and Finland, across all stores.
+List every shipment of Lay's Chips to Finland, across all stores.
 
 Something that would have been straightforward in a relational DB becomes a complex problem with this particular model.
 
