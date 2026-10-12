@@ -126,11 +126,7 @@ If the spec is good, I generate a client, make a real request and look at the ac
 
 What is usually missing is exactly that last part: docs written only for humans, with no markdown, no OpenAPI spec and no MCP server, no sandbox, and errors that just say "something went wrong". The worst one now is docs that drift from the real API, because a stale spec makes an AI confidently write broken code.
 
-## 4. Client types
-
-What is your personal "pop psychology" classification of client types, and what is the best strategy for dealing with each type?
-
-**Answer:**
+## 4. What is your personal "pop psychology" classification of client types, and what is the best strategy for dealing with each type?
 
 Off the top of my head, I deal with three types:
 
@@ -140,8 +136,8 @@ Strategy: talk tech freely, but flag business gaps early and pull in an expert i
 - The consultant. They use the app behind the API. Strong on the business, not technical. If I have to explain a technical problem, I always translate it into UI, screens, and business language. If I can't tie it to something visual ("clicking fast here triggers a race condition"), I use a metaphor. They have to be concrete with me too: "I click this button, I want that number; this other number is wrong." I don't need the business meaning, I need to reproduce the error, read the log, and find a workaround. They're pragmatic; they always want to move forward.
 Strategy: no jargon; map everything to what they see. Match their pragmatism: reproduce, workaround, then explain.
 
-- The corpo. They care about risk, numbers, efficiency, and legal.
-Strategy: lead with impact (time, money, risk). One sentence, no rabbit holes.
+- The corpo. They care about risk, numbers, efficiency, and legal. I deal with them much less than the other two: mostly at events, or when they are invited into my company's offices. It is not part of my daily job.
+Strategy: lead with impact (time, money, risk). Keep it short and direct.
 
 ## 5. How you work
 
