@@ -6,7 +6,6 @@
 
 Tell us about your personal experience organising, attending, promoting, or speaking at a developer event. What would you have done to improve the event?
 
-**Answer:**
 
 Last year I spoke at N-SIDE Connect 2025, the clinical-supply event my company runs for its customers in Belgium. I presented a session called "Leveraging APIs and system integrations to operationalise a supply chain strategy".
 
@@ -24,7 +23,6 @@ If I ran it again, I would fix the one thing I actually missed: a formal, schedu
 
 What algorithm have you implemented or invented that you are most happy with? How did you arrive at the working solution, and what problems does it still have?
 
-**Answer:**
 
 ### The context
 
@@ -56,6 +54,10 @@ The rows carry no version. It is `MetaDataDB` that knows these three rows are th
 {id: 501, business_row_id: 123, version: 1}
 {id: 502, business_row_id: 252, version: 2}
 {id: 503, business_row_id: 990, version: 3}
+...
+{id: 601, business_row_id: 9025, version: 1}
+{id: 845, business_row_id: 9522, version: 1}
+{id: 889, business_row_id: 9855, version: 1}
 ```
 
 The latest version with id 990 is the current Lay's Chips, but the older ones still matter. Why? not only to be able to revert to an older version, it's because of **references**.
@@ -66,11 +68,13 @@ Then shipments. Similar to products, they have a date and a destination.
 
 ```
 {id: 9025, date: 2021, destination: Germany}
+{id: 9522, date: 2023, destination: Finland}
+{id: 9855, date: 2024, destination: Spain}
 ```
 
 But... what are we shipping? Where is the link between the shipment and the product?
 
-The reference is not stored in that `BusinessDB` row. It lives in `MetaDataDB`.
+The reference is not stored in those `BusinessDB` rows. It lives in `MetaDataDB`.
 
 `MetaDataDB` → `references` table:
 
@@ -78,9 +82,11 @@ The reference is not stored in that `BusinessDB` row. It lives in `MetaDataDB`.
 {id: 9001, from_id: 845, to_id: 502}
 ```
 
-This reads as "there is a reference between these two ids, and each id represents an entity plus a version."
+This reads as "the 2023 shipment to Finland shipped Lay's Chips, version 2."
 
-Here is the awkward part. Those coordinates do not exist in `BusinessDB`. The real row is id 252, and only `MetaDataDB` knows that entity "Lay's Chips" in version 2 equals row 252 in `BusinessDB`. So resolving a single reference is a round trip: read the reference from `MetaDataDB`, resolve entity plus version into a real row id, go back to `BusinessDB`, and only then read the row.
+Here is the awkward part. Those ids do not mean anything on their own. You look up 845 in `versions` and discover it is shipments version 1, business row 9522. You look up 502 and discover it is Lay's Chips version 2, business row 252. All the meaning comes from the join.
+
+And even then you have not read any actual data yet. Row 9522 and row 252 live in `BusinessDB`, not in `MetaDataDB`. So resolving a single reference is a round trip: read the reference from `MetaDataDB`, use `versions` to translate both ids into real row ids, go back to `BusinessDB`, and only then read the rows.
 
 ### The problem
 
@@ -139,21 +145,24 @@ Strategy: no jargon; map everything to what they see. Match their pragmatism: re
 - The corpo. They care about risk, numbers, efficiency, and legal. I deal with them much less than the other two: mostly at events, or when they are invited into my company's offices. It is not part of my daily job.
 Strategy: lead with impact (time, money, risk). Keep it short and direct.
 
-## 5. How you work
-
-How do you like to work? What is your process, and what do you need from us to do your best work?
-
-**Answer:**
+## 5. How do you like to work? What is your process, and what do you need from us to do your best work?
 
 I like to work written-first and async. I build a small thing, then I explain it. I share drafts early and iterate. I use AI to go faster, but I keep the creative part: what to say, what to show, where the friction is.
 
-My process starts as a confused first-time user.
+I put myself in the situation of a noob user and take a lot of notes:
+1. Website: is it obvious what the product is in 30 seconds?
+2. Docs: I start with a tutorial and reproduce it locally. I write down every bit of friction, and how I would fix it. If the tutorial is not easy and high value, I design a better one.
+3. The spec: auth, errors, rate limits, a real OpenAPI spec with examples, a sandbox. If something is missing, I note it and treat it as the first thing to fix.
+4. Videos: if a developer watches, do they think "ah, so that is it," or is it corporate noise? I want real problems this tool actually solves. And are they highlighting technical features competitors do not have? Then I think about visual ways to show that: a diagram, a short clip, a longer walkthrough.
 
-1. Your website: is it obvious what the product is in 30 seconds?
-2. Your docs: I start with a tutorial and reproduce it locally. I write down every bit of friction, and how I would fix it. If the tutorial is not straightforward, easy, and high value, I design a better one.
-3. The spec: same bar as question 3. Auth, errors, rate limits, a real OpenAPI spec with examples, a sandbox. If those are missing, that is the work.
-4. Your videos: if a developer watches, do they think "ah, so that is it," or is it corporate noise? I want real problems this tool actually solves. Then I sketch better ones: a diagram, a short clip, a worked example.
+Across those 4 steps, I also take note of good things. What I like and what I find original. I also learn in the process.
 
-PearNote is the example. I wanted to understand P2P well enough to explain it, so I learned the concepts first (no server, two phones, deterministic merge), then the Holepunch stack I actually needed: Autopass, Autobase, Hypercore, Corestore, Hyperswarm, BlindPairing. Then I built a serverless Android app: one phone creates a note and an invite, the other joins, both lists stay in sync with no cloud. Then I wrote HOW-IT-WORKS.md and recorded a video walking through the layers. Learn the idea, learn the stack, build the thing, then explain it.
+[PearNote](https://www.youtube.com/watch?v=B8783WSrCjI) is the example. I wanted to understand P2P well enough to explain it, so I learned the concepts first (no server, two phones, deterministic merge), then the Holepunch stack I actually needed: Autopass, Autobase, Hypercore, Corestore, Hyperswarm, BlindPairing. Then I built a serverless Android app: one phone creates a note and an invite, the other joins, both lists stay in sync with no cloud. Then I wrote [HOW-IT-WORKS.md](https://github.com/pablorotten/PearNote/blob/main/documentation/HOW-IT-WORKS.md) and recorded a video walking through the layers. Learn the idea, learn the stack, build the thing, then explain it.
 
-What I need from you: access (repo, staging, a way to run sdkgen), one concrete first problem rather than "go do DevRel," and fast written feedback on drafts. I need a bit of time to learn the product before shipping content, and an honest picture of who the real user is. I do not need a detailed brief.
+What I need from you:
+- Access to the tool
+- One concrete first problem
+- A point of contact for technical questions
+- Feedback on my drafts
+
+I need a bit of time to learn the product before shipping content. I am quite autonomous: I do not need to be guided in specific steps, nor a detailed brief.
