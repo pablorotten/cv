@@ -26,9 +26,9 @@ What algorithm have you implemented or invented that you are most happy with? Ho
 
 ### The context
 
-The app is not designed to aggregate large historical data. It is designed to run optimizations on current data, prevent data loss and ease users going back and forth with different combinations of data until they find the optimal.
+The SaaS was not designed to aggregate large historical data. It was designed to run optimizations on current data, prevent data loss and ease users going back and forth with different combinations of data until they find the optimal. That led us to implement a strong, maybe overkill but super safe versioning system.
 
-Then the requirements change. After a while, customers start asking for historical aggregations, and they are willing to pay for them. So it stops being a nice to have and becomes revenue, and we add versioning to a system that has no place for it.
+Then the requirements changed. After years of storing valuable data, customers started asking for historical aggregations, and they were willing to pay for them. So it stopped being a nice to have and became revenue, and this clashed with our versioned data model.
 
 ### The data model
 
@@ -136,14 +136,21 @@ What is usually missing is exactly that last part: docs written only for humans,
 
 Off the top of my head, I deal with three types:
 
-- The engineer (nerd). My usual point of contact. We speak the same language, so the conversation is smooth. The small caveat: either of us can lack a piece of business context, and we can't always explain it because we don't own it. The talk stalls until a domain expert unblocks it.
-Strategy: talk tech freely, but flag business gaps early and pull in an expert instead of guessing.
+**The Nerd (developer)**
 
-- The consultant. They use the app behind the API. Strong on the business, not technical. If I have to explain a technical problem, I always translate it into UI, screens, and business language. If I can't tie it to something visual ("clicking fast here triggers a race condition"), I use a metaphor. They have to be concrete with me too: "I click this button, I want that number; this other number is wrong." I don't need the business meaning, I need to reproduce the error, read the log, and find a workaround. They're pragmatic; they always want to move forward.
+My usual point of contact. We speak the same language, so the conversation is smooth. Either of us might lack business context, and we can't always explain it because we don't own it. We need to wait until a domain expert unblocks it. 
+
+Strategy: talk tech freely, but the moment we hit something about the business that neither of us fully owns, raise the point and get someone who does instead of guessing.
+
+- **The Consultant**. My 2nd most common point of contact. They use the app behind the API. Strong on the business, but (usually) not technical. If I have to explain a technical problem, I always translate it into UI, screens, and business language. If I can't tie it to something visual ("clicking fast here triggers a race condition"), I use a metaphor. They have to be concrete with me too: "I click this button, I want that number; this other number is wrong." I don't need the business meaning, I need to reproduce the error, read the log, and find a workaround. They're pragmatic; they always want to move forward.
 Strategy: no jargon; map everything to what they see. Match their pragmatism: reproduce, workaround, then explain.
 
-- The corpo. They care about risk, numbers, efficiency, and legal. I deal with them much less than the other two: mostly at events, or when they are invited into my company's offices. It is not part of my daily job.
-Strategy: lead with impact (time, money, risk). Keep it short and direct.
+- The corpo (high management).
+
+They care about risk, numbers, efficiency, and legal. I deal with them much less than the other two: mostly at events, or when they are invited into my company's offices. It is not part of my daily job.
+
+Even so, these can be the most consequential conversations I have, because what I say ends up above my pay grade. So I listen more than I talk, and I pay attention to what they are actually asking: is this a question about feasibility, cost or risk? That tells me who needs to be in the room.
+Strategy: talk in their language: time, money, risk.
 
 ## 5. How do you like to work? What is your process, and what do you need from us to do your best work?
 
