@@ -24,7 +24,7 @@ Time-boxed to 30 min of human clicking, starting from the website as a new user 
 
 **Summary:** the website buries the entry point. The real start (`create-sdkgen`) only appears at the bottom of `/sdk/docs#where-to-start`. The best onboarding (`README.md` + `agents.md`) lives in GitHub, not on the site. Result: ~25 min lost before knowing which tool to run.
 
-### Step 1 — SDK landing: no entry point
+### Step 1 - SDK landing: no entry point
 
 URL: https://voxgig.com/sdk
 
@@ -39,12 +39,11 @@ URL: https://voxgig.com/sdk
 
 - **Expected:** Marketing is expected, but also a "Getting started" somewhere with the install command on first screen.
 - **Found:** generic landing. Scrolling to `sdk#your-own-sdk` shows an `npm create` command with a link to GitHub, but no runnable quick-start on the page itself.
-- **Suggestion:** put a copy-paste quick-start on the landing page itself, not behind a GitHub link.
-- **Suggestion:** put the quick-start from the README on the landing page. The repo `README.md` and [agent guide](https://voxgig.com/sdk/agents.md) are the best docs in the project.
+- **Suggestion:** put a copy-paste quick-start on the landing page itself, not behind a GitHub link. The repo `README.md` and [agent guide](https://voxgig.com/sdk/agents.md) are the best docs in the project, I'd like to see them here.
 
 ### Step 2 - `/sdk/docs`: wrong labels, marketing instead of actual docs
 
-URL: https://www.voxgig.com/sdk/docs
+URL: https://voxgig.com/sdk/docs
 
 <details>
 <summary>Screenshots</summary>
@@ -88,7 +87,7 @@ URL: https://voxgig.com/sdk/docs#where-to-start
 </details>
 
 - **Expected:** this content at the top of Step 2.
-- **Found:** `Building an SDK for your own API: start at create-sdkgen` — exactly what I searched for since Step 1.
+- **Found:** `Building an SDK for your own API: start at create-sdkgen`: 🎉🎉 Exactly what I searched for since Step 1 🎉🎉
 - **Suggestion:** move this block to the top of `/sdk/docs` and to the landing page.
 
 ### Step 5 - GitHub repos: the actual docs
@@ -101,7 +100,7 @@ Only after Step 4 I learn that I have to use `create-sdkgen`. Since I don't find
 
 - **Expected:** the website to have a complete, up-to-date "Getting started", so I don't have to hunt it in the repos.
 - **Found:** that repo's `README.md` and the [agent guide](https://voxgig.com/sdk/agents.md) are fantastic: clear quick-start commands, the real entry point. This is the content I wanted on the homepage in Step 1.
-- **Suggestion:** mirror this quick-start on https://voxgig.com/sdk and at the top of https://www.voxgig.com/sdk/docs. As a user, I want everything I need on the website, not split across repos.
+- **Suggestion:** mirror this quick-start on https://voxgig.com/sdk and at the top of https://voxgig.com/sdk/docs. As a user, I want everything I need on the website, not split across repos.
 
 ## 🤖 Robot journey
 
