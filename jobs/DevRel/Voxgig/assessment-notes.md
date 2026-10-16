@@ -90,7 +90,7 @@ I scroll to the bottom of the page, [Where to start](https://voxgig.com/sdk/docs
 
 ## Robot journey
 
-If I ask an AI what the steps to complete the assessment are, it is very clear what I have to do.
+Those are the steps AI generated to complete the assessment. It is very clear what I have to do.
 
 ### Prerequisites
 
@@ -107,6 +107,10 @@ npm create @voxgig/sdkgen@latest -- my-api -d ./openapi.json -o ./my-api-sdk -t 
 ```
 
 This creates `my-api-sdk/`. Inside it, `.sdk/` is your project; `ts/` will hold the generated SDK. `-t ts` = generate TypeScript; `-f test` = include the offline test suite.
+
+> [!NOTE]
+> It merges the installation of `@voxgig/create-sdkgen` with the execution in one single command
+
 
 ### Step 2 — Generate the SDK code
 
@@ -144,21 +148,13 @@ git push -u origin main
 
 Add a `LICENSE` file with the MIT text (or let the scaffold's license stand).
 
-### Step 6 — Write the report
-
-Repo URL + what worked, what broke, where you got stuck, what you'd change. That's what Richard actually wants.
-
-If something looks wrong in the output (wrong entity names, missing operations): edit the files in `my-api-sdk/.sdk/model/`, then re-run Step 2 and Step 3. Never edit `ts/` by hand — it gets overwritten.
-
-That's the entire assessment.
-
 ## Building the SDK in Windows
 
 Chosen API: TMDB
 
 I picked [The Movie Database (TMDB)](https://developer.themoviedb.org/) to generate the SDK from. Spec: https://developer.themoviedb.org/openapi/tmdb-api.json
 
-Let's to the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart)
+Next, I follow the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart).
 
 ```sh
 # 1. Scaffold a project from your OpenAPI 3 spec
@@ -179,27 +175,14 @@ cd ../ts && npm install && npm run build && npm test
 ### Some comments
 
 > [!WARNING]
-> **Feedback:** The Quickstart has no **Prerequisites** section, so copying it verbatim fails on a clean machine. `create-sdkgen` is not installed, so the shell reports `create-sdkgen: The term 'create-sdkgen' is not recognized...`. The README should state the prerequisites (Node.js 24+) and how to run the tool. Two forms that need no install:
->
+> **Feedback:** The README [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) and [AGENTS.md](https://github.com/voxgig/create-sdkgen/blob/main/AGENTS.md) have no **Prerequisites** section. The missing prerequisites are:
+> - use Node 24+
+> - install `create-sdkgen`
 > ```sh
 > nvm install 24
 > nvm use 24
 > npm install -g @voxgig/create-sdkgen 
 > ```
->
-> **Also:** the tutorial says "Node.js (a recent LTS)", which is misleading. I had Node 22, a recent LTS, and it is below the required floor — the toolchain needs **Node 24+**. State the exact version, not "recent LTS".
-
-> [!NOTE]
-> **Feedback — the run command is inconsistent across the docs.** Four docs, two spellings, and only two show something that runs as written:
->
-> | Doc | Audience | Shows | Runs as-is? |
-> |---|---|---|---|
-> | [create-sdkgen README](http://github.com/voxgig/create-sdkgen#quickstart) | human | bare `create-sdkgen` | ❌ (no install) |
-> | [create-sdkgen AGENTS.md](https://github.com/voxgig/create-sdkgen/blob/main/AGENTS.md) | agent | bare `create-sdkgen` | ❌ (no install) |
-> | [sdkgen tutorial](https://github.com/voxgig/sdkgen/blob/main/docs/tutorial.md) | human | `npm create @voxgig/sdkgen@latest` | ✅ |
-> | [website `/sdk/docs/create-sdkgen`](https://voxgig.com/sdk/docs/create-sdkgen) | human | `npx @voxgig/create-sdkgen` | ✅ |
->
-> The README (the obvious human entry) and AGENTS.md assume a pre-installed `create-sdkgen`; only the tutorial and the website show a runnable form. Pick one spelling and one runnable command, and use it everywhere.
 
 ### Bugs found
 
@@ -214,10 +197,7 @@ INFO: create/jostraca generate-install running npm install in .\tmdb-sdk\.sdk
 Voxgig Create SDK Error: Failed to start npm: spawn npm ENOENT
 ```
 
-The scaffolder spawns `npm` without the `.cmd`/shell, so it cannot launch on Windows even though `npm` works in the shell. Same error from the parent folder and from inside the project, so it is not a working-directory problem.
-
 Known issue: [voxgig/create-sdkgen#58 — Fix npm process launching in the generated scaffold on Windows](https://github.com/voxgig/create-sdkgen/issues/58) (Open, High).
-Workaround: `--no-install`, then run `npm install` manually in `.sdk`.
 
 #### Bug 2 — `api/api-info.aontu` source not found
 
@@ -229,24 +209,22 @@ ERROR: model run-build build
   --> .sdk\model\sdk.aontu:13:1
 ```
 
-The bare include `@"api/api-info.aontu"` is resolved against `.sdk` instead of `.sdk/model`, so the model never builds and `apidef` never produces the entities. The same build run from inside `.sdk/model` gets further, which confirms it is an include-base problem.
-
-Known issue: [voxgig/create-sdkgen#62 — Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62) (Open). It also folds in sdkgen#264, sdkgen#270 and apidef#118.
+Known issue: [voxgig/create-sdkgen#62 — Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62) (Open).
 
 
-### Tried with WSL
+### Workaround: Tried with WSL
 
-Repeat [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL: ✅ It worked!
+I repeated the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL, and it worked ✅ 
 
 ### Test the SDK against the API
 
-Export the API key
+Set the API key in PowerShell:
 
-```sh
+```powershell
 $env:TMDB_APIKEY = "..."
 ```
 
-Write small script in `tmdb-sdk\ts` folder
+I wrote a small script in the `tmdb-sdk\ts` folder:
 ```ts
 import { TmdbSDK } from './dist/TmdbSDK.js'
 
@@ -266,12 +244,12 @@ const found = await client.Movie().list({ query: 'Fight Club' })
 console.log('search hits:', found.length, '| first:', found[0]?.data?.().title)
 ```
 
-Run it
-```sh
+Run it in PowerShell:
+```powershell
 node .\live-check.mjs
 ```
 
-✅ Works fine!
+✅ It worked!
 
 ```
 ok: true status: 200
@@ -292,4 +270,4 @@ The website is confusing and full of marketing content, even on the pages titled
 2. The clearest runbook is in `AGENTS.md`. Although it is framed for AI agents, it is the best human onboarding doc in the project, and the website never points humans to it.
 3. The names are easy to confuse: `create-sdkgen` versus `sdkgen`, the `npm create @voxgig/sdkgen` command silently running `create-sdkgen`, and two overlapping tutorials in separate repos.
 4. Small remark: The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
-5. The [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) is broken for windows
+5. The [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) is broken on Windows.
