@@ -90,9 +90,25 @@ I scroll to the bottom of the page, [Where to start](https://voxgig.com/sdk/docs
 
 **⚠️ At this point I give up on the website and go straight to the `create-sdkgen` GitHub repo, since now I know this is what I need. ⚠️**
 
-## Notes
+### Following `create-sdkgen` README.md
 
-- The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
+Let's to the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart)
+
+```sh
+# 1. Scaffold a project from your OpenAPI 3 spec
+create-sdkgen my-api -d ./openapi.yaml -o ./my-api-sdk
+
+# 2. Add the languages you want + offline test mode
+cd my-api-sdk/.sdk
+npx voxgig-sdkgen target add ts py go
+npx voxgig-sdkgen feature add test
+
+# 3. Generate the SDKs (builds the .sdk sources, then runs the generator)
+npm run generate
+
+# 4. Verify
+cd ../ts && npm install && npm run build && npm test
+```
 
 ## Robot journey
 
@@ -165,3 +181,4 @@ The website is confusing and full of marketing content, even on the pages titled
 1. The website is the documented entry point, but the real documentation is not there. Even `/sdk/docs` is marketing-shaped, and one page still used `.aon` where the current GitHub guide uses `.aontu`.
 2. The clearest runbook is in `AGENTS.md`. Although it is framed for AI agents, it is the best human onboarding doc in the project, and the website never points humans to it.
 3. The names are easy to confuse: `create-sdkgen` versus `sdkgen`, the `npm create @voxgig/sdkgen` command silently running `create-sdkgen`, and two overlapping tutorials in separate repos.
+4. Small remark: The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
