@@ -18,89 +18,92 @@ Please time-box the human work to 30 minutes maximum. If that is not enough, or 
 There is no fixed deadline; about one calendar week is a useful guide.
 
 Once this task is complete, we will send the second task under the same conditions.
-## Human journey
+## 👨‍💻 Human journey
 
-This is my personal journey to generate an SDK, starting from the website
+Time-boxed to 30 min of human clicking, starting from the website as a new user who wants to "generate an SDK from my API". No GitHub, no prior knowledge.
 
-### SDK main page
+**Summary:** the website buries the entry point. The real start (`create-sdkgen`) only appears at the bottom of `/sdk/docs#where-to-start`. The best onboarding (`README.md` + `agents.md`) lives in GitHub, not on the site. Result: ~25 min lost before knowing which tool to run.
 
-Go to https://voxgig.com/sdk
+### Step 1 — SDK landing: no entry point
+
+URL: https://voxgig.com/sdk
+
+<details>
+<summary>Screenshots</summary>
 
 ![Voxgig SDK landing page](image.png)
 
-> [!NOTE]
-> Nothing interesting.
-
-#### ⚠️ SPOILER ⚠️
-
-When I scroll down to https://voxgig.com/sdk#your-own-sdk
-
 ![The "Your own SDK" section with the npm create command](image-2.png)
 
-That link goes to: https://github.com/voxgig/sdkgen
+</details>
 
-In the [voxgig-sdkgen section of the README](https://github.com/voxgig/sdkgen#voxgigsdkgen), I finally find what I was looking for:
+- **Expected:** Marketing is expected, but also a "Getting started" somewhere with the install command on first screen.
+- **Found:** generic landing. Scrolling to `sdk#your-own-sdk` shows an `npm create` command with a link to GitHub, but no runnable quick-start on the page itself.
+- **Suggestion:** put a copy-paste quick-start on the landing page itself, not behind a GitHub link.
+- **Suggestion:** put the quick-start from the README on the landing page. The repo `README.md` and [agent guide](https://voxgig.com/sdk/agents.md) are the best docs in the project.
 
-![README section showing the quick-start commands](image-7.png)
-
-> [!NOTE]
-> That repo's `README.md` and the [agent guide](https://voxgig.com/sdk/agents.md) are ❤️fantastic❤️.
->
-> That content is what I would like to see on the home page.
->
-> As a user, I expect the website to have a complete, up-to-date "Getting started" section, so I do not have to go to the GitHub repo.
-
-**⚠️ But this is a shortcut: as a user, I want to find everything I need on the website, not in the GitHub repo. ⚠️**
-
-### SDK > docs
+### Step 2 - `/sdk/docs`: wrong labels, marketing instead of actual docs
 
 URL: https://www.voxgig.com/sdk/docs
 
-Docs page. This is where I really expect to find structured technical documentation. But I cannot find it.
-
-#### `Toolchain documentation` section
+<details>
+<summary>Screenshots</summary>
 
 ![The "Toolchain documentation" heading](image-3.png)
 
-> [!NOTE]
-> I don't like `Toolchain documentation` as a title. I want to generate an SDK from an API; what does this have to do with a toolchain?
+![The pipeline table](image-4.png)
 
-#### `The Pipeline` section
+</details>
+
+- **Expected:** structured technical documentation with prerequisites and first command.
+- **Found:**
+  - Section titled `Toolchain documentation`, as a user who wants to generate an SDK, I don't know what this has to do with my goal.
+  - Section `The Pipeline` (https://voxgig.com/sdk/docs#the-pipeline) reads like marketing copy, not a getting started. Mentions `apidef` and `sdkgen` but never `create-sdkgen`, the tool I actually need to run. No links to those products.
+- **Suggestion:** This "marketing" content should go to the **overview** on Step 1. Add here a  `Getting started` section and add the 3-step runbook here (same as `AGENTS.md`): scaffold → generate → build/test.
+
+### Step 3 - `/sdk/docs > The Components`: first mention of the right tool, still no guidance
 
 URL: https://voxgig.com/sdk/docs#the-components
 
-![The pipeline table](image-4.png)
-
-> [!NOTE]
-> At first glance this looks like a real "Getting started". But after reading it, I realize it is marketing copy rather than a technical guide.
-> - We are on the docs page; why not have the getting started here, similar to what is in [`AGENTS.md`](https://github.com/voxgig/create-sdkgen/blob/main/AGENTS.md)?
-> - I see mentions of several Voxgig products, like `apidef` and `sdkgen` (the reason I am here), but no mention of `create-sdkgen`, the product I am actually going to use ➡️ It feels confusing; why not link to those products?
-
-#### `The Components` section
-
-I scroll down to [The components](https://voxgig.com/sdk/docs#the-components)
-
+<details>
+<summary>Screenshot</summary>
 
 ![The components section](image-5.png)
 
-> [!NOTE]
-> - A description of the tools, but it does not say which one to use to generate my SDK.
-> - Still looking for real documentation and a getting-started guide.
-> - This is the first time I see `create-sdkgen`; what is the difference between it and `sdkgen`?
-> - 💀 At this point I am lost and frustrated; I don't know what to do.
+</details>
 
-#### `Where to start` section
+- **Expected:** "use X to generate your SDK".
+- **Found:** description of tools but no selection guidance. First time I see `create-sdkgen`. Unclear difference `sdkgen` vs `create-sdkgen`.
+- **Suggestion:** one line on top: "To build a new SDK, use `create-sdkgen`. `sdkgen` is the engine it calls internally." Link both.
 
-I scroll to the bottom of the page, [Where to start](https://voxgig.com/sdk/docs#where-to-start) section
+### Step 4 - `/sdk/docs > Where to start`: the answer, at the bottom
+
+URL: https://voxgig.com/sdk/docs#where-to-start
+
+<details>
+<summary>Screenshot</summary>
 
 ![The "Where to start" section](image-6.png)
 
-> [!IMPORTANT]
-> 🎉🎉🎉 FINALLY!!!! `Building an SDK for your own API: start at create-sdkgen` 👈 This is what I have been looking for since the beginning!
+</details>
 
-**⚠️ At this point I give up on the website and go straight to the `create-sdkgen` GitHub repo, since now I know this is what I need. ⚠️**
+- **Expected:** this content at the top of Step 2.
+- **Found:** `Building an SDK for your own API: start at create-sdkgen` — exactly what I searched for since Step 1.
+- **Suggestion:** move this block to the top of `/sdk/docs` and to the landing page.
 
-## Robot journey
+### Step 5 - GitHub repos: the actual docs
+
+URLs:
+- https://github.com/voxgig/create-sdkgen
+- https://voxgig.com/sdk/agents.md
+
+Only after Step 4 I learn that I have to use `create-sdkgen`. Since I don't find any guidance, I manually leave the website and go to GitHub. This is where I finally find what I needed from the start.
+
+- **Expected:** the website to have a complete, up-to-date "Getting started", so I don't have to hunt it in the repos.
+- **Found:** that repo's `README.md` and the [agent guide](https://voxgig.com/sdk/agents.md) are fantastic: clear quick-start commands, the real entry point. This is the content I wanted on the homepage in Step 1.
+- **Suggestion:** mirror this quick-start on https://voxgig.com/sdk and at the top of https://www.voxgig.com/sdk/docs. As a user, I want everything I need on the website, not split across repos.
+
+## 🤖 Robot journey
 
 Those are the steps AI generated to complete the assessment. It is very clear what I have to do.
 
@@ -222,7 +225,7 @@ ERROR: model run-build build
 Known issue: [#62: Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62)
 
 
-### Workaround: Tried with WSL
+### Workaround: WSL
 
 I repeated the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL, and the pipeline completed. `npm install` succeeded, `npm run generate` parsed the OpenAPI spec and generated the TypeScript SDK. `apidef` reported 103 entities from 148 paths, but marked the build partial with 13 selector-collision warnings; `sdkgen` also warned that some generated flow steps were unreachable.
 
@@ -283,9 +286,8 @@ PS C:\Users\pablo\DEV\projects\tmdb-sdk\ts
 
 The website is confusing and full of marketing content, even on the pages titled "Documentation". A technical user would be lost and frustrated. The best material is in `AGENTS.md`, which is written for AI agents but is the most useful thing I found as a human.
 
-1. The website is the documented entry point, but the real documentation is not there. Even `/sdk/docs` is marketing-shaped, and one page still used `.aon` where the current GitHub guide uses `.aontu`.
-2. The clearest runbook is in `AGENTS.md`. Although it is framed for AI agents, it is the best human onboarding doc in the project, and the website never points humans to it.
-3. The names are easy to confuse: `create-sdkgen` versus `sdkgen`, the `npm create @voxgig/sdkgen` command silently running `create-sdkgen`, and two overlapping tutorials in separate repos.
-4. Small remark: The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
-5. The [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) is broken on Windows.
-6. All the other small issues I found were easily fixed with the help of small model
+1. The clearest runbook is in `AGENTS.md`. Although it is framed for AI agents, it is the best human onboarding doc in the project, and the website never points humans to it.
+2. The names are easy to confuse: `create-sdkgen` versus `sdkgen`, the `npm create @voxgig/sdkgen` command silently running `create-sdkgen`, and two overlapping tutorials in separate repos.
+3. Small remark: The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
+4. The [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) is broken on Windows.
+5. All the other small issues I found were easily fixed with the help of small model
