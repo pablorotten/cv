@@ -1,14 +1,26 @@
 # Voxgig assessment notes - Task 1: Build an SDK and write a report
 
-- **Build** an open-source SDK under the MIT License in my own GitHub/GitLab account, and **write a short report** on my observations. I keep the copyright and may reference the work elsewhere.
-- **Use the Voxgig SDK generator** — AI-assisted or manual is fine.
-- **Pick an API** not already in the [catalogue](https://github.com/orgs/voxgig-sdk/repositories). Prefer a SaaS free trial, or a personal project with an API (an API key is needed to test fully).
-- **Time-box my human work to 30 minutes.** Going over is fine. Note issues and bugs in the report.
-- The report should cover my **developer experience with the generator**, which is what they are most interested in.
+> [!NOTE]
+> Environment disclaimer: I completed this assessment on **Windows 11**, AI-assisted with **Muse Spark 1.3 via OpenCode**.
 
+This task asks you to build an open-source SDK under the MIT License in your own GitHub or GitLab account, using the Voxgig SDK tools, and write a short report on your observations. The project remains your open-source work, you retain the copyright, and you are free to reference it for other work.
+
+Please choose an API that does not already have an SDK in our open-source catalogue:
+https://github.com/orgs/voxgig-sdk/repositories
+
+You may use AI or build it manually, so long as you use the Voxgig SDK generator:
+https://voxgig.com/sdk
+
+I recommend an API from a SaaS company with a free trial, since you will need an API key to test fully. A personal or side project with an API is also a good choice.
+
+Please time-box the human work to 30 minutes maximum. If that is not enough, or if you find issues or bugs, that is fine: include them in your report. We are very interested in your developer experience with the generator.
+
+There is no fixed deadline; about one calendar week is a useful guide.
+
+Once this task is complete, we will send the second task under the same conditions.
 ## Human journey
 
-This is my personal journey to learn how to generate an SDK, starting from the website as a human would.
+This is my personal journey to generate an SDK, starting from the website
 
 ### SDK main page
 
@@ -150,8 +162,6 @@ Add a `LICENSE` file with the MIT text (or let the scaffold's license stand).
 
 ## Building the SDK in Windows
 
-Chosen API: TMDB
-
 I picked [The Movie Database (TMDB)](https://developer.themoviedb.org/) to generate the SDK from. Spec: https://developer.themoviedb.org/openapi/tmdb-api.json
 
 Next, I follow the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart).
@@ -188,7 +198,7 @@ cd ../ts && npm install && npm run build && npm test
 
 While actually running the steps on Windows I hit two errors and could not finish the generation. Both turn out to be **known, open issues filed by the maintainer**, so I am not doing anything wrong: the Windows path of the tool is currently broken.
 
-#### Bug 1 — `spawn npm ENOENT`
+#### Bug 1: `spawn npm ENOENT`
 
 `create-sdkgen tmdb -d ./tmdb-api.json -o ./tmdb-sdk` fails at the install step:
 
@@ -197,9 +207,9 @@ INFO: create/jostraca generate-install running npm install in .\tmdb-sdk\.sdk
 Voxgig Create SDK Error: Failed to start npm: spawn npm ENOENT
 ```
 
-Known issue: [voxgig/create-sdkgen#58 — Fix npm process launching in the generated scaffold on Windows](https://github.com/voxgig/create-sdkgen/issues/58) (Open, High).
+Known issue: [#58: Fix npm process launching in the generated scaffold on Windows](https://github.com/voxgig/create-sdkgen/issues/58)
 
-#### Bug 2 — `api/api-info.aontu` source not found
+#### Bug 2: `api/api-info.aontu` source not found
 
 After installing the dependencies manually, `npm run generate` fails during the model build:
 
@@ -209,14 +219,21 @@ ERROR: model run-build build
   --> .sdk\model\sdk.aontu:13:1
 ```
 
-Known issue: [voxgig/create-sdkgen#62 — Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62) (Open).
+Known issue: [#62: Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62)
 
 
 ### Workaround: Tried with WSL
 
-I repeated the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL, and it worked ✅ 
+I repeated the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL, and the pipeline completed. `npm install` succeeded, `npm run generate` parsed the OpenAPI spec and generated the TypeScript SDK. `apidef` reported 103 entities from 148 paths, but marked the build partial with 13 selector-collision warnings; `sdkgen` also warned that some generated flow steps were unreachable.
+
+### Offline test result
+
+`npm test` completed with **908 tests: 800 passed, 0 failed, 108 skipped** (duration: about 4 minutes). These are the generated offline tests; they use a mock and do not by themselves test requests against TMDB.
 
 ### Test the SDK against the API
+
+> [!NOTE]
+> TMDB's OpenAPI spec marks `Authorization` as a bearer credential, but passing the raw Read Access Token as `apikey` returned `401 Invalid API key`. Prefixing it with `Bearer ` fixed authentication. The generated client did not add this prefix automatically. With the prefix, `GET /3/authentication` returned `200`, and the `Movie().load()` and `Movie().list()` entity calls returned live movie data.
 
 Set the API key in PowerShell:
 
@@ -271,3 +288,4 @@ The website is confusing and full of marketing content, even on the pages titled
 3. The names are easy to confuse: `create-sdkgen` versus `sdkgen`, the `npm create @voxgig/sdkgen` command silently running `create-sdkgen`, and two overlapping tutorials in separate repos.
 4. Small remark: The examples assume the OpenAPI spec is YAML rather than JSON, even though the tool accepts both.
 5. The [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) is broken on Windows.
+6. All the other small issues I found were easily fixed with the help of small model
