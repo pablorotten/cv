@@ -14,19 +14,6 @@ I recommend an API from a SaaS company with a free trial, since you will need an
 
 Please time-box the human work to 30 minutes maximum. If that is not enough, or if you find issues or bugs, that is fine: include them in your report. We are very interested in your developer experience with the generator.
 
-## AI steps
-
-1. Pick an API (the only real decision). Not in [voxgig-sdk] (https://github.com/orgs/voxgig-sdk/repositories). Prefer a small REST API, not GraphQL.
-2. Time-box: 30 min of your time. Note every friction, bug, and “I had to guess.”
-3. Generate (Node 24+)
-```sh
-npm create @voxgig/sdkgen -- my-api -d ./openapi.yaml -o ./my-api-sdk -t ts -f test
-cd my-api-sdk/.sdk && npm run generate
-cd ../ts && npm install && npm run build && npm test
-```
-Edit .sdk/model/ only. Never hand-edit ts/. Run npx voxgig-sdkgen doctor before commit.
-4. Publish MIT on your GitHub.
-
 ## Human journey
 
 ### Main page
@@ -158,37 +145,65 @@ Want to keep going and turn this frustration into the report? I can help you str
 
 ## OK I'm done, I'll ask AI
 
-Prerequisites:
-- Node.js 24+ (node -v)
-- git + a GitHub account
-- Your openapi.json file
-Step 1 — Scaffold the project
-Open a terminal in the folder holding your openapi.json:
+### Prerequisites
+
+- Node.js 24+ (`node -v`)
+- Git and a GitHub account
+- Your `openapi.json` file
+
+### Step 1 — Scaffold the project
+
+Open a terminal in the folder holding your `openapi.json`:
+
+```sh
 npm create @voxgig/sdkgen@latest -- my-api -d ./openapi.json -o ./my-api-sdk -t ts -f test
-This creates my-api-sdk/. Inside it, .sdk/ is your project; ts/ will hold the generated SDK. -t ts = generate TypeScript; -f test = include the offline test suite.
-Step 2 — Generate the SDK code
+```
+
+This creates `my-api-sdk/`. Inside it, `.sdk/` is your project; `ts/` will hold the generated SDK. `-t ts` = generate TypeScript; `-f test` = include the offline test suite.
+
+### Step 2 — Generate the SDK code
+
+```sh
 cd my-api-sdk/.sdk
 npm run generate
-This reads .sdk/model/ and writes the SDK into ts/.
-Step 3 — Build and test it
+```
+
+This reads `.sdk/model/` and writes the SDK into `ts/`.
+
+### Step 3 — Build and test it
+
+```sh
 cd ../ts
 npm install
 npm run build
 npm test
+```
+
 Green tests = the SDK works, offline, no API key needed.
-Step 4 — (Optional) One real call
+
+### Step 4 — (Optional) One real call
+
 Only if you have an API key, make a single live request to prove it works end to end. If you don't, skip — the offline tests already prove it.
-Step 5 — Push to your GitHub under MIT
+
+### Step 5 — Push to your GitHub under MIT
+
+```sh
 cd ..                       # back to my-api-sdk/
 git init && git add . && git commit -m "Initial SDK"
 # create an empty repo on GitHub, then:
 git remote add origin https://github.com/pablorotten/my-api-sdk.git
 git push -u origin main
-Add an LICENSE file with the MIT text (or let the scaffold's license stand).
-Step 6 — Write the report
+```
+
+Add a `LICENSE` file with the MIT text (or let the scaffold's license stand).
+
+### Step 6 — Write the report
+
 Repo URL + what worked, what broke, where you got stuck, what you'd change. That's what Richard actually wants.
-If something looks wrong in the output (wrong entity names, missing operations): edit the files in my-api-sdk/.sdk/model/, then re-run Step 2 and Step 3. Never edit ts/ by hand — it gets overwritten.
-That's the entire assessment. Two things I can do for you right now: pick an API, or run Step 1 against your openapi.json — do you have a spec file already?
+
+If something looks wrong in the output (wrong entity names, missing operations): edit the files in `my-api-sdk/.sdk/model/`, then re-run Step 2 and Step 3. Never edit `ts/` by hand — it gets overwritten.
+
+That's the entire assessment. Two things I can do for you right now: pick an API, or run Step 1 against your `openapi.json` — do you have a spec file already?
 
 
 ## Conclusion
