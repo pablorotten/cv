@@ -162,10 +162,10 @@ Let's to the [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quic
 
 ```sh
 # 1. Scaffold a project from your OpenAPI 3 spec
-create-sdkgen my-api -d ./openapi.yaml -o ./my-api-sdk
+create-sdkgen tmdb -d ./tmdb-api.json -o ./tmdb-sdk
 
 # 2. Add the languages you want + offline test mode
-cd my-api-sdk/.sdk
+cd tmdb-sdk/.sdk
 npx voxgig-sdkgen target add ts py go
 npx voxgig-sdkgen feature add test
 
@@ -182,8 +182,9 @@ cd ../ts && npm install && npm run build && npm test
 > **Feedback:** The Quickstart has no **Prerequisites** section, so copying it verbatim fails on a clean machine. `create-sdkgen` is not installed, so the shell reports `create-sdkgen: The term 'create-sdkgen' is not recognized...`. The README should state the prerequisites (Node.js 24+) and how to run the tool. Two forms that need no install:
 >
 > ```sh
-> npm create @voxgig/sdkgen@latest -- my-api -d ./openapi.yaml -o ./my-api-sdk
-> npx @voxgig/create-sdkgen my-api -d ./openapi.yaml -o ./my-api-sdk
+> nvm install 24
+> nvm use 24
+> npm install -g @voxgig/create-sdkgen 
 > ```
 >
 > **Also:** the tutorial says "Node.js (a recent LTS)", which is misleading. I had Node 22, a recent LTS, and it is below the required floor — the toolchain needs **Node 24+**. State the exact version, not "recent LTS".
@@ -193,14 +194,12 @@ cd ../ts && npm install && npm run build && npm test
 >
 > | Doc | Audience | Shows | Runs as-is? |
 > |---|---|---|---|
-> | [create-sdkgen README](https://github.com/voxgig/create-sdkgen#quickstart) | human | bare `create-sdkgen` | ❌ (no install) |
+> | [create-sdkgen README](http://github.com/voxgig/create-sdkgen#quickstart) | human | bare `create-sdkgen` | ❌ (no install) |
 > | [create-sdkgen AGENTS.md](https://github.com/voxgig/create-sdkgen/blob/main/AGENTS.md) | agent | bare `create-sdkgen` | ❌ (no install) |
 > | [sdkgen tutorial](https://github.com/voxgig/sdkgen/blob/main/docs/tutorial.md) | human | `npm create @voxgig/sdkgen@latest` | ✅ |
 > | [website `/sdk/docs/create-sdkgen`](https://voxgig.com/sdk/docs/create-sdkgen) | human | `npx @voxgig/create-sdkgen` | ✅ |
 >
 > The README (the obvious human entry) and AGENTS.md assume a pre-installed `create-sdkgen`; only the tutorial and the website show a runnable form. Pick one spelling and one runnable command, and use it everywhere.
-
-## Chosen API: TMDB
 
 ### Bugs found
 
@@ -233,6 +232,56 @@ ERROR: model run-build build
 The bare include `@"api/api-info.aontu"` is resolved against `.sdk` instead of `.sdk/model`, so the model never builds and `apidef` never produces the entities. The same build run from inside `.sdk/model` gets further, which confirms it is an include-base problem.
 
 Known issue: [voxgig/create-sdkgen#62 — Bare includes in the scaffold's model and test files fail to resolve, notably on Windows](https://github.com/voxgig/create-sdkgen/issues/62) (Open). It also folds in sdkgen#264, sdkgen#270 and apidef#118.
+
+
+### Tried with WSL
+
+Repeat [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) in WSL: ✅ It worked!
+
+### Test the SDK against the API
+
+Export the API key
+
+```sh
+$env:TMDB_APIKEY = "..."
+```
+
+Write small script in `tmdb-sdk\ts` folder
+```ts
+import { TmdbSDK } from './dist/TmdbSDK.js'
+
+const client = new TmdbSDK({ apikey: 'Bearer ' + process.env.TMDB_APIKEY })
+
+// Test authentication
+const res = await client.direct({ path: '/3/authentication', method: 'GET' })
+console.log('ok:', res.ok, 'status:', res.status)
+console.log(JSON.stringify(res.ok ? res.data : res.err, null, 2).slice(0, 1200))
+
+// Test entities
+const movie = await client.Movie().load({ id: 550 })
+console.log('load:', movie.data().title, '|', movie.data().release_date, '| ★', movie.data().vote_average)
+
+// Test search
+const found = await client.Movie().list({ query: 'Fight Club' })
+console.log('search hits:', found.length, '| first:', found[0]?.data?.().title)
+```
+
+Run it
+```sh
+node .\live-check.mjs
+```
+
+✅ Works fine!
+
+```
+ok: true status: 200
+{
+  "success": true
+}
+load: Fight Club | 1999-10-15 | ★ 8.438
+search hits: 20 | first: Fight Club
+PS C:\Users\pablo\DEV\projects\tmdb-sdk\ts
+```
 
 
 ## Conclusion
