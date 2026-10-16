@@ -104,63 +104,11 @@ Only after Step 4 I learn that I have to use `create-sdkgen`. Since I don't find
 
 ## 🤖 Robot journey
 
-Those are the steps AI generated to complete the assessment. It is very clear what I have to do.
+AI completed the same task with zero navigation friction, because it never used the website.
 
-### Prerequisites
+It treated the repos as source of truth: went straight to `create-sdkgen`, followed [Quickstart](https://github.com/voxgig/create-sdkgen/tree/main#quickstart) + [AGENTS.md](https://github.com/voxgig/create-sdkgen/blob/main/AGENTS.md), ran scaffold → generate → build/test. No lost time in Steps 1-4 above.
 
-- Node.js 24+ (`node -v`)
-- Git and a GitHub account
-- Your `openapi.json` file
-
-### Step 1 — Scaffold the project
-
-Open a terminal in the folder holding your `openapi.json`:
-
-```sh
-npm create @voxgig/sdkgen@latest -- my-api -d ./openapi.json -o ./my-api-sdk -t ts -f test
-```
-
-This creates `my-api-sdk/`. Inside it, `.sdk/` is your project; `ts/` will hold the generated SDK. `-t ts` = generate TypeScript; `-f test` = include the offline test suite.
-
-> [!NOTE]
-> It merges the installation of `@voxgig/create-sdkgen` with the execution in one single command
-
-
-### Step 2 — Generate the SDK code
-
-```sh
-cd my-api-sdk/.sdk
-npm run generate
-```
-
-This reads `.sdk/model/` and writes the SDK into `ts/`.
-
-### Step 3 — Build and test it
-
-```sh
-cd ../ts
-npm install
-npm run build
-npm test
-```
-
-Green tests = the SDK works, offline, no API key needed.
-
-### Step 4 — (Optional) One real call
-
-Only if you have an API key: make a single live request to prove it works end to end. If you don't have a key, skip this — the offline tests still prove the SDK builds and runs against the mock.
-
-### Step 5 — Push to your GitHub under MIT
-
-```sh
-cd ..                       # back to my-api-sdk/
-git init && git add . && git commit -m "Initial SDK"
-# create an empty repo on GitHub, then:
-git remote add origin https://github.com/pablorotten/my-api-sdk.git
-git push -u origin main
-```
-
-Add a `LICENSE` file with the MIT text (or let the scaffold's license stand).
+This is the contrast that matters: the human journey failed on the website, the robot journey succeeded by ignoring it. `AGENTS.md` is currently the best human onboarding doc in the project.
 
 ## Building the SDK in Windows
 
