@@ -122,7 +122,7 @@ create-sdkgen tmdb -d ./tmdb-api.json -o ./tmdb-sdk
 
 # 2. Add the languages you want + offline test mode
 cd tmdb-sdk/.sdk
-npx voxgig-sdkgen target add ts py go
+npx voxgig-sdkgen target add ts
 npx voxgig-sdkgen feature add test
 
 # 3. Generate the SDKs (builds the .sdk sources, then runs the generator)
@@ -228,6 +228,31 @@ search hits: 20 | first: Fight Club
 PS C:\Users\pablo\DEV\projects\tmdb-sdk\ts
 ```
 
+
+## Personalizing the generated project
+
+I handled project ownership and the remaining generated-file fixes in three stages:
+
+1. **Set project metadata in `.sdk/model/project.aontu`.** I set the publisher and author to my name, the repository path to `pablorotten/tmdb-sdk`, a personal package name, and the project-facing title and links. This is the source-of-truth configuration that is preserved across regeneration.
+2. **Regenerate from `.sdk` with `npm run generate` in WSL.** The generated licenses, package metadata, README attribution, security policy, and npm publishing workflow then reflected my repository and ownership.
+3. **Apply a few project-specific documentation fixes after generation.** I documented that TMDB tokens need the `Bearer ` prefix, corrected the TypeScript README's tag/install reference, aligned `package-lock.json`, and clarified the security policy scope. These edits are in generated output and could be overwritten by a future regeneration; durable generator changes belong in the model or templates.
+
+### Release tag: `ts/v0.0.1`
+
+I tagged the first release `ts/v0.0.1`, following the per-target convention used by Voxgig's own SDK repos:
+
+```sh
+git tag -a ts/v0.0.1 -m "TMDB SDK v0.0.1"
+git push origin ts/v0.0.1
+```
+
+Two things are worth pointing out about that naming, because they are easy to get wrong:
+
+- **The prefix is the language target, not the API version.** In `voxgig-sdk/univec-sdk`, the tags `ts/v0.1.1`, `py/v0.1.1`, `php/v0.1.1`, and `lua/v0.1.1` all point at the same commit `5baaad8`. One release bumps every target of the same API to the same SDK version, and `release/v0.1.2` marks the cross-language release. `voxgig-sdk/voxgig-solardemo-sdk` even carries a `ts/v0.0.2`, so starting at `0.0.x` is normal here.
+- **The SDK version does not have to match the API version.** TMDB is API v3, and that lives in the paths (`/3/movie/popular`) and the generated code, not in the tag. The SDK version is my own library's semver. The only real constraint is internal: the publish workflow reads `ts/package.json`, so the tag must match that `0.0.1`.
+
+> [!WARNING]
+> **Inconsistency in the generated output:** `.sdk/PUBLISHING.md` and `.github/workflows/publish-ts.yml` hardcode the tag as `v<version>` (`TAG="v$VERSION"`), without the target prefix that Voxgig's own repositories use. A generated multi-target repo would therefore cut colliding, untargeted tags. The docs are the only place I documented the prefix, because `PUBLISHING.md` and the workflow are regenerated on every `npm run generate`. This looks like a genuine generator bug worth reporting.
 
 ## Conclusion
 
